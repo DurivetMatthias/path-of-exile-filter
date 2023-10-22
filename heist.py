@@ -1,25 +1,22 @@
-from rule import Rule
-import rarity_options
+"""This file defines the rules for heist items."""
+
+import categories
+import rule
 
 
-class HeistItem(Rule):
-    def label(self) -> str:
-        """White text on red background"""
-        return """
-            SetFontSize 45
-            SetTextColor 255 255 255
-            SetBackgroundColor 150 0 0
-            SetBorderColor 150 0 0
+class HeistStyle(rule.Rule):
+    def label(self) -> categories.LABEL:
+        return categories.LABEL.WHITE_ON_RED
+
+    def icon_shape(self) -> categories.SHAPE:
+        return categories.SHAPE.UPSIDE_DOWN_HOUSE
+
+
+class HeistItem(HeistStyle):
+    def filter(self):
+        return f"""
+            BaseType "{self.name}"
         """
-
-    def sound(self) -> str:
-        return """
-            DisableDropSound
-            CustomAlertSound "filter-sounds/lily-bam.mp3"
-        """
-
-    def icon(self) -> str:
-        return "MinimapIcon 0 Red UpsideDownHouse"
 
 
 class HeistClass(HeistItem):
@@ -29,49 +26,71 @@ class HeistClass(HeistItem):
         """
 
 
+best_in_slot_items = [
+    "Foliate Brooch",
+    "Precise Arrowhead",
+    "Whisper-woven Cloak",
+    "Regicide Disguise Kit",
+    "Grandmaster Keyring",
+    "Thaumetic Flashpowder",
+    "Thaumaturgical Sensing Charm",
+    "Thaumaturgical Ward",
+    "Silkweave Sole",
+    "Thaumetic Blowtorch",
+    "Steel Bracers",
+    "Master Lockpick",
+]
+
+heist_item_classes = [
+    "Heist Brooch",
+    "Heist Cloak",
+    "Heist Gear",
+    "Heist Tool",
+]
+
 rules = [
     HeistItem(
         name="Rogue's Marker",
-        rarity=rarity_options.COMMON,
+        rarity=categories.RARITY.COMMON,
+        strictness=categories.STRICTNESS.STRICT,
     ),
     HeistItem(
         name="Tempering Orb",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.LEGENDARY,
     ),
     HeistItem(
         name="Tailoring Orb",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.LEGENDARY,
     ),
     HeistClass(
         name="Blueprint",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.LEGENDARY,
     ),
     HeistClass(
         name="Contract",
-        rarity=rarity_options.EPIC,
+        rarity=categories.RARITY.EPIC,
     ),
     HeistClass(
         name="Heist Target",
-        rarity=rarity_options.COMMON,
+        rarity=categories.RARITY.COMMON,
     ),
-    HeistClass(
-        name="Heist Brooch",
-        rarity=rarity_options.EPIC,
-    ),
-    HeistClass(
-        name="Heist Cloak",
-        rarity=rarity_options.EPIC,
-    ),
-    HeistClass(
-        name="Heist Tool",
-        rarity=rarity_options.EPIC,
-    ),
-    HeistClass(
-        name="Heist Gear",
-        rarity=rarity_options.EPIC,
-    ),
+    *[
+        HeistItem(
+            name=item_name,
+            rarity=categories.RARITY.EPIC,
+        )
+        for item_name in best_in_slot_items
+    ],
+    *[
+        HeistClass(
+            name=item_class,
+            rarity=categories.RARITY.RARE,
+            strictness=categories.STRICTNESS.STRICT,
+        )
+        for item_class in heist_item_classes
+    ],
     HeistClass(
         name="Trinket",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.LEGENDARY,
     ),
 ]

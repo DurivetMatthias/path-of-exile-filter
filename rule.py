@@ -16,7 +16,7 @@ class Rule:
         name: Optional[str] = None,
         hide: bool = False,
         rarity: categories.RARITY = categories.RARITY.COMMON,
-        strictness: categories.STRICTNESS = categories.STRICTNESS.MAX,
+        strictness: int = categories.STRICTNESS.MAX,
     ) -> None:
         """Initialise the rules and its properties"""
         self.name = name
@@ -35,11 +35,11 @@ class Rule:
         result = "\n".join(lines)
         return "\n" + result + "\n"
 
-    def filter(self):
+    def filter(self) -> str:
         """Limit the rule to certain properties of the item"""
         return f'BaseType == "{self.name}"'
 
-    def hidden(self):
+    def hidden(self) -> bool:
         """Determines if this becomes a Hide or Show rule"""
         return self.hide
 
@@ -49,9 +49,9 @@ class Rule:
 
     def icon(self) -> str:
         """Customize the look of the map icon that appears in-game"""
-        color = self.icon_color()
-        shape = self.icon_shape()
-        size = self.icon_size()
+        color = self.icon_color().value
+        shape = self.icon_shape().value
+        size = self.icon_size().value
 
         return f"""
             MinimapIcon {size} {color} {shape}
@@ -71,7 +71,7 @@ class Rule:
 
     def beam(self) -> str:
         """Customize the look of the beam of light that appears in-game"""
-        color = self.beam_color()
+        color = self.beam_color().value
         return f"""
             PlayEffect {color}
         """
@@ -82,15 +82,24 @@ class Rule:
 
     def sound(self) -> str:
         """Customize the look of the sound that plays when the item drops in-game"""
-        sound = self.sound_file
+        sound_file = self.sound_file().value
         return f"""
             DisableDropSound
-            CustomAlertSound "{sound}"
+            CustomAlertSound "{sound_file}" 300
         """
 
-    def sound_file(self) -> categories.SOUND:
+    def sound_file(self) -> categories.SOUND_FILE:
         """Customize the look of the sound that plays when the item drops in-game"""
-        return categories.SOUND.LILY_WOMP
+        if self.rarity == categories.RARITY.COMMON:
+            return categories.SOUND_FILE.DISABLED
+        if self.rarity == categories.RARITY.RARE:
+            return categories.SOUND_FILE.LILY_BING
+        if self.rarity == categories.RARITY.EPIC:
+            return categories.SOUND_FILE.LILY_BAM
+        if self.rarity == categories.RARITY.LEGENDARY:
+            return categories.SOUND_FILE.LILY_OOH
+
+        return categories.SOUND_FILE.DISABLED
 
     def __str__(self) -> str:
         """Combine all the rules into a text block"""
@@ -103,7 +112,7 @@ class Rule:
             item_rule = f"""
                 Show
                     {self.filter()}
-                    {self.label()}
+                    {self.label().value}
                     {self.icon()}
                     {self.beam()}
                     {self.sound()}

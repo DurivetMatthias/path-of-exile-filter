@@ -1,66 +1,78 @@
-from rule import Rule
-import rarity_options
+import rule
+import categories
 
 
-class MiscStyle(Rule):
-    def label(self) -> str:
-        """White text on a black background"""
-        return """
-            SetFontSize 45
-            SetTextColor 255 255 255
-            SetBackgroundColor 0 0 0
-            SetBorderColor 0 0 0
-        """
+class MiscStyle(rule.Rule):
+    def label(self) -> categories.LABEL:
+        return categories.LABEL.BLACK_ON_WHITE
 
-    def sound(self) -> str:
-        return """
-            DisableDropSound
-        """
+    def icon_shape(self) -> categories.SHAPE:
+        return categories.SHAPE.DIAMOND
 
 
 class MiscRule(MiscStyle):
+    def __init__(self, class_name: str = "", **kwargs):
+        super().__init__(**kwargs)
+        self.class_name = class_name
+
     def filter(self):
         return f"""
             BaseType "{self.name}"
+            Class "{self.class_name}"
         """
 
 
 hidden = [
     "Incubator",
-    "Simulacrum Splinter",
 ]
+
+splinters = [
+    "Splinter of Chayula",
+    "Splinter of Esh",
+    "Splinter of Tul",
+    "Splinter of Uul-Netol",
+    "Splinter of Xoph",
+    "Timeless Eternal Empire Splinter",
+    "Timeless Karui Splinter",
+    "Timeless Maraketh Splinter",
+    "Timeless Templar Splinter",
+    "Timeless Vaal Splinter",
+    "Simulacrum Splinter",
+    "Ritual Splinter",
+]
+
 common = [
-    "Splinter",
+    *splinters,
     "Breachstone",
     "Stone of Passage",
     "Flashpowder Keg",
-]
-rare = [
-    "Fragment",
+    "to the Goddess",
     "Exotic Coinage",
     "Scrap Metal",
     "Astragali",
     "Burial Medallion",
+]
+rare = [
+    "Sacrifice at",
+    "Mortal",
     "Vessel",
-    "Oil",
-    "Catalyst",
-    "Delirium Orb",
-    "Fossil",
-    "Report",
-    "Lifeforce",
 ]
 epic = [
     "Tainted",
-    "Essence",
     "Remnant of Corruption",
     "Resonator",
     "Scarab",
-    "Invitation",
+    "Catalyst",
+    "Delirium Orb",
+    "Report",
+    "Lifeforce",
 ]
 legendary = [
-    "Crest",
+    "Invitation",
     "Blessing of",
+    "Fragment of",
     "Emblem",
+    "Breachstone",
     "Sacred Blossom",
     "Simulacrum",
     "Logbook",
@@ -73,7 +85,6 @@ rules = [
     *[
         MiscRule(
             name=item_name,
-            rarity=rarity_options.COMMON,
             hide=True,
         )
         for item_name in hidden
@@ -81,29 +92,44 @@ rules = [
     *[
         MiscRule(
             name=item_name,
-            rarity=rarity_options.COMMON,
+            rarity=categories.RARITY.COMMON,
         )
         for item_name in common
     ],
     *[
         MiscRule(
             name=item_name,
-            rarity=rarity_options.RARE,
+            rarity=categories.RARITY.RARE,
         )
         for item_name in rare
     ],
     *[
         MiscRule(
             name=item_name,
-            rarity=rarity_options.EPIC,
+            rarity=categories.RARITY.EPIC,
         )
         for item_name in epic
     ],
     *[
         MiscRule(
             name=item_name,
-            rarity=rarity_options.LEGENDARY,
+            rarity=categories.RARITY.LEGENDARY,
         )
         for item_name in legendary
     ],
+    MiscRule(
+        name="Oil",
+        rarity=categories.RARITY.EPIC,
+        class_name="Stackable Currency",
+    ),
+    MiscRule(
+        name="Fossil",
+        rarity=categories.RARITY.EPIC,
+        class_name="Stackable Currency",
+    ),
+    MiscRule(
+        name="Crest",
+        rarity=categories.RARITY.EPIC,
+        class_name="Map Fragments",
+    ),
 ]

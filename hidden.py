@@ -1,9 +1,9 @@
-from rule import Rule
+import rule
 
 
-class HideRule(Rule):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, hide=True, **kwargs)
+class HideRule(rule.Rule):
+    def __init__(self, **kwargs):
+        super().__init__(hide=True, **kwargs)
 
 
 class HideClass(HideRule):

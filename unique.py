@@ -1,25 +1,16 @@
-from rule import Rule
-import rarity_options
+import rule
+import categories
 
 
-class Unique(Rule):
-    def label(self) -> str:
-        return """
-            SetFontSize 45
-            SetTextColor 175 96 37
-            SetBackgroundColor 0 0 0
-            SetBorderColor 175 96 37
-        """
+class UniqueStyle(rule.Rule):
+    def label(self) -> categories.LABEL:
+        return categories.LABEL.ORANGE_ON_BLACK_WITH_BORDER
 
-    def sound(self) -> str:
-        return """
-            DisableDropSound
-            CustomAlertSound "filter-sounds/lily-pekabo.mp3"
-        """
+    def icon_shape(self) -> categories.SHAPE:
+        return categories.SHAPE.CROSS
 
-    def icon(self) -> str:
-        return "MinimapIcon 0 Orange Star"
 
+class Unique(UniqueStyle):
     def filter(self):
         return f"""
             BaseType == "{self.name}"
@@ -27,7 +18,7 @@ class Unique(Rule):
         """
 
 
-class UniqueClass(Unique):
+class UniqueClass(UniqueStyle):
     def filter(self):
         return f"""
             Class == "{self.name}"
@@ -38,22 +29,22 @@ class UniqueClass(Unique):
 rules = [
     Unique(
         name="Leather Belt",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.EPIC,
     ),
     Unique(
         name="Wyrmscale Boots",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.LEGENDARY,
     ),
     Unique(
         name="Onyx Amulet",
-        rarity=rarity_options.LEGENDARY,
+        rarity=categories.RARITY.LEGENDARY,
     ),
     UniqueClass(
-        name="Jewel",
-        rarity=rarity_options.LEGENDARY,
+        name="Jewels",
+        rarity=categories.RARITY.LEGENDARY,
     ),
     UniqueClass(
-        name="Map",
-        rarity=rarity_options.LEGENDARY,
+        name="Maps",
+        rarity=categories.RARITY.LEGENDARY,
     ),
 ]

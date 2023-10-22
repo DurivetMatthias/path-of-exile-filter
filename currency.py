@@ -1,379 +1,213 @@
-from rule import Rule
-import rarity_options
+"""This file defines the rules for currency items."""
+
+import rule
+import categories
 
 
-class Currency(Rule):
-    def label(self) -> str:
-        return """
-            SetFontSize 45
-            SetTextColor 0 0 0
-            SetBackgroundColor 255 255 255
-            SetBorderColor 255 255 255
-        """
+class Currency(rule.Rule):
+    def label(self) -> categories.LABEL:
+        return categories.LABEL.BLACK_ON_WHITE
 
-    def sound(self) -> str:
-        if self.rarity == rarity_options.COMMON:
-            return """
-                DisableDropSound
-            """
-        if self.rarity == rarity_options.RARE:
-            return """
-                DisableDropSound
-                CustomAlertSound "filter-sounds/lily-bing-bing.mp3"
-            """
-        if self.rarity == rarity_options.EPIC:
-            return """
-                DisableDropSound
-                CustomAlertSound "filter-sounds/lily-bam.mp3"
-            """
-        if self.rarity == rarity_options.LEGENDARY:
-            return """
-                DisableDropSound
-                CustomAlertSound "filter-sounds/lily-ooh.mp3"
-            """
-        return "None"
+    def icon_shape(self) -> categories.SHAPE:
+        return categories.SHAPE.CIRCLE
 
 
-shard = [
-    Currency(
-        name="Scroll Fragment",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Binding Shard",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Engineer's Shard",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Horizon Shard",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Transmutation Shard",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Alchemy Shard",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Alteration Shard",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Ancient Shard",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Chaos Shard",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Regal Shard",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Harbinger's Shard",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Annulment Shard",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Exalted Shard",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Fracturing Shard",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Mirror Shard",
-        rarity=rarity_options.LEGENDARY,
-    ),
+common_shards = [
+    "Scroll Fragment",
+    "Binding Shard",
+    "Engineer's Shard",
+    "Horizon Shard",
+    "Transmutation Shard",
+    "Alchemy Shard",
 ]
 
-
-scroll = [
-    Currency(
-        name="Portal Scroll",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Scroll of Wisdom",
-        rarity=rarity_options.COMMON,
-    ),
+rare_shards = [
+    "Alteration Shard",
+    "Ancient Shard",
+    "Chaos Shard",
+    "Regal Shard",
+    "Harbinger's Shard",
 ]
 
-basic = [
-    Currency(
-        name="Orb of Transmutation",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Orb of Augmentation",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Orb of Chance",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Orb of Alchemy",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Orb of Alteration",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Chaos Orb",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Regal Orb",
-        rarity=rarity_options.EPIC,
-    ),
+epic_shards = [
+    "Annulment Shard",
+    "Exalted Shard",
+    "Fracturing Shard",
+    "Mirror Shard",
 ]
 
-niche = [
-    Currency(
-        name="Orb of Binding",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Enkindling Orb",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Instilling Orb",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Orb of Horizons",
-        rarity=rarity_options.COMMON,
-    ),
+scrolls = [
+    "Portal Scroll",
+    "Scroll of Wisdom",
 ]
 
-quality = [
-    Currency(
-        name="Blacksmith's Whetstone",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Armourer's Scrap",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Engineer's Orb",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Glassblower's Bauble",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Gemcutter's Prism",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Cartographer's Chisel",
-        rarity=rarity_options.COMMON,
-    ),
+common_basic_currencies = [
+    "Orb of Transmutation",
+    "Orb of Augmentation",
+    "Orb of Chance",
 ]
 
-socket = [
-    Currency(
-        name="Jeweller's Orb",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Orb of Fusing",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Chromatic Orb",
-        rarity=rarity_options.COMMON,
-    ),
+rare_basic_currencies = [
+    "Orb of Alchemy",
+    "Orb of Alteration",
 ]
 
-undo = [
-    Currency(
-        name="Orb of Scouring",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Orb of Regret",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Orb of Unmaking",
-        rarity=rarity_options.EPIC,
-    ),
+epic_basic_currencies = [
+    "Chaos Orb",
+    "Regal Orb",
 ]
 
-other = [
-    Currency(
-        name="Ancient Orb",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Harbinger's Orb",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Vaal Orb",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Blessed Orb",
-        rarity=rarity_options.RARE,
-    ),
+common_niche_currencies = [
+    "Orb of Binding",
+    "Enkindling Orb",
+    "Instilling Orb",
+    "Orb of Horizons",
 ]
 
-sextant = [
-    Currency(
-        name="Surveyor's Compass",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Awakened Sextant",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Elevated Sextant",
-        rarity=rarity_options.EPIC,
-    ),
+epic_niche_currencies = [
+    "Ancient Orb",
+    "Harbinger's Orb",
+    "Vaal Orb",
+    "Blessed Orb",
+]
+
+common_quality_currencies = [
+    "Blacksmith's Whetstone",
+    "Armourer's Scrap",
+]
+
+rare_quality_currencies = [
+    "Engineer's Orb",
+    "Glassblower's Bauble",
+    "Gemcutter's Prism",
+]
+
+epic_quality_currencies = [
+    "Cartographer's Chisel",
+]
+
+socket_currencies = [
+    "Jeweller's Orb",
+    "Orb of Fusing",
+    "Chromatic Orb",
+]
+
+undo_currencies = [
+    "Orb of Scouring",
+    "Orb of Regret",
+    "Orb of Unmaking",
+]
+
+sextant_currencies = [
+    "Surveyor's Compass",
+    "Charged Compass",
+    "Awakened Sextant",
+    "Elevated Sextant",
+]
+
+legendary_currencies = [
+    "Veiled Chaos Orb",
+    "Orb of Annulment",
+    "Exalted Orb",
+    "Divine Orb",
+    "Mirror of Kalandra",
+    "Sacred Orb",
+    "Fracturing Orb",
+]
+
+common_eldritch_currencies = [
+    "Lesser Eldritch Ichor",
+    "Lesser Eldritch Ember",
+]
+
+rare_eldritch_currencies = [
+    "Greater Eldritch Ichor",
+    "Greater Eldritch Ember",
+]
+
+epic_eldritch_currencies = [
+    "Grand Eldritch Ichor",
+    "Grand Eldritch Ember",
+]
+
+legendary_eldritch_currencies = [
+    "Exceptional Eldritch Ichor",
+    "Exceptional Eldritch Ember",
+    "Eldritch Chaos Orb",
+    "Eldritch Exalted Orb",
+    "Eldritch Orb of Annulment",
+    "Orb of Conflict",
+    "Orb of Dominance",
+    "Awakener's Orb",
+    "Crusader's Exalted Orb",
+    "Hunter's Exalted Orb",
+    "Redeemer's Exalted Orb",
+    "Warlord's Exalted Orb",
+    "Crescent Splinter",
+    "The Maven's Writ",
+]
+
+common = [
+    *scrolls,
+    *socket_currencies,
+    *common_shards,
+    *common_basic_currencies,
+    *common_quality_currencies,
+    *common_niche_currencies,
+    *common_eldritch_currencies,
+]
+
+rare = [
+    *rare_shards,
+    *rare_basic_currencies,
+    *rare_quality_currencies,
+    *rare_eldritch_currencies,
+]
+
+epic = [
+    *epic_shards,
+    *epic_basic_currencies,
+    *epic_quality_currencies,
+    *epic_niche_currencies,
+    *epic_eldritch_currencies,
+    *sextant_currencies,
+    *undo_currencies,
 ]
 
 legendary = [
-    Currency(
-        name="Veiled Chaos Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Orb of Annulment",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Exalted Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Divine Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Mirror of Kalandra",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Sacred Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Fracturing Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-]
-
-eldritch = [
-    Currency(
-        name="Lesser Eldritch Ichor",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Greater Eldritch Ichor",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Grand Eldritch Ichor",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Exceptional Eldritch Ichor",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Lesser Eldritch Ember",
-        rarity=rarity_options.COMMON,
-    ),
-    Currency(
-        name="Greater Eldritch Ember",
-        rarity=rarity_options.RARE,
-    ),
-    Currency(
-        name="Grand Eldritch Ember",
-        rarity=rarity_options.EPIC,
-    ),
-    Currency(
-        name="Exceptional Eldritch Ember",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Eldritch Chaos Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Eldritch Exalted Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Eldritch Orb of Annulment",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Orb of Conflict",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Orb of Dominance",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Awakener's Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Crusader's Exalted Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Hunter's Exalted Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Redeemer's Exalted Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Warlord's Exalted Orb",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="Crescent Splinter",
-        rarity=rarity_options.LEGENDARY,
-    ),
-    Currency(
-        name="The Maven's Writ",
-        rarity=rarity_options.LEGENDARY,
-    ),
+    *legendary_currencies,
+    *legendary_eldritch_currencies,
 ]
 
 rules = [
-    *shard,
-    *scroll,
-    *basic,
-    *niche,
-    *quality,
-    *socket,
-    *undo,
-    *other,
-    *sextant,
-    *eldritch,
-    *legendary,
+    *[
+        Currency(
+            name=name,
+            rarity=categories.RARITY.LEGENDARY,
+        )
+        for name in legendary
+    ],
+    *[
+        Currency(
+            name=name,
+            rarity=categories.RARITY.EPIC,
+        )
+        for name in epic
+    ],
+    *[
+        Currency(
+            name=name,
+            rarity=categories.RARITY.RARE,
+            strictness=categories.STRICTNESS.STRICT,
+        )
+        for name in rare
+    ],
+    *[
+        Currency(
+            name=name,
+            rarity=categories.RARITY.COMMON,
+            strictness=categories.STRICTNESS.LESS_STRICT,
+        )
+        for name in common
+    ],
 ]

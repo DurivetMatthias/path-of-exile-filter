@@ -2,7 +2,7 @@
 
 import sys
 
-from enum import Enum
+from enum import Enum, IntEnum
 
 
 class COLOR(Enum):
@@ -64,7 +64,7 @@ class RARITY(Enum):
     LEGENDARY = "legendary"
 
 
-class STRICTNESS(Enum):
+class STRICTNESS(IntEnum):
     """
     Determines how many items are shown.
     Higher strictness means less items are shown.
@@ -76,7 +76,7 @@ class STRICTNESS(Enum):
     MAX = sys.maxsize
 
 
-class SOUND(Enum):
+class SOUND_FILE(Enum):
     """
     Sound files available to play as CustomAlertSound.
     https://www.pathofexile.com/item-filter/about#:~:text=CustomAlertSound
@@ -130,10 +130,10 @@ def make_label(
     border_color: RGB_COLOR,
 ) -> str:
     return f"""
-        SetFontSize {font_size}
-        SetTextColor {text_color}
-        SetBackgroundColor {background_color}
-        SetBorderColor {border_color}
+        SetFontSize {font_size.value}
+        SetTextColor {text_color.value}
+        SetBackgroundColor {background_color.value}
+        SetBorderColor {border_color.value}
     """
 
 

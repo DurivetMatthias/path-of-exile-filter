@@ -1,25 +1,15 @@
-from rule import Rule
-import rarity_options
+"""This file defines the rules for veiled items."""
+
+import categories
+import rule
 
 
-class VeiledStyle(Rule):
-    def label(self) -> str:
-        """Black text on a yellow background"""
-        return """
-            SetFontSize 45
-            SetTextColor 0 0 0
-            SetBackgroundColor 255 255 0
-            SetBorderColor 255 255 0
-        """
+class VeiledStyle(rule.Rule):
+    def label(self) -> categories.LABEL:
+        return categories.LABEL.WHITE_ON_YELLOW
 
-    def sound(self) -> str:
-        return """
-            DisableDropSound
-            CustomAlertSound "filter-sounds/lily-bam.mp3"
-        """
-
-    def icon(self) -> str:
-        return "MinimapIcon 0 Yellow Triangle"
+    def icon_shape(self) -> categories.SHAPE:
+        return categories.SHAPE.TRIANGLE
 
 
 class VeiledPrefix(VeiledStyle):
@@ -57,14 +47,16 @@ rules = [
     *[
         VeiledPrefix(
             name=class_name,
-            rarity=rarity_options.EPIC,
+            rarity=categories.RARITY.EPIC,
+            strictness=categories.STRICTNESS.LESS_STRICT,
         )
         for class_name in prefix_classes
     ],
     *[
         VeiledSuffix(
             name=class_name,
-            rarity=rarity_options.EPIC,
+            rarity=categories.RARITY.EPIC,
+            strictness=categories.STRICTNESS.LESS_STRICT,
         )
         for class_name in suffix_classes
     ],

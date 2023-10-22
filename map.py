@@ -1,35 +1,46 @@
-from rule import Rule
-import rarity_options
+import rule
+import categories
 
 
-class MapRule(Rule):
-    def __init__(self) -> None:
-        super().__init__("", rarity_options.EPIC, False)
+class MapStyle(rule.Rule):
+    def label(self) -> categories.LABEL:
+        return categories.LABEL.WHITE_ON_RED
 
-    def label(self) -> str:
-        """White text on red background"""
-        return """
-            SetFontSize 45
-            SetTextColor 255 255 255
-            SetBackgroundColor 150 0 0
-            SetBorderColor 150 0 0
+    def icon_shape(self) -> categories.SHAPE:
+        return categories.SHAPE.CIRCLE
+
+
+class Map(MapStyle):
+    def __init__(self, tier: str = "> 0", **kwargs):
+        super().__init__(**kwargs)
+        self.tier = tier
+
+    def filter(self):
+        return f"""
+            Class == "Maps"
+            MapTier {self.tier}
         """
 
-    def sound(self) -> str:
-        return """
-            DisableDropSound
-            CustomAlertSound "filter-sounds/lily-aah.mp3"
-        """
 
-    def icon(self) -> str:
-        return """
-            MinimapIcon 0 Red Circle
-        """
-
+class InfluencedMap(MapStyle):
     def filter(self):
         return """
             Class == "Maps"
+            HasInfluence "Shaper" "Elder" "Crusader" "Hunter" "Redeemer" "Warlord"
         """
 
 
-rules = [MapRule()]
+rules = [
+    InfluencedMap(
+        rarity=categories.RARITY.LEGENDARY,
+    ),
+    Map(
+        rarity=categories.RARITY.EPIC,
+        tier="== 16",
+    ),
+    Map(
+        rarity=categories.RARITY.RARE,
+        strictness=categories.STRICTNESS.STRICT,
+        tier="< 16",
+    ),
+]

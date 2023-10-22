@@ -15,6 +15,7 @@ import config
 import altered_bases
 import card
 import currency
+import essence
 import gear
 import gem
 import heist
@@ -26,16 +27,17 @@ import veiled
 
 
 rules = [
+    *map.rules,
     *unique.rules,
     *altered_bases.rules,
-    *card.rules,
-    *currency.rules,
-    *map.rules,
-    *gem.rules,
-    *gear.rules,
     *heist.rules,
     *veiled.rules,
+    *gem.rules,
+    *gear.rules,
+    *currency.rules,
+    *card.rules,
     *miscellaneous.rules,
+    *essence.rules,
     *hidden.rules,
 ]
 
@@ -58,6 +60,10 @@ for strictness_name, strictness_value in strictness_levels:
     for rule in rules:
         if rule.strictness >= strictness_value:
             filter_content += str(rule)
+        else:
+            hide_rule = rule
+            hide_rule.hide = True
+            filter_content += str(hide_rule)
 
     FILTER_FILENAME = (
         "-".join([config.FILTER_NAME, strictness_name]) + "." + config.FILTER_EXTENSION
