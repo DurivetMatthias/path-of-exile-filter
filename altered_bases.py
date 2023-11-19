@@ -12,8 +12,25 @@ class AlteredStyle(rule.Rule):
         return categories.SHAPE.STAR
 
 
+class CorruptedImplicitItem(AlteredStyle):
+    def filter(self):
+        if self.name:
+            return f"""
+                BaseType "{self.name}"
+                CorruptedMods > 0
+            """
+        return """
+            CorruptedMods > 0
+        """
+
+
 class FracturedItem(AlteredStyle):
     def filter(self):
+        if self.name:
+            return f"""
+                BaseType "{self.name}"
+                FracturedItem True
+            """
         return """
             FracturedItem True
         """
@@ -21,6 +38,11 @@ class FracturedItem(AlteredStyle):
 
 class InfluencedItem(AlteredStyle):
     def filter(self):
+        if self.name:
+            return f"""
+                BaseType "{self.name}"
+                HasInfluence "Shaper" "Elder" "Crusader" "Hunter" "Redeemer" "Warlord"
+            """
         return """
             HasInfluence "Shaper" "Elder" "Crusader" "Hunter" "Redeemer" "Warlord"
         """
@@ -28,6 +50,11 @@ class InfluencedItem(AlteredStyle):
 
 class SynthesizedItem(AlteredStyle):
     def filter(self):
+        if self.name:
+            return f"""
+                BaseType "{self.name}"
+                SynthesisedItem True
+            """
         return """
             SynthesisedItem True
         """
@@ -35,6 +62,11 @@ class SynthesizedItem(AlteredStyle):
 
 class EightySixItem(AlteredStyle):
     def filter(self):
+        if self.name:
+            return f"""
+                BaseType "{self.name}"
+                ItemLevel >= 86
+            """
         return """
             ItemLevel >= 86
         """
@@ -48,7 +80,27 @@ class WhiteWeapon(AlteredStyle):
         """
 
 
+jewels = [
+    "Crimson Jewel",
+    "Viridian Jewel",
+    "Cobalt Jewel",
+]
+
 rules = [
+    *[
+        FracturedItem(
+            name=jewel,
+            rarity=categories.RARITY.EPIC,
+        )
+        for jewel in jewels
+    ],
+    *[
+        CorruptedImplicitItem(
+            name=jewel,
+            rarity=categories.RARITY.EPIC,
+        )
+        for jewel in jewels
+    ],
     FracturedItem(
         rarity=categories.RARITY.EPIC,
         strictness=categories.STRICTNESS.STRICT,

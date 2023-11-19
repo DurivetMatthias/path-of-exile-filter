@@ -13,6 +13,7 @@ class Gem(GemStyle):
     def filter(self):
         return f"""
             BaseType "{self.name}"
+            Class "Gems"
         """
 
 
@@ -147,11 +148,11 @@ rules = [
         name="Awakened",
         rarity=categories.RARITY.LEGENDARY,
     ),
-    Gem(
+    GemStyle(
         name="Prime Regrading Lens",
         rarity=categories.RARITY.LEGENDARY,
     ),
-    Gem(
+    GemStyle(
         name="Secondary Regrading Lens",
         rarity=categories.RARITY.LEGENDARY,
     ),

@@ -27,8 +27,8 @@ import veiled
 
 
 rules = [
-    *map.rules,
     *unique.rules,
+    *map.rules,
     *altered_bases.rules,
     *heist.rules,
     *veiled.rules,

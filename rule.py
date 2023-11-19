@@ -90,6 +90,8 @@ class Rule:
 
     def sound_file(self) -> categories.SOUND_FILE:
         """Customize the look of the sound that plays when the item drops in-game"""
+        if self.hidden():
+            return categories.SOUND_FILE.DISABLED
         if self.rarity == categories.RARITY.COMMON:
             return categories.SOUND_FILE.DISABLED
         if self.rarity == categories.RARITY.RARE:
@@ -106,6 +108,9 @@ class Rule:
         if self.hidden():
             item_rule = f"""
                 Hide
+                    PlayEffect None
+                    PlayAlertSound None
+                    DisableDropSound
                     {self.filter()}
             """
         else:

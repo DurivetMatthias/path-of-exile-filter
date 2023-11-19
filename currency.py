@@ -12,6 +12,9 @@ class Currency(rule.Rule):
         return categories.SHAPE.CIRCLE
 
 
+# TODO stack size for chaos shards
+
+
 common_shards = [
     "Scroll Fragment",
     "Binding Shard",

@@ -82,6 +82,26 @@ legendary = [
 ]
 
 rules = [
+    MiscRule(
+        name="Oil",
+        rarity=categories.RARITY.EPIC,
+        class_name="Stackable Currency",
+    ),
+    MiscRule(
+        name="Fossil",
+        rarity=categories.RARITY.EPIC,
+        class_name="Stackable Currency",
+    ),
+    MiscRule(
+        name="Crest",
+        rarity=categories.RARITY.EPIC,
+        class_name="Map Fragments",
+    ),
+    MiscRule(
+        name="Offering to the goddess",
+        rarity=categories.RARITY.COMMON,
+        strictness=categories.STRICTNESS.LESS_STRICT,
+    ),
     *[
         MiscRule(
             name=item_name,
@@ -117,19 +137,4 @@ rules = [
         )
         for item_name in legendary
     ],
-    MiscRule(
-        name="Oil",
-        rarity=categories.RARITY.EPIC,
-        class_name="Stackable Currency",
-    ),
-    MiscRule(
-        name="Fossil",
-        rarity=categories.RARITY.EPIC,
-        class_name="Stackable Currency",
-    ),
-    MiscRule(
-        name="Crest",
-        rarity=categories.RARITY.EPIC,
-        class_name="Map Fragments",
-    ),
 ]
