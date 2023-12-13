@@ -1,19 +1,5 @@
-"""This file defines the rules for currency items."""
-
-import rule
-import categories
-
-
-class Currency(rule.Rule):
-    def label(self) -> categories.LABEL:
-        return categories.LABEL.BLACK_ON_WHITE
-
-    def icon_shape(self) -> categories.SHAPE:
-        return categories.SHAPE.CIRCLE
-
-
-# TODO stack size for chaos shards
-
+from app import categories, extensions
+from app.rules import Rule
 
 common_shards = [
     "Scroll Fragment",
@@ -35,6 +21,9 @@ rare_shards = [
 epic_shards = [
     "Annulment Shard",
     "Exalted Shard",
+]
+
+legendary_shards = [
     "Fracturing Shard",
     "Mirror Shard",
 ]
@@ -61,10 +50,12 @@ epic_basic_currencies = [
 ]
 
 common_niche_currencies = [
-    "Orb of Binding",
     "Enkindling Orb",
-    "Instilling Orb",
     "Orb of Horizons",
+]
+
+rare_niche_currencies = [
+    "Instilling Orb",
 ]
 
 epic_niche_currencies = [
@@ -93,6 +84,7 @@ socket_currencies = [
     "Jeweller's Orb",
     "Orb of Fusing",
     "Chromatic Orb",
+    "Orb of Binding",
 ]
 
 undo_currencies = [
@@ -118,22 +110,19 @@ legendary_currencies = [
     "Fracturing Orb",
 ]
 
-common_eldritch_currencies = [
+rare_eldritch_currencies = [
     "Lesser Eldritch Ichor",
     "Lesser Eldritch Ember",
 ]
 
-rare_eldritch_currencies = [
+epic_eldritch_currencies = [
     "Greater Eldritch Ichor",
     "Greater Eldritch Ember",
 ]
 
-epic_eldritch_currencies = [
+legendary_eldritch_currencies = [
     "Grand Eldritch Ichor",
     "Grand Eldritch Ember",
-]
-
-legendary_eldritch_currencies = [
     "Exceptional Eldritch Ichor",
     "Exceptional Eldritch Ember",
     "Eldritch Chaos Orb",
@@ -151,19 +140,18 @@ legendary_eldritch_currencies = [
 ]
 
 common = [
-    *scrolls,
     *socket_currencies,
     *common_shards,
     *common_basic_currencies,
     *common_quality_currencies,
     *common_niche_currencies,
-    *common_eldritch_currencies,
 ]
 
 rare = [
     *rare_shards,
     *rare_basic_currencies,
     *rare_quality_currencies,
+    *rare_niche_currencies,
     *rare_eldritch_currencies,
 ]
 
@@ -178,39 +166,50 @@ epic = [
 ]
 
 legendary = [
+    *legendary_shards,
     *legendary_currencies,
     *legendary_eldritch_currencies,
 ]
 
 rules = [
     *[
-        Currency(
-            name=name,
-            rarity=categories.RARITY.LEGENDARY,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.COMMON),
+            ],
         )
-        for name in legendary
+        for base_type in common
     ],
     *[
-        Currency(
-            name=name,
-            rarity=categories.RARITY.EPIC,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.RARE),
+            ],
         )
-        for name in epic
+        for base_type in rare
     ],
     *[
-        Currency(
-            name=name,
-            rarity=categories.RARITY.RARE,
-            strictness=categories.STRICTNESS.STRICT,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.EPIC),
+            ],
         )
-        for name in rare
+        for base_type in epic
     ],
     *[
-        Currency(
-            name=name,
-            rarity=categories.RARITY.COMMON,
-            strictness=categories.STRICTNESS.LESS_STRICT,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+            ],
         )
-        for name in common
+        for base_type in legendary
     ],
 ]

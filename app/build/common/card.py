@@ -1,19 +1,8 @@
-"""This file defines the rules for divinations cards."""
-
-import categories
-import rule
-
-
-class Card(rule.Rule):
-    def label(self) -> categories.LABEL:
-        return categories.LABEL.WHITE_ON_BLUE
-
-    def icon_shape(self) -> categories.SHAPE:
-        return categories.SHAPE.SQUARE
-
+from app import categories, extensions
+from app.rules import Rule
 
 # Cards with extremely valuable rewards
-legendary_cards = [
+legendary = [
     "Abandoned Wealth",
     "Alluring Bounty",
     "Brother's Gift",
@@ -75,7 +64,7 @@ legendary_cards = [
 ]
 
 # Cards with useful results
-epic_cards = [
+epic = [
     "A Sea of Blue",
     "Acclimatisation",
     "Ambitious Obsession",
@@ -120,10 +109,11 @@ epic_cards = [
     "Three Voices",
     "Underground Forest",
     "Vinia's Token",
+    "The Mad King",
 ]
 
 # Rare cards that give an interesting reward
-rare_cards = [
+rare = [
     "A Dusty Memory",
     "A Fate Worse Than Death",
     "A Modest Request",
@@ -156,6 +146,7 @@ rare_cards = [
     "The Encroaching Darkness",
     "The Magma Crab",
     "The Obscured",
+    "The Porcupine",
     "The Price of Prescience",
     "The Price of Protection",
     "The Professor",
@@ -165,7 +156,7 @@ rare_cards = [
     "Vanity",
 ]
 
-bad_cards = [
+common = [
     "A Chilling Wind",
     "A Dab of Ink",
     "A Familiar Call",
@@ -360,7 +351,6 @@ bad_cards = [
     "The Lord of Celebration",
     "The Lover",
     "The Lunaris Priestess",
-    "The Mad King",
     "The Master",
     "The Mercenary",
     "The Messenger",
@@ -378,7 +368,6 @@ bad_cards = [
     "The Penitent",
     "The Poet",
     "The Polymath",
-    "The Porcupine",
     "The Price of Loyalty",
     "The Primordial",
     "The Prince of Darkness",
@@ -457,38 +446,51 @@ bad_cards = [
 ]
 
 rules = [
-    Card(
-        name="Stacked Deck",
-        rarity=categories.RARITY.RARE,
+    *[
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.COMMON),
+            ],
+        )
+        for base_type in common
+    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.BaseType(base_type="Stacked Deck"),
+            extensions.TierStyle(tier=categories.TIER.RARE),
+        ],
     ),
     *[
-        Card(
-            name=card_name,
-            rarity=categories.RARITY.LEGENDARY,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.RARE),
+            ],
         )
-        for card_name in legendary_cards
+        for base_type in rare
     ],
     *[
-        Card(
-            name=card_name,
-            rarity=categories.RARITY.EPIC,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.EPIC),
+            ],
         )
-        for card_name in epic_cards
+        for base_type in epic
     ],
     *[
-        Card(
-            name=card_name,
-            rarity=categories.RARITY.RARE,
-            strictness=categories.STRICTNESS.STRICT,
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
+                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+            ],
         )
-        for card_name in rare_cards
-    ],
-    *[
-        Card(
-            name=card_name,
-            rarity=categories.RARITY.COMMON,
-            hide=True,
-        )
-        for card_name in bad_cards
+        for base_type in legendary
     ],
 ]
