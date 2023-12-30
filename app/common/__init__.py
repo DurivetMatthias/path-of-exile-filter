@@ -1,10 +1,12 @@
-from app.build.common import (
+from app.common import (
     altered_bases,
+    bases,
     card,
     currency,
     essence,
     gem,
     heist,
+    leveling,
     map,
     miscellaneous,
     quest,
@@ -15,11 +17,13 @@ from app.build.common import (
 
 rules = [
     *altered_bases.rules,
+    *bases.rules,
     *card.rules,
     *currency.rules,
     *essence.rules,
     *gem.rules,
     *heist.rules,
+    *leveling.rules,
     *map.rules,
     *miscellaneous.rules,
     *quest.rules,

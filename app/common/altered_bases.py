@@ -9,7 +9,6 @@ style_extensions = [
         shape=categories.SHAPE.CIRCLE,
         size=categories.SIZE.SMALL,
     ),
-    extensions.Border(rgb=categories.RGB.CYAN),
     extensions.Sound(
         file=categories.SOUND_FILE.LILY_BAM,
         volume=categories.VOLUME.MEDIUM,
@@ -60,7 +59,7 @@ rules = [
     Rule(
         instruction=extensions.Show(),
         extensions=[
-            extensions.SocketGroup(sockets="3W", operator=categories.OPERATOR.GTE),
+            extensions.Sockets(sockets="WWW", operator=categories.OPERATOR.GTE),
             *style_extensions,
         ],
     ),

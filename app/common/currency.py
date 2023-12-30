@@ -177,6 +177,17 @@ rules = [
             instruction=extensions.Show(),
             extensions=[
                 extensions.BaseType(base_type=base_type),
+                extensions.DefaultStyle(),
+                extensions.FontSize(size=categories.FONT_SIZE.LARGE),
+            ],
+        )
+        for base_type in scrolls
+    ],
+    *[
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type),
                 extensions.TierStyle(tier=categories.TIER.COMMON),
             ],
         )

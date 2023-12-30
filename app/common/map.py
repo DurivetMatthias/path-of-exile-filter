@@ -14,7 +14,7 @@ rules = [
             ),
             extensions.Border(rgb=categories.RGB.RED),
             extensions.Sound(
-                file=categories.SOUND_FILE.LILY_SNIFF,
+                file=categories.SOUND_FILE.LILY_PEKABO,
                 volume=categories.VOLUME.LOUD,
             ),
             extensions.FontSize(size=categories.FONT_SIZE.LARGE),

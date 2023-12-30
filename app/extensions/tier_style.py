@@ -8,38 +8,38 @@ class TierStyle(extensions.Extension):
 
     def __str__(self):
         # default for common
-        categories.COLOR = categories.COLOR.WHITE
-        categories.RGB = categories.RGB.WHITE
-        file = categories.SOUND_FILE.LILY_OOH
-        categories.VOLUME = categories.VOLUME.QUIET
+        color = categories.COLOR.WHITE
+        rgb = categories.RGB.WHITE
+        file = categories.SOUND_FILE.DISABLED
+        volume = categories.VOLUME.QUIET
 
         if self.tier == categories.TIER.RARE:
-            categories.COLOR = categories.COLOR.BLUE
-            categories.RGB = categories.RGB.BLUE
+            color = categories.COLOR.BLUE
+            rgb = categories.RGB.BLUE
             file = categories.SOUND_FILE.LILY_AAH
-            categories.VOLUME = categories.VOLUME.QUIET
+            volume = categories.VOLUME.QUIET
 
         if self.tier == categories.TIER.EPIC:
-            categories.COLOR = categories.COLOR.PURPLE
-            categories.RGB = categories.RGB.PURPLE
+            color = categories.COLOR.PURPLE
+            rgb = categories.RGB.PURPLE
             file = categories.SOUND_FILE.LILY_BING
-            categories.VOLUME = categories.VOLUME.MEDIUM
+            volume = categories.VOLUME.MEDIUM
 
         if self.tier == categories.TIER.LEGENDARY:
-            categories.COLOR = categories.COLOR.ORANGE
-            categories.RGB = categories.RGB.ORANGE
+            color = categories.COLOR.ORANGE
+            rgb = categories.RGB.ORANGE
             file = categories.SOUND_FILE.LILY_WOMP
-            categories.VOLUME = categories.VOLUME.LOUD
+            volume = categories.VOLUME.LOUD
 
         child_extensions = [
-            extensions.Beam(color=categories.COLOR),
+            extensions.Beam(color=color),
             extensions.Icon(
-                color=categories.COLOR,
+                color=color,
                 shape=categories.SHAPE.CIRCLE,
                 size=categories.SIZE.SMALL,
             ),
-            extensions.Border(rgb=categories.RGB),
-            extensions.Sound(file=file, volume=categories.VOLUME),
+            extensions.Border(rgb=rgb),
+            extensions.Sound(file=file, volume=volume),
             extensions.FontSize(size=categories.FONT_SIZE.LARGE),
         ]
 

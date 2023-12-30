@@ -110,6 +110,7 @@ epic = [
     "Underground Forest",
     "Vinia's Token",
     "The Mad King",
+    "The Coming Storm",
 ]
 
 # Rare cards that give an interesting reward
@@ -287,7 +288,6 @@ common = [
     "The Celestial Justicar",
     "The Celestial Stone",
     "The Chosen",
-    "The Coming Storm",
     "The Conduit",
     "The Craving",
     "The Cursed King",

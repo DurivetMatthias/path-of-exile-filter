@@ -1,24 +1,25 @@
-from app import categories, extensions, filter
+from app import categories, extensions, filter, items
 from app.rules import Rule
 
-from app.build import common
+from app import common
 
 
 weapons = [
     "Short Bow",
-    "Broadhead Arrow Quiver",
+    # "Broadhead Arrow Quiver",
 ]
 
 armour = [
-    "Dragonscale Boots",
-    "Full Dragonscale",
-    "Nightmare Bascinet",
-    "Dragonscale Gauntlets",
+    # "Dragonscale Boots",
+    # "Full Dragonscale",
+    # "Nightmare Bascinet",
+    # "Dragonscale Gauntlets",
+    "Cutthroat's Garb",
     "Vermillion Ring",
-    "Amethyst Ring",
-    "Marble Amulet",
-    "Leather Belt",
-    "Crimson Jewel",
+    # "Amethyst Ring",
+    # "Marble Amulet",
+    # "Leather Belt",
+    # items.VIRIDIAN_JEWEL,
 ]
 
 flasks = [
@@ -27,6 +28,7 @@ flasks = [
     "Granite Flask",
     "Jade Flask",
     "Quicksilver Flask",
+    "Silver Flask",
 ]
 
 all_item_classes = [
@@ -59,6 +61,7 @@ all_item_classes = [
     "Bows",
     "Quivers",
     "Jewels",
+    "Utility Flasks",
 ]
 
 rules = [

@@ -36,28 +36,22 @@ rules = [
             extensions.TierStyle(tier=categories.TIER.LEGENDARY),
         ],
     ),
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=gem_name),
-                extensions.GemLevel(gem_level=20, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.RARE),
-            ],
-        )
-        for gem_name in items.FIRE_GEMS
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=gem_name),
-                extensions.Quality(quality=1, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.RARE),
-            ],
-        )
-        for gem_name in items.FIRE_GEMS
-    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.ClassName(class_name=classes.GEMS, fuzzy=True),
+            extensions.GemLevel(gem_level=20, operator=categories.OPERATOR.GTE),
+            extensions.TierStyle(tier=categories.TIER.RARE),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.ClassName(class_name=classes.GEMS, fuzzy=True),
+            extensions.Quality(quality=10, operator=categories.OPERATOR.GTE),
+            extensions.TierStyle(tier=categories.TIER.RARE),
+        ],
+    ),
     # Show gems on The Twilight Strand
     Rule(
         instruction=extensions.Show(),
