@@ -1,6 +1,8 @@
 from app import categories, extensions
 from app.rules import Rule
 
+
+# TODO auto fetch top bases
 armour = [
     # STR
     "Glorious Plate",
@@ -12,38 +14,13 @@ armour = [
     "Dragonscale Gauntlets",
     "Dragonscale Boots",
     "Nightmare Bascinet",
+    # DEX
+    "Zodiac Leather",
+    "Lion Pelt",
+    "Slink Gloves",
+    "Slink Boots",
 ]
 
-jewelry = [
-    # Amulet
-    "Jade Amulet",
-    "Lapis Amulet",
-    "Turquoise Amulet",
-    "Onyx Amulet",
-    "Simplex Amulet",
-    "Focused Amulet",
-    # Ring
-    "Amethyst Ring",
-    "Vermillion Ring",
-    "Cogwork Ring",
-    "Composite Ring",
-    "Geodesic Ring",
-    "Helical Ring",
-    "Manifold Ring",
-    "Ratcheting Ring",
-]
-
-flasks = [
-    "Quartz Flask",
-    "Amethyst Flask",
-    "Granite Flask",
-    "Jade Flask",
-    "Quicksilver Flask",
-    "Silver Flask",
-    "Ruby Flask",
-    "Sapphire Flask",
-    "Topaz Flask",
-]
 
 rules = [
     *[
@@ -52,8 +29,8 @@ rules = [
             extensions=[
                 extensions.BaseType(base_type=base_type),
                 extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
-                extensions.BaseDefencePercentile(
-                    percentile=100,
+                extensions.BaseDefenSePercentile(
+                    percentile=90,
                     operator=categories.OPERATOR.GTE,
                 ),
                 extensions.TierStyle(tier=categories.TIER.LEGENDARY),
@@ -66,21 +43,10 @@ rules = [
             instruction=extensions.Show(),
             extensions=[
                 extensions.BaseType(base_type=base_type),
-                extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
+                extensions.ItemLevel(item_level=84, operator=categories.OPERATOR.GTE),
                 extensions.TierStyle(tier=categories.TIER.LEGENDARY),
             ],
         )
-        for base_type in jewelry
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for base_type in flasks
+        for base_type in ["Vermillion Ring", "Marble Amulet"]
     ],
 ]

@@ -18,27 +18,27 @@ best_in_slot_items = [
     "Master Lockpick",
 ]
 heist_classes = [
-    "Heist Brooch",
-    "Heist Cloak",
-    "Heist Gear",
-    "Heist Tool",
+    # "Heist Brooch",
+    # "Heist Cloak",
+    # "Heist Gear",
+    # "Heist Tool",
     "Heist Target",
 ]
 
 
 rules = [
     # Tiered bases
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.ItemLevel(item_level=83, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for base_type in best_in_slot_items
-    ],
+    # *[
+    #     Rule(
+    #         instruction=extensions.Show(),
+    #         extensions=[
+    #             extensions.BaseType(base_type=base_type),
+    #             extensions.ItemLevel(item_level=83, operator=categories.OPERATOR.GTE),
+    #             extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+    #         ],
+    #     )
+    #     for base_type in best_in_slot_items
+    # ],
     *[
         Rule(
             instruction=extensions.Show(),
@@ -65,22 +65,22 @@ rules = [
             extensions.TierStyle(tier=categories.TIER.LEGENDARY),
         ],
     ),
-    Rule(
-        instruction=extensions.Show(),
-        extensions=[
-            extensions.ClassName(class_name="Blueprint"),
-            extensions.ItemLevel(item_level=68, operator=categories.OPERATOR.GTE),
-            extensions.TierStyle(tier=categories.TIER.COMMON),
-        ],
-    ),
-    Rule(
-        instruction=extensions.Show(),
-        extensions=[
-            extensions.ClassName(class_name="Contract"),
-            extensions.ItemLevel(item_level=68, operator=categories.OPERATOR.GTE),
-            extensions.TierStyle(tier=categories.TIER.COMMON),
-        ],
-    ),
+    # Rule(
+    #     instruction=extensions.Show(),
+    #     extensions=[
+    #         extensions.ClassName(class_name="Blueprint"),
+    #         extensions.ItemLevel(item_level=68, operator=categories.OPERATOR.GTE),
+    #         extensions.TierStyle(tier=categories.TIER.COMMON),
+    #     ],
+    # ),
+    # Rule(
+    #     instruction=extensions.Show(),
+    #     extensions=[
+    #         extensions.ClassName(class_name="Contract"),
+    #         extensions.ItemLevel(item_level=68, operator=categories.OPERATOR.GTE),
+    #         extensions.TierStyle(tier=categories.TIER.COMMON),
+    #     ],
+    # ),
     Rule(
         instruction=extensions.Show(),
         extensions=[

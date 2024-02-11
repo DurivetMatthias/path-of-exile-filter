@@ -2,8 +2,10 @@ from app.common import (
     altered_bases,
     bases,
     card,
+    cluster,
     currency,
     essence,
+    flasks,
     gem,
     heist,
     leveling,
@@ -13,14 +15,17 @@ from app.common import (
     unique,
     veiled,
     vendor,
+    hide,
 )
 
 rules = [
     *altered_bases.rules,
     *bases.rules,
     *card.rules,
+    *cluster.rules,
     *currency.rules,
     *essence.rules,
+    *flasks.rules,
     *gem.rules,
     *heist.rules,
     *leveling.rules,
@@ -30,4 +35,6 @@ rules = [
     *unique.rules,
     *veiled.rules,
     *vendor.rules,
+    # Very important that the hide rules go last
+    *hide.rules,
 ]

@@ -1,23 +1,19 @@
-from app import categories, extensions
+from app import extensions
 from app.rules import Rule
-
-style_extensions = [
-    extensions.DefaultStyle(),
-]
 
 rules = [
     Rule(
         instruction=extensions.Show(),
         extensions=[
             extensions.VeiledPrefix(),
-            *style_extensions,
+            extensions.DefaultStyle(),
         ],
     ),
     Rule(
         instruction=extensions.Show(),
         extensions=[
             extensions.VeiledSuffix(),
-            *style_extensions,
+            extensions.DefaultStyle(),
         ],
     ),
 ]

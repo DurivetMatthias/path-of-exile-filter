@@ -2,30 +2,32 @@ from app import categories, extensions, items
 from app.rules import Rule
 
 hidden = [
-    *items.INCUBATORS,
-    *items.DELIRIUM,
-    *items.RITUAL,
-    *items.EXPEDITION,
+    *items.PANTHEON,
+    *items.LABYRINTH,
 ]
 common = [
-    *items.BREACH_SPLINTERS,
-    *items.LEGION_SPLINTERS,
-    *items.INCURSION,
     *items.VAAL_FRAGMENTS,
     *items.MORTAL_FRAGMENTS,
-    *items.SCOUTING_REPORTS,
+    *items.RITUAL,
 ]
 rare = [
-    *items.LABYRINTH,
-    items.DIVINE_VESSEL,
-    *items.DELVE,
     *items.HARVEST,
-    *items.TAINTED_CURRENCY,
+    *items.SANCTUM,
+    *items.INCURSION,
+    *items.DELIRIUM,
+    *items.SCOUTING_REPORTS,
+    *items.EXPEDITION,
+    *items.INCUBATORS,
+    *items.BREACH_SPLINTERS,
+    *items.LEGION_SPLINTERS,
 ]
 epic = [
+    *items.DELVE,
+    *items.TAINTED_CURRENCY,
     *items.SCARABS,
     *items.BLIGHT,
     *items.CATALYST,
+    *items.AFFLICTION,
 ]
 legendary = [
     *items.BREACH_BLESSINGS,
@@ -40,27 +42,16 @@ legendary = [
     *items.KEYS,
 ]
 
-
 rules = [
     *[
         Rule(
             instruction=extensions.Show(),
             extensions=[
                 extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.COMMON),
+                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
             ],
         )
-        for base_type in common
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.RARE),
-            ],
-        )
-        for base_type in rare
+        for base_type in legendary
     ],
     *[
         Rule(
@@ -77,10 +68,20 @@ rules = [
             instruction=extensions.Show(),
             extensions=[
                 extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+                extensions.TierStyle(tier=categories.TIER.RARE),
             ],
         )
-        for base_type in legendary
+        for base_type in rare
+    ],
+    *[
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=base_type, fuzzy=True),
+                extensions.TierStyle(tier=categories.TIER.COMMON),
+            ],
+        )
+        for base_type in common
     ],
     *[
         Rule(

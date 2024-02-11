@@ -1,58 +1,8 @@
-COBALT_JEWEL = "Cobalt Jewel"
-CRIMSON_JEWEL = "Crimson Jewel"
-VIRIDIAN_JEWEL = "Viridian Jewel"
-JEWELS = [COBALT_JEWEL, CRIMSON_JEWEL, VIRIDIAN_JEWEL]
-
-# TODO list individual gems and sort accordingly
-# TODO find a public API
-FIRE_GEMS = [
-    "Burning Arrow",
-    "Explosive Trap",
-    "Fireball",
-    "Molten Strike",
-    "Purifying Flame",
-    "Rolling Magma",
-    "Detonate Dead",
-    "Flame Wall",
-    "Holy Flame Totem",
-    "Molten Shell",
-    "Summon Raging Spirit",
-    "Bodyswap",
-    "Flame Dash",
-    "Blazing Salvo",
-    "Elemental Hit",
-    "Fire Trap",
-    "Flame Surge",
-    "Incinerate",
-    "Infernal Blow",
-    "Scorching Ray",
-    "Searing Bond",
-    "Volatile Dead",
-    "Volcanic Fissure",
-    "Herald of Ash",
-    "Righteous Fire",
-    "Wave of Conviction",
-    "Alchemist's Mark",
-    "Anger",
-    "Flammability",
-    "Infernal Cry",
-    "Purity of Fire",
-    "Armageddon Brand",
-    "Artillery Ballista",
-    "Blast Rain",
-    "Consecrated Path",
-    "Cremation",
-    "Discharge",
-    "Explosive Arrow",
-    "Explosive Concoction",
-    "Firestorm",
-    "Flameblast",
-    "Flamethrower Trap",
-    "Pyroclast Mine",
-    "Tectonic Slam",
-    "Wild Strike",
-    "Flame Link",
-    "Summon Flame Golem",
+# TODO store any hardcoded reference to the game objects in a "data" folder
+JEWELS = [
+    "Cobalt Jewel",
+    "Crimson Jewel",
+    "Viridian Jewel",
 ]
 
 EXCEPTIONAL_GEMS = [
@@ -176,7 +126,9 @@ MORTAL_FRAGMENTS = [
     "Mortal Rage",
 ]
 
-DIVINE_VESSEL = "Divine Vessel"
+PANTHEON = [
+    "Divine Vessel",
+]
 
 SHAPER_FRAGMENTS = [
     "Fragment of the Hydra",
@@ -342,4 +294,13 @@ TAINTED_CURRENCY = [
     "Tainted Jeweller's Orb",
     "Tainted Mythic Orb",
     "Tainted Orb of Fusing",
+]
+
+SANCTUM = [
+    "Forbidden Tome",
+]
+
+AFFLICTION = [
+    "Charm",
+    "Tincture",
 ]

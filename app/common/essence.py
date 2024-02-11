@@ -66,25 +66,14 @@ essences = []
 for essence_type, essence_tier in product:
     name = f"{essence_tier} Essence of {essence_type}"
     essence_value = 0
-    if type in ["Greed", "Dread", "Zeal"]:
-        essence_value += 3
-    if type in ["Hatred", "Anger", "Sorrow", "Rage", "Wrath", "Spite", "Envy"]:
-        essence_value += 2
-
-    if essence_tier == "Screaming":
-        essence_value += 1
-    if essence_tier == "Shrieking":
-        essence_value += 2
-    if essence_tier == "Deafening":
-        essence_value += 3
 
     tier = categories.TIER.COMMON
-    if essence_value >= 5:
-        tier = categories.TIER.LEGENDARY
-    elif essence_value >= 3:
-        tier = categories.TIER.EPIC
-    elif essence_value >= 2:
+    if essence_tier == "Screaming":
         tier = categories.TIER.RARE
+    if essence_tier == "Shrieking":
+        tier = categories.TIER.EPIC
+    if essence_tier == "Deafening":
+        tier = categories.TIER.LEGENDARY
 
     essences.append(
         {

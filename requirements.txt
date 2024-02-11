@@ -1,0 +1,2 @@
+# No requirements :)
+# Only using built-in functionality of python

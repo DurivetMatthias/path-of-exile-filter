@@ -32,7 +32,7 @@ rules = [
         instruction=extensions.Show(),
         extensions=[
             extensions.Fractured(),
-            *style_extensions,
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
         ],
     ),
     Rule(
@@ -56,11 +56,11 @@ rules = [
             *style_extensions,
         ],
     ),
-    Rule(
-        instruction=extensions.Show(),
-        extensions=[
-            extensions.Sockets(sockets="WWW", operator=categories.OPERATOR.GTE),
-            *style_extensions,
-        ],
-    ),
+    # Rule(
+    #     instruction=extensions.Show(),
+    #     extensions=[
+    #         extensions.Sockets(sockets="WWW", operator=categories.OPERATOR.GTE),
+    #         *style_extensions,
+    #     ],
+    # ),
 ]

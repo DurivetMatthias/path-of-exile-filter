@@ -2,7 +2,7 @@ from app.extensions.base_class import Extension
 from app import categories
 
 
-class BaseDefencePercentile(Extension):
+class BaseDefensePercentile(Extension):
     def __init__(
         self,
         *,

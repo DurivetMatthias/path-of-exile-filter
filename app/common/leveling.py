@@ -18,6 +18,7 @@ rules = [
                 extensions.ClassName(class_name=class_name),
                 extensions.SocketGroup(sockets="4", operator=categories.OPERATOR.EXACT),
                 extensions.AreaLevel(area_level=35, operator=categories.OPERATOR.LT),
+                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
             ],
         )
         for class_name in classes_with_sockets
@@ -29,9 +30,10 @@ rules = [
                 extensions.ClassName(class_name=class_name),
                 extensions.SocketGroup(sockets="5", operator=categories.OPERATOR.EXACT),
                 extensions.AreaLevel(area_level=50, operator=categories.OPERATOR.LT),
+                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
             ],
         )
         for class_name in classes_with_sockets
     ],
-    # 6 Links are shown thanks to the vendor recipe
+    # 6-Links are shown thanks to the vendor recipe
 ]

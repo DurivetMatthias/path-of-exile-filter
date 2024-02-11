@@ -18,10 +18,9 @@ rules = [
         ],
     ),
     Rule(
-        instruction=extensions.Hide(),
+        instruction=extensions.Show(),
         extensions=[
             extensions.SocketGroup(sockets="RGB", operator=categories.OPERATOR.GTE),
-            extensions.AreaLevel(area_level=68, operator=categories.OPERATOR.LT),
             extensions.Beam(color=categories.COLOR.GREY),
             extensions.FontSize(size=categories.FONT_SIZE.LARGE),
         ],

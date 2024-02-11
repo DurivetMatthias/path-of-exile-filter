@@ -11,10 +11,11 @@ from app.extensions.hide import *
 # Basic extensions for matching the item
 from app.extensions.area_level import *
 from app.extensions.base_type import *
-from app.extensions.base_defence_percentile import *
+from app.extensions.base_defense_percentile import *
 from app.extensions.class_name import *
 from app.extensions.corrupt_implicit import *
 from app.extensions.default_style import *
+from app.extensions.elder import *
 from app.extensions.fractured import *
 from app.extensions.gem_level import *
 from app.extensions.influenced import *
