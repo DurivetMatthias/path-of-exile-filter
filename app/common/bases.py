@@ -29,7 +29,7 @@ rules = [
             extensions=[
                 extensions.BaseType(base_type=base_type),
                 extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
-                extensions.BaseDefenSePercentile(
+                extensions.BaseDefensePercentile(
                     percentile=90,
                     operator=categories.OPERATOR.GTE,
                 ),
