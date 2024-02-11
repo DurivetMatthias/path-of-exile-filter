@@ -1,11 +1,10 @@
 from app import categories, extensions
 from app.rules import Rule
 
+# TODO fetch as external data
+# TODO simplify as JSON
 utility_flasks = [
     "Amethyst Flask",
-    "Basalt Flask",
-    "Diamond Flask",
-    "Gold Flask",
     "Granite Flask",
     "Jade Flask",
     "Quartz Flask",
@@ -33,6 +32,17 @@ rules = [
             extensions=[
                 extensions.BaseType(base_type=flask_name),
                 extensions.ItemLevel(item_level=80, operator=categories.OPERATOR.GTE),
+                extensions.TierStyle(tier=categories.TIER.RARE),
+            ],
+        )
+        for flask_name in utility_flasks
+    ],
+    *[
+        Rule(
+            instruction=extensions.Show(),
+            extensions=[
+                extensions.BaseType(base_type=flask_name),
+                extensions.ItemLevel(item_level=80, operator=categories.OPERATOR.LTE),
                 extensions.TierStyle(tier=categories.TIER.COMMON),
             ],
         )

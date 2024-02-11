@@ -1,6 +1,7 @@
 from app import categories, classes, extensions
 from app.rules import Rule
 
+# TODO create higher order style
 rules = [
     Rule(
         instruction=extensions.Show(),

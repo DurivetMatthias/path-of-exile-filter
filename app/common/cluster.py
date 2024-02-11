@@ -1,18 +1,6 @@
 from app import categories, extensions
 from app.rules import Rule
 
-# Item Class: Jewels
-# Rarity: Normal
-# Large Cluster Jewel
-# --------
-# Item Level: 83
-# --------
-# Adds 8 Passive Skills (enchant)
-# 2 Added Passive Skills are Jewel Sockets (enchant)
-# Added Small Passive Skills grant: 12% increased Fire Damage (enchant)
-# --------
-# Place into an allocated Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.
-
 cluster_jewels = [
     "Large Cluster Jewel",
     "Medium Cluster Jewel",

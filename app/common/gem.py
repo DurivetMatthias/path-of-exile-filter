@@ -1,6 +1,9 @@
 from app import categories, classes, items, extensions
 from app.rules import Rule
 
+# TODO create higher order style extension
+# TODO split styles from extensions
+# TODO group extensions into categories: styles, rule, composite
 style_extensions = [
     extensions.Beam(color=categories.COLOR.GREEN),
     extensions.Icon(

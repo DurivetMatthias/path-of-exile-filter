@@ -2,6 +2,8 @@ from app import categories, extensions
 from app.rules import Rule
 from app.external_data.py.uniques import Unique, uniques
 
+# TODO re-evaluate
+
 desirable_uniques = [
     # T0
     "Headhunter",

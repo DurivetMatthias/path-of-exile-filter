@@ -7,6 +7,8 @@ from app.rules import Rule
 
 
 # https://www.poewiki.net/wiki/Essence
+# TODO fetch as external data
+# TODO simplify as JSON
 essence_tiers = [
     "Whispering",
     "Muttering",

@@ -174,28 +174,6 @@ legendary = [
 rules = [
     *[
         Rule(
-            instruction=extensions.Hide(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-            ],
-        )
-        for base_type in [
-            "Orb of Transmutation",
-            "Blacksmith's Whetstone",
-            "Orb of Binding",
-            "Orb of Alchemy",
-            "Orb of Augmentation",
-            "Armourer's Scrap",
-            "Scroll of wisdom",
-            # "Portal Scroll",
-            "Orb of Horizons",
-            "Instilling Orb",
-            "Enkindling Orb",
-            *common_shards,
-        ]
-    ],
-    *[
-        Rule(
             instruction=extensions.Show(),
             extensions=[
                 extensions.BaseType(base_type=base_type),

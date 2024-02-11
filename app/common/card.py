@@ -1,6 +1,7 @@
 from app import categories, extensions
 from app.rules import Rule
 
+# TODO re-evaluate
 # TODO automate
 # Cards with extremely valuable rewards
 legendary = [
