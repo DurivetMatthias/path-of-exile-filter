@@ -56,11 +56,4 @@ rules = [
             *style_extensions,
         ],
     ),
-    # Rule(
-    #     instruction=extensions.Show(),
-    #     extensions=[
-    #         extensions.Sockets(sockets="WWW", operator=categories.OPERATOR.GTE),
-    #         *style_extensions,
-    #     ],
-    # ),
 ]

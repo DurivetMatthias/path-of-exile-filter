@@ -95,14 +95,11 @@ rules = [
         )
         for essence in essences
     ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=name),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for name in special_essences
-    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=special_essences),
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+        ],
+    ),
 ]

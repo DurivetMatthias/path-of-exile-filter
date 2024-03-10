@@ -3,7 +3,7 @@ from app.rules import Rule
 
 
 # TODO auto fetch top bases
-armour = [
+bis_armour_bases = [
     # STR
     "Glorious Plate",
     "Titan Gauntlets",
@@ -21,32 +21,31 @@ armour = [
     "Slink Boots",
 ]
 
+endgame_jewelry_bases = [
+    "Vermillion Ring",
+    "Marble Amulet",
+]
+
 
 rules = [
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
-                extensions.BaseDefensePercentile(
-                    percentile=90,
-                    operator=categories.OPERATOR.GTE,
-                ),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for base_type in armour
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.ItemLevel(item_level=84, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for base_type in ["Vermillion Ring", "Marble Amulet"]
-    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=bis_armour_bases),
+            extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
+            extensions.BaseDefensePercentile(
+                percentile=90,
+                operator=categories.OPERATOR.GTE,
+            ),
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=endgame_jewelry_bases),
+            extensions.ItemLevel(item_level=84, operator=categories.OPERATOR.GTE),
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+        ],
+    ),
 ]

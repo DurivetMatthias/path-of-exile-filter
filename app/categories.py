@@ -49,9 +49,29 @@ class SOUND_FILE(Enum):
     DISABLED = "None"
 
 
+class BASIC_SOUND(Enum):
+    DISABLED = "None"
+    CYMBAL = "1"
+    GUN = "2"
+    BELL = "3"
+    ROTATION = "4"
+    ELECTRICITY = "5"
+    NEEDLE = "6"
+    RIPPLE = "7"
+    INVERTED_RIPPLE = "8"
+    SLOW_RIPPLE = "9"
+    TINK = "10"
+    PISTOL = "11"
+    METRONOME = "12"
+    TAMBOURINE = "13"
+    SLOW_TREMBLE = "14"
+    TREMBLE = "15"
+    PUNCH = "16"
+
+
 class VOLUME(Enum):
-    QUIET = "100"
-    MEDIUM = "200"
+    QUIET = "50"
+    MEDIUM = "100"
     LOUD = "300"
 
 

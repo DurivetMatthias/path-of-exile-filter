@@ -10,25 +10,25 @@ class TierStyle(extensions.Extension):
         # default for common
         color = categories.COLOR.WHITE
         rgb = categories.RGB.WHITE
-        file = categories.SOUND_FILE.DISABLED
+        basic_sound = categories.BASIC_SOUND.ELECTRICITY
         volume = categories.VOLUME.QUIET
 
         if self.tier == categories.TIER.RARE:
             color = categories.COLOR.BLUE
             rgb = categories.RGB.BLUE
-            file = categories.SOUND_FILE.LILY_AAH
-            volume = categories.VOLUME.QUIET
+            basic_sound = categories.BASIC_SOUND.PUNCH
+            volume = categories.VOLUME.MEDIUM
 
         if self.tier == categories.TIER.EPIC:
             color = categories.COLOR.PURPLE
             rgb = categories.RGB.PURPLE
-            file = categories.SOUND_FILE.LILY_BING
+            basic_sound = categories.BASIC_SOUND.GUN
             volume = categories.VOLUME.MEDIUM
 
         if self.tier == categories.TIER.LEGENDARY:
             color = categories.COLOR.ORANGE
             rgb = categories.RGB.ORANGE
-            file = categories.SOUND_FILE.LILY_WOMP
+            basic_sound = categories.BASIC_SOUND.TINK
             volume = categories.VOLUME.LOUD
 
         child_extensions = [
@@ -39,7 +39,7 @@ class TierStyle(extensions.Extension):
                 size=categories.SIZE.SMALL,
             ),
             extensions.Border(rgb=rgb),
-            extensions.Sound(file=file, volume=volume),
+            extensions.BasicSound(sound=basic_sound, volume=volume),
             extensions.FontSize(size=categories.FONT_SIZE.LARGE),
         ]
 

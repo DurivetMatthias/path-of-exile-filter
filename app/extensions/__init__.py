@@ -20,6 +20,8 @@ from app.extensions.fractured import *
 from app.extensions.gem_level import *
 from app.extensions.influenced import *
 from app.extensions.item_level import *
+from app.extensions.multi_base_type import *
+from app.extensions.multi_class import *
 from app.extensions.quality import *
 from app.extensions.rarity import *
 from app.extensions.socket_group import *
@@ -30,10 +32,11 @@ from app.extensions.veiled import *
 
 # Basic extensions for modifying the style
 from app.extensions.beam import *
+from app.extensions.basic_sound import *
 from app.extensions.border import *
 from app.extensions.font_size import *
 from app.extensions.icon import *
-from app.extensions.sound import *
+from app.extensions.sound_file import *
 
 # Complex extensions that combine multiple basic extensions
 from app.extensions.tier_style import *

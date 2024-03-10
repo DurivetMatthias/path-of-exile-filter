@@ -172,55 +172,40 @@ legendary = [
 ]
 
 rules = [
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.DefaultStyle(),
-                extensions.FontSize(size=categories.FONT_SIZE.LARGE),
-            ],
-        )
-        for base_type in scrolls
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.TierStyle(tier=categories.TIER.COMMON),
-            ],
-        )
-        for base_type in common
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.TierStyle(tier=categories.TIER.RARE),
-            ],
-        )
-        for base_type in rare
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.TierStyle(tier=categories.TIER.EPIC),
-            ],
-        )
-        for base_type in epic
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for base_type in legendary
-    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=scrolls),
+            extensions.DefaultStyle(),
+            extensions.FontSize(size=categories.FONT_SIZE.LARGE),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=legendary),
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=epic),
+            extensions.TierStyle(tier=categories.TIER.EPIC),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=rare),
+            extensions.TierStyle(tier=categories.TIER.RARE),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=common),
+            extensions.TierStyle(tier=categories.TIER.COMMON),
+        ],
+    ),
 ]
