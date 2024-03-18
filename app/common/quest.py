@@ -14,10 +14,7 @@ rules = [
                 size=categories.SIZE.SMALL,
             ),
             extensions.Border(rgb=categories.RGB.GREEN),
-            extensions.Sound(
-                file=categories.SOUND_FILE.LILY_SNIFF,
-                volume=categories.VOLUME.LOUD,
-            ),
+            extensions.BasicSound(sound=categories.BASIC_SOUND.RIPPLE),
             extensions.FontSize(size=categories.FONT_SIZE.LARGE),
         ],
     ),

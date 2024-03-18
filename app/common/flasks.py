@@ -15,37 +15,28 @@ utility_flasks = [
 ]
 
 rules = [
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=flask_name),
-                extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for flask_name in utility_flasks
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=flask_name),
-                extensions.ItemLevel(item_level=80, operator=categories.OPERATOR.GTE),
-                extensions.TierStyle(tier=categories.TIER.RARE),
-            ],
-        )
-        for flask_name in utility_flasks
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=flask_name),
-                extensions.ItemLevel(item_level=80, operator=categories.OPERATOR.LTE),
-                extensions.TierStyle(tier=categories.TIER.COMMON),
-            ],
-        )
-        for flask_name in utility_flasks
-    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=utility_flasks),
+            extensions.ItemLevel(item_level=85, operator=categories.OPERATOR.GTE),
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=utility_flasks),
+            extensions.ItemLevel(item_level=80, operator=categories.OPERATOR.GTE),
+            extensions.TierStyle(tier=categories.TIER.RARE),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=utility_flasks),
+            extensions.ItemLevel(item_level=80, operator=categories.OPERATOR.LTE),
+            extensions.TierStyle(tier=categories.TIER.COMMON),
+        ],
+    ),
 ]

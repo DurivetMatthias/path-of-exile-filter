@@ -14,7 +14,6 @@ from app.common import (
     unique,
     veiled,
     vendor,
-    hide,
 )
 
 rules = [
@@ -33,6 +32,4 @@ rules = [
     *unique.rules,
     *veiled.rules,
     *vendor.rules,
-    # Very important that the hide rules go last
-    *hide.rules,
 ]

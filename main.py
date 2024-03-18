@@ -1,7 +1,6 @@
-from app import builds, common, filter
+from app import common, filter
 
 rules = [
-    *builds.rules,
     *common.rules,
 ]
 

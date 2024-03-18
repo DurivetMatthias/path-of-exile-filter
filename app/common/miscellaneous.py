@@ -1,11 +1,9 @@
 from app import categories, extensions, items
 from app.rules import Rule
 
-hidden = [
+common = [
     *items.PANTHEON,
     *items.LABYRINTH,
-]
-common = [
     *items.VAAL_FRAGMENTS,
     *items.MORTAL_FRAGMENTS,
     *items.RITUAL,
@@ -43,53 +41,32 @@ legendary = [
 ]
 
 rules = [
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.LEGENDARY),
-            ],
-        )
-        for base_type in legendary
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.EPIC),
-            ],
-        )
-        for base_type in epic
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.RARE),
-            ],
-        )
-        for base_type in rare
-    ],
-    *[
-        Rule(
-            instruction=extensions.Show(),
-            extensions=[
-                extensions.BaseType(base_type=base_type, fuzzy=True),
-                extensions.TierStyle(tier=categories.TIER.COMMON),
-            ],
-        )
-        for base_type in common
-    ],
-    *[
-        Rule(
-            instruction=extensions.Hide(),
-            extensions=[
-                extensions.BaseType(base_type=base_type, fuzzy=True),
-            ],
-        )
-        for base_type in hidden
-    ],
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=legendary, fuzzy=True),
+            extensions.TierStyle(tier=categories.TIER.LEGENDARY),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=epic, fuzzy=True),
+            extensions.TierStyle(tier=categories.TIER.EPIC),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=rare, fuzzy=True),
+            extensions.TierStyle(tier=categories.TIER.RARE),
+        ],
+    ),
+    Rule(
+        instruction=extensions.Show(),
+        extensions=[
+            extensions.MultiBaseType(base_types=common, fuzzy=True),
+            extensions.TierStyle(tier=categories.TIER.COMMON),
+        ],
+    ),
 ]
