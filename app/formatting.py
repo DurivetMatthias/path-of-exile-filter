@@ -2,8 +2,8 @@ import textwrap
 
 from typing import Sequence
 
-from app.extensions import Extension
-from app.rules import Rule
+from app.conditions.base_class import Extension
+from app.blocks import Rule
 
 TAB_WITH_SPACES = " " * 4
 
@@ -33,7 +33,7 @@ def format_rules(rules: Sequence[Rule]):
     return "\n\n".join(rule_blocks)
 
 
-def format_filter(*, rules, header):
+def format_filter(*, rules: list[Rule], header: str):
     rules_text = format_rules(rules)
     header_text = format_header(header)
 

@@ -12,7 +12,7 @@ I hope you find some learnings in the code.
 ## Composition over inheritance
 
 The fundamental Class in this codebase is the `Rule` class.
-Each rule is made up of a list of extensions.
+Each rule is made up of a list of
 An `Extension` is very similar to the properties in <https://www.pathofexile.com/item-filter/about>
 But it is also possible to write a higher level `Extension`.
 

@@ -70,9 +70,9 @@ class BASIC_SOUND(Enum):
 
 
 class VOLUME(Enum):
-    QUIET = "50"
+    QUIET = "25"
     MEDIUM = "100"
-    LOUD = "300"
+    LOUD = "200"
 
 
 class RGB(Enum):
