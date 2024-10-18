@@ -21,7 +21,7 @@ rules = [
     Show(
         [
             ClassName("Map"),
-            TierStyle(TIER.RARE),
+            TierStyle(TIER.EPIC),
         ],
     ),
 ]

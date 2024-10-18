@@ -14,6 +14,7 @@ fractured_classes = [
     # "Shields",
     "Rings",
     "Amulets",
+    "Jewels",
 ]
 
 influenced_bases = [
@@ -27,7 +28,7 @@ rules = [
         [
             Fractured(),
             MultiClass(fractured_classes),
-            TierStyle(TIER.LEGENDARY),
+            TierStyle(TIER.EPIC),
         ]
     ),
     # Show(

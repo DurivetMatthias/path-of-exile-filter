@@ -14,10 +14,12 @@ from app.sections import (
     scarabs,
     unique,
     veiled,
+    vendor,
 )
 
 rules = [
     *altered_bases.rules,
+    *vendor.rules,
     *bases.rules,
     *card.rules,
     *currency.rules,

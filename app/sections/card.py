@@ -163,6 +163,7 @@ cards = {
     "Rain Tempter": HIDE,
     "Rats": HIDE,
     "Rebirth": HIDE,
+    "Rebirth and Renewal": EPIC,
     "Reckless Ambition": HIDE,
     "Remembrance": RARE,
     "Sambodhi's Vow": EPIC,
