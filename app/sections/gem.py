@@ -1,6 +1,6 @@
 from app.blocks import Show, Hide
-from app.conditions.compound import MultiBaseType, TierStyle
-from app.conditions.standard import ClassName, BaseType
+from app.conditions import Class, BaseType, MultiBaseType
+from app.actions import TierStyle
 from app.categories import OPERATOR, TIER
 
 exceptional_gems = [
@@ -18,18 +18,18 @@ rules = [
     ),
     Show(
         [
-            ClassName("Support Gems"),
+            Class("Support Gems"),
             BaseType("Awakened", operator=OPERATOR.EQUAL),
         ],
     ),
     Hide(
         [
-            ClassName("Support Gems"),
+            Class("Support Gems"),
         ]
     ),
     Hide(
         [
-            ClassName("Skill Gems"),
+            Class("Skill Gems"),
         ]
     ),
 ]

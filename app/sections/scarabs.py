@@ -1,7 +1,7 @@
 from app.base_types import *
 from app.blocks import Show
-from app.conditions.compound import MultiBaseType, TierStyle
-from app.conditions.standard import BaseType
+from app.actions import TierStyle
+from app.conditions import BaseType, MultiBaseType
 from app.categories import TIER, OPERATOR
 
 LEGENDARY = TIER.LEGENDARY
@@ -29,12 +29,6 @@ legendary_scarabs = [scarab for scarab, tier in scarabs.items() if tier == LEGEN
 epic_scarabs = [scarab for scarab, tier in scarabs.items() if tier == EPIC]
 
 rules = [
-    # Show(
-    #     [
-    #         MultiBaseType(epic_scarabs),
-    #         TierStyle(TIER.EPIC),
-    #     ],
-    # ),
     Show(
         [
             MultiBaseType(legendary_scarabs),
@@ -44,7 +38,7 @@ rules = [
     Show(
         [
             BaseType("Scarab", operator=OPERATOR.EQUAL),
-            TierStyle(TIER.RARE),
+            TierStyle(TIER.EPIC),
         ],
     ),
 ]

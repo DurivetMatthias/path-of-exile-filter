@@ -1,6 +1,6 @@
 from app.blocks import Hide, Show
-from app.conditions.standard import BaseType
-from app.conditions.compound import MultiBaseType, TierStyle
+from app.conditions import BaseType, MultiBaseType
+from app.actions import TierStyle
 from app.categories import TIER
 
 HIDE = "hide"
@@ -460,7 +460,7 @@ legendary_cards = [
 rules = [
     Show(
         [
-            BaseType(base_type="Stacked Deck"),
+            BaseType("Stacked Deck"),
             TierStyle(TIER.RARE),
         ],
     ),

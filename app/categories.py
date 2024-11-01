@@ -1,9 +1,9 @@
 """A collection of all the categorical values used throughout the code"""
 
-from enum import Enum
+from enum import StrEnum
 
 
-class COLOR(Enum):
+class COLOR(StrEnum):
     RED = "Red"
     GREEN = "Green"
     BLUE = "Blue"
@@ -17,7 +17,7 @@ class COLOR(Enum):
     PURPLE = "Purple"
 
 
-class SHAPE(Enum):
+class SHAPE(StrEnum):
     CIRCLE = "Circle"
     DIAMOND = "Diamond"
     HEXAGON = "Hexagon"
@@ -32,24 +32,13 @@ class SHAPE(Enum):
     UPSIDE_DOWN_HOUSE = "UpsideDownHouse"
 
 
-class SIZE(Enum):
+class SIZE(StrEnum):
     LARGE = "0"
     MEDIUM = "1"
     SMALL = "2"
 
 
-class SOUND_FILE(Enum):
-    LILY_AAH = "filter-sounds/lily-aah.mp3"
-    LILY_BAM = "filter-sounds/lily-bam.mp3"
-    LILY_BING = "filter-sounds/lily-bing-bing.mp3"
-    LILY_OOH = "filter-sounds/lily-ooh.mp3"
-    LILY_PEKABO = "filter-sounds/lily-pekabo.mp3"
-    LILY_SNIFF = "filter-sounds/lily-sniff.mp3"
-    LILY_WOMP = "filter-sounds/lily-womp-womp.mp3"
-    DISABLED = "None"
-
-
-class BASIC_SOUND(Enum):
+class BASIC_SOUND(StrEnum):
     DISABLED = "None"
     CYMBAL = "1"
     GUN = "2"
@@ -69,13 +58,13 @@ class BASIC_SOUND(Enum):
     PUNCH = "16"
 
 
-class VOLUME(Enum):
+class VOLUME(StrEnum):
     QUIET = "25"
     MEDIUM = "100"
     LOUD = "200"
 
 
-class RGB(Enum):
+class RGB(StrEnum):
     BLACK = "0 0 0"
     WHITE = "255 255 255"
     RED = "255 0 0"
@@ -89,27 +78,27 @@ class RGB(Enum):
     GREY = "150 150 150"
 
 
-class FONT_SIZE(Enum):
+class FONT_SIZE(StrEnum):
     SMALL = "15"
     MEDIUM = "30"
     LARGE = "45"
 
 
-class RARITY(Enum):
+class RARITY(StrEnum):
     NORMAL = "normal"
     MAGIC = "magic"
     RARE = "rare"
     UNIQUE = "unique"
 
 
-class TIER(Enum):
+class TIER(StrEnum):
     COMMON = "COMMON"
     RARE = "RARE"
     EPIC = "EPIC"
     LEGENDARY = "LEGENDARY"
 
 
-class OPERATOR(Enum):
+class OPERATOR(StrEnum):
     EQUAL = "="
     NOT_EQUAL = "!="
     LTE = "<="
@@ -122,5 +111,5 @@ class OPERATOR(Enum):
 # TODO list individually
 # TODO one hand vs two hand
 # TODO other gear classes
-class WEAPONS(Enum):
+class WEAPONS(StrEnum):
     pass

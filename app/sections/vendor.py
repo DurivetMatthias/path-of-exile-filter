@@ -1,9 +1,15 @@
 from app.blocks import Show
-from app.conditions.standard import Sockets, SocketGroup
-from app.conditions.compound import TierStyle
+from app.actions import TierStyle
+from app.conditions import Sockets, LinkedSockets, SocketGroup
 from app.categories import TIER
 
 rules = [
+    Show(
+        [
+            SocketGroup("RGB"),
+            TierStyle(TIER.EPIC),
+        ],
+    ),
     Show(
         [
             Sockets("6"),
@@ -12,7 +18,7 @@ rules = [
     ),
     Show(
         [
-            SocketGroup("6"),
+            LinkedSockets(6),
             TierStyle(TIER.LEGENDARY),
         ],
     ),

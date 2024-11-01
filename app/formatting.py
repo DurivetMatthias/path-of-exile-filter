@@ -2,7 +2,7 @@ import textwrap
 
 from typing import Sequence
 
-from app.conditions.base_class import Extension
+from app.extention import Extension
 from app.blocks import Rule
 
 TAB_WITH_SPACES = " " * 4

@@ -3,7 +3,8 @@
 import itertools
 
 from app.blocks import Show, Hide
-from app.conditions.compound import MultiBaseType, TierStyle
+from app.conditions import MultiBaseType
+from app.actions import TierStyle
 from app.categories import TIER
 
 HIDE = "Hide"

@@ -1,17 +1,15 @@
 from app.blocks import Show
-from app.conditions.standard import (
-    Fractured,
-)
-from app.conditions.compound import TierStyle, MultiClass
+from app.actions import TierStyle
+from app.conditions import FracturedItem, Influenced, MultiClass, MultiBaseType
 from app.categories import TIER
 
 fractured_classes = [
-    # "Helmets",
-    # "Gloves",
-    # "Boots",
+    "Helmets",
+    "Gloves",
+    "Boots",
     "Sceptres",
     "Rune Daggers",
-    # "Shields",
+    "Shields",
     "Rings",
     "Amulets",
     "Jewels",
@@ -26,16 +24,16 @@ influenced_bases = [
 rules = [
     Show(
         [
-            Fractured(),
+            FracturedItem(),
             MultiClass(fractured_classes),
             TierStyle(TIER.EPIC),
         ]
     ),
-    # Show(
-    #     [
-    #         Influenced(),
-    #         MultiBaseType(influenced_bases),
-    #         TierStyle(TIER.LEGENDARY),
-    #     ]
-    # ),
+    Show(
+        [
+            Influenced(),
+            MultiBaseType(influenced_bases),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
 ]

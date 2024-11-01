@@ -1,6 +1,6 @@
 from app.blocks import Show
-from app.conditions.standard import BaseType, Rarity
-from app.conditions.compound import MultiBaseType, MultiClass, TierStyle
+from app.conditions import BaseType, Rarity, MultiBaseType, MultiClass
+from app.actions import TierStyle
 from app.categories import TIER, RARITY
 
 atlas_bases = [
@@ -37,7 +37,6 @@ rules = [
                     "Belts",
                 ]
             ),
-            TierStyle(TIER.RARE),
         ]
     ),
 ]

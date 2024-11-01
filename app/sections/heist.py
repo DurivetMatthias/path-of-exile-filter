@@ -1,6 +1,6 @@
 from app.blocks import Show
-from app.conditions.compound import TierStyle, MultiBaseType
-from app.conditions.standard import BaseType, StackSize, ClassName
+from app.actions import TierStyle
+from app.conditions import BaseType, StackSize, Class, MultiBaseType, MultiClass
 from app.categories import TIER
 
 best_in_slot_items = [
@@ -33,33 +33,33 @@ rules = [
             TierStyle(TIER.EPIC),
         ]
     ),
-    # Show(
-    #     [
-    #         MultiClass(item_classes),
-    #         TierStyle(TIER.RARE),
-    #     ]
-    # ),
     Show(
         [
-            ClassName("Contracts"),
+            MultiClass(item_classes),
+            TierStyle(TIER.RARE),
+        ]
+    ),
+    Show(
+        [
+            Class("Contracts"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            ClassName("Blueprints"),
+            Class("Blueprints"),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            ClassName("Heist Target"),
+            Class("Heist Target"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            ClassName("Trinkets"),
+            Class("Trinkets"),
             TierStyle(TIER.LEGENDARY),
         ]
     ),

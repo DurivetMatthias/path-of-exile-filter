@@ -1,5 +1,5 @@
 from abc import ABC
-from app.conditions.standard import Extension
+from app.extention import Extension
 
 
 class Rule(ABC):

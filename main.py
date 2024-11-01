@@ -10,6 +10,7 @@ from app.sections import (
     heist,
     hide_gear,
     jewels,
+    leveling,
     map,
     scarabs,
     unique,
@@ -18,6 +19,7 @@ from app.sections import (
 )
 
 rules = [
+    *leveling.rules,
     *altered_bases.rules,
     *vendor.rules,
     *bases.rules,

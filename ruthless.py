@@ -1,7 +1,7 @@
 from app.filter import generate
 from app.blocks import Show
-from app.conditions.standard import BaseType, ClassName, Rarity, SocketGroup
-from app.conditions.compound import TierStyle, MultiClass
+from app.conditions.conditions import BaseType, ClassName, Rarity, SocketGroup
+from app.actions import TierStyle, MultiClass
 from app.categories import TIER, RARITY
 
 rules = [
