@@ -4,12 +4,12 @@ from app.conditions import Sockets, LinkedSockets, SocketGroup
 from app.categories import TIER
 
 rules = [
-    Show(
-        [
-            SocketGroup("RGB"),
-            TierStyle(TIER.EPIC),
-        ],
-    ),
+    # Show(
+    #     [
+    #         SocketGroup("RGB"),
+    #         TierStyle(TIER.EPIC),
+    #     ],
+    # ),
     Show(
         [
             Sockets("6"),

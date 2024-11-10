@@ -11,17 +11,21 @@ from app.sections import (
     hide_gear,
     jewels,
     leveling,
+    leveling_bases,
     map,
     scarabs,
+    scrolls,
     unique,
     veiled,
     vendor,
 )
 
 rules = [
+    *scrolls.rules,
+    *vendor.rules,
+    *leveling_bases.rules,
     *leveling.rules,
     *altered_bases.rules,
-    *vendor.rules,
     *bases.rules,
     *card.rules,
     *currency.rules,

@@ -1,8 +1,8 @@
 from app.base_types import *
-from app.blocks import Show
-from app.conditions import MultiBaseType
+from app.blocks import Show, Hide
+from app.conditions import MultiBaseType, BaseType
 from app.actions import TierStyle
-from app.categories import TIER
+from app.categories import TIER, OPERATOR
 
 HIDE = "Hide"
 COMMON = "common"
@@ -11,7 +11,6 @@ EPIC = "epic"
 LEGENDARY = "legendary"
 
 currencies = {
-    "Gold": RARE,
     # Currency
     ORB_OF_ALTERATION: EPIC,
     ORB_OF_FUSING: RARE,
@@ -20,7 +19,7 @@ currencies = {
     GEMCUTTERS_PRISM: RARE,
     EXALTED_ORB: LEGENDARY,
     CHROMATIC_ORB: RARE,
-    JEWELLERS_ORB: RARE,
+    JEWELLERS_ORB: COMMON,
     ENGINEERS_ORB: RARE,
     INFUSED_ENGINEERS_ORB: LEGENDARY,
     ORB_OF_CHANCE: RARE,
@@ -42,13 +41,11 @@ currencies = {
     ORB_OF_HORIZONS: RARE,
     HARBINGERS_ORB: EPIC,
     FRACTURING_ORB: LEGENDARY,
-    SCROLL_OF_WISDOM: RARE,
-    PORTAL_SCROLL: RARE,
-    ARMOURERS_SCRAP: RARE,
-    BLACKSMITHS_WHETSTONE: RARE,
+    ARMOURERS_SCRAP: COMMON,
+    BLACKSMITHS_WHETSTONE: COMMON,
     GLASSBLOWERS_BAUBLE: RARE,
-    ORB_OF_TRANSMUTATION: RARE,
-    ORB_OF_AUGMENTATION: RARE,
+    ORB_OF_TRANSMUTATION: COMMON,
+    ORB_OF_AUGMENTATION: COMMON,
     MIRROR_OF_KALANDRA: LEGENDARY,
     TEMPERING_ORB: LEGENDARY,
     TAILORING_ORB: LEGENDARY,
@@ -361,4 +358,11 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ],
     ),
+    Show(
+        [
+            BaseType("tattoo", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.EPIC),
+        ],
+    ),
+    Hide([BaseType("Gold")]),
 ]

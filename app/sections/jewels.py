@@ -1,4 +1,4 @@
-from app.blocks import Show
+from app.blocks import Show, Hide
 from app.conditions import Rarity, MultiBaseType
 from app.actions import TierStyle
 from app.categories import RARITY, OPERATOR
@@ -10,7 +10,7 @@ basic_jewels = [
 ]
 
 rules = [
-    Show(
+    Hide(
         [
             MultiBaseType(basic_jewels),
             Rarity(RARITY.RARE, operator=OPERATOR.LTE),

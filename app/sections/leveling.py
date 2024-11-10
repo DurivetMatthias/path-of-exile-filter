@@ -1,77 +1,88 @@
 from app.blocks import Show
-from app.conditions import SocketGroup, LinkedSockets, BaseType, AreaLevel
+from app.conditions import (
+    SocketGroup,
+    LinkedSockets,
+    AreaLevel,
+    Rarity,
+    Class,
+    MultiClass,
+)
 from app.actions import TierStyle
-from app.categories import TIER, OPERATOR
+from app.categories import TIER, RARITY
+
+BEFORE_RF = 16
+BEFORE_SIOSA = 30
+BEFORE_MAPS = 67
+
 
 rules = [
     Show(
         [
-            AreaLevel(16),
-            BaseType("Iron Ring"),
-            TierStyle(TIER.LEGENDARY),
+            Class("Quest Items"),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            AreaLevel(16),
-            BaseType("Lapis Amulet"),
-            TierStyle(TIER.LEGENDARY),
+            AreaLevel(BEFORE_RF),
+            Class("Currency"),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(
         [
-            AreaLevel(40),
-            BaseType("Quartz Sceptre"),
-            TierStyle(TIER.LEGENDARY),
+            AreaLevel(BEFORE_RF),
+            MultiClass(["Support Gems", "Skill Gems"]),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            AreaLevel(60),
-            BaseType("Crystal Sceptre"),
-            TierStyle(TIER.LEGENDARY),
+            AreaLevel(BEFORE_RF),
+            Rarity(RARITY.MAGIC),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            AreaLevel(67),
-            BaseType("Opal Sceptre"),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(67),
+            AreaLevel(BEFORE_MAPS),
             SocketGroup("bbbr"),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(67),
+            AreaLevel(BEFORE_MAPS),
             SocketGroup("ggbb"),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(67),
+            AreaLevel(BEFORE_MAPS),
             LinkedSockets(4),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(67),
-            BaseType("Amethyst Ring"),
-            TierStyle(TIER.LEGENDARY),
+            AreaLevel(BEFORE_MAPS),
+            Rarity(RARITY.RARE),
+            MultiClass(
+                [
+                    "Helmets",
+                    "Gloves",
+                    "Boots",
+                    "Body Armours",
+                    "Sceptres",
+                    "Shields",
+                    "Rings",
+                    "Amulets",
+                    "Belts",
+                ]
+            ),
+            TierStyle(TIER.COMMON),
         ]
     ),
-    Show(
-        [
-            AreaLevel(67),
-            BaseType("Quicksilver Flask"),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
+    # TODO life flasks
 ]

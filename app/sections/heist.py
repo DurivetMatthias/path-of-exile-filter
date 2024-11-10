@@ -1,4 +1,4 @@
-from app.blocks import Show
+from app.blocks import Show, Hide
 from app.actions import TierStyle
 from app.conditions import BaseType, StackSize, Class, MultiBaseType, MultiClass
 from app.categories import TIER
@@ -39,13 +39,13 @@ rules = [
             TierStyle(TIER.RARE),
         ]
     ),
-    Show(
+    Hide(
         [
             Class("Contracts"),
             TierStyle(TIER.EPIC),
         ]
     ),
-    Show(
+    Hide(
         [
             Class("Blueprints"),
             TierStyle(TIER.LEGENDARY),
@@ -72,7 +72,13 @@ rules = [
     Show(
         [
             BaseType("Rogue's Marker"),
-            StackSize(500),
+            StackSize(1000),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Hide(
+        [
+            BaseType("Rogue's Marker"),
             TierStyle(TIER.EPIC),
         ]
     ),

@@ -1,17 +1,22 @@
 from app.blocks import Show
-from app.conditions import BaseType, Rarity, MultiBaseType, MultiClass
+from app.conditions import (
+    BaseType,
+    MultiBaseType,
+    AreaLevel,
+    MultiClass,
+    BaseArmour,
+    Class,
+    Rarity,
+)
 from app.actions import TierStyle
 from app.categories import TIER, RARITY
 
-atlas_bases = [
-    "Vermillion Ring",
-    "Marble Amulet",
-]
+EARLY_MAPS = 82
 
 rules = [
     Show(
         [
-            MultiBaseType(atlas_bases),
+            MultiBaseType(["Vermillion Ring", "Marble Amulet"]),
             TierStyle(TIER.EPIC),
         ]
     ),
@@ -23,20 +28,64 @@ rules = [
     ),
     Show(
         [
-            Rarity(RARITY.RARE),
-            MultiClass(
-                [
-                    "Helmets",
-                    "Gloves",
-                    "Boots",
-                    "Body Armours",
-                    "Sceptres",
-                    "Shields",
-                    "Rings",
-                    "Amulets",
-                    "Belts",
-                ]
-            ),
+            AreaLevel(EARLY_MAPS),
+            MultiClass(["Gloves", "Boots"]),
+            BaseArmour(200),
+            Rarity(RARITY.MAGIC),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            Class("Helmets"),
+            BaseArmour(400),
+            Rarity(RARITY.MAGIC),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            Class("Body Armours"),
+            BaseArmour(800),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            BaseType("Void Sceptre"),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            Class("Shield"),
+            BaseArmour(500),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            BaseType("Leather Belt"),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            BaseType("Amethyst Ring"),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(EARLY_MAPS),
+            BaseType("Onyx Amulet"),
+            TierStyle(TIER.COMMON),
         ]
     ),
 ]

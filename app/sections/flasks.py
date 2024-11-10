@@ -1,15 +1,13 @@
 from app.blocks import Show
-from app.conditions import MultiBaseType, ItemLevel, Class, Quality
+from app.conditions import MultiBaseType, ItemLevel
 from app.actions import TierStyle
-from app.categories import TIER, OPERATOR
+from app.categories import TIER
 
 utility_flasks = [
     "Granite Flask",
     "Quartz Flask",
     "Quicksilver Flask",
     "Silver Flask",
-    "Sulphur Flask",
-    "Jade Flask",
     "Gold Flask",
 ]
 
@@ -25,13 +23,6 @@ rules = [
         [
             MultiBaseType(utility_flasks),
             TierStyle(TIER.EPIC),
-        ],
-    ),
-    Show(
-        [
-            Class("Flask", OPERATOR.EQUAL),
-            Quality(1),
-            TierStyle(TIER.RARE),
         ],
     ),
 ]
