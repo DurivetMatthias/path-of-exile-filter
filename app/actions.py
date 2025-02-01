@@ -1,9 +1,9 @@
-from app.extention import Extension
 from app.categories import *
-from app.formatting import format_extensions
+from app.conditions import Condition
+from app import formatting
 
 
-class PlayAlertSound(Extension):
+class PlayAlertSound(Condition):
     def __init__(
         self,
         sound: BASIC_SOUND,
@@ -18,7 +18,7 @@ class PlayAlertSound(Extension):
         """
 
 
-class MinimapIcon(Extension):
+class MinimapIcon(Condition):
     def __init__(
         self,
         size: SIZE,
@@ -35,7 +35,7 @@ class MinimapIcon(Extension):
         """
 
 
-class PlayEffect(Extension):
+class PlayEffect(Condition):
     def __init__(
         self,
         color: COLOR,
@@ -48,7 +48,7 @@ class PlayEffect(Extension):
         """
 
 
-class SetBorderColor(Extension):
+class SetBorderColor(Condition):
     def __init__(
         self,
         rgb: RGB,
@@ -61,7 +61,7 @@ class SetBorderColor(Extension):
         """
 
 
-class SetFontSize(Extension):
+class SetFontSize(Condition):
     def __init__(
         self,
         size: FONT_SIZE,
@@ -74,7 +74,7 @@ class SetFontSize(Extension):
         """
 
 
-class TierStyle(Extension):
+class TierStyle(Condition):
     def __init__(self, tier: TIER):
         self.tier = tier
 
@@ -103,7 +103,7 @@ class TierStyle(Extension):
             basic_sound = BASIC_SOUND.TINK
             volume = VOLUME.LOUD
 
-        child_extensions = [
+        child_conditions = [
             PlayEffect(color),
             MinimapIcon(SIZE.SMALL, color, SHAPE.CIRCLE),
             SetBorderColor(rgb),
@@ -111,4 +111,4 @@ class TierStyle(Extension):
             SetFontSize(FONT_SIZE.LARGE),
         ]
 
-        return format_extensions(child_extensions)
+        return formatting.format_conditions(child_conditions)

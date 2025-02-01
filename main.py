@@ -1,5 +1,5 @@
-from app.filter import generate
-from app.sections import (
+from app import filter
+from sections import (
     altered_bases,
     bases,
     card,
@@ -41,4 +41,4 @@ rules = [
     *hide_gear.rules,
 ]
 
-generate(rules=rules, filter_name="main")
+filter.generate(rules=rules, filter_name="main")

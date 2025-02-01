@@ -1,12 +1,16 @@
-from app.extention import Extension
 from app.categories import OPERATOR, RARITY
 
 
-class AreaLevel(Extension):
+class Condition:
+    def __str__(self):
+        raise NotImplementedError
+
+
+class AreaLevel(Condition):
     def __init__(
         self,
         value: int,
-        operator: OPERATOR = OPERATOR.LTE,
+        operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
         self.operator = operator
@@ -17,7 +21,7 @@ class AreaLevel(Extension):
         """
 
 
-class BaseArmour(Extension):
+class BaseArmour(Condition):
     def __init__(
         self,
         value: int,
@@ -32,7 +36,7 @@ class BaseArmour(Extension):
         """
 
 
-class BaseDefensePercentile(Extension):
+class BaseDefensePercentile(Condition):
     def __init__(
         self,
         value: int,
@@ -47,7 +51,7 @@ class BaseDefensePercentile(Extension):
         """
 
 
-class BaseEnergyShield(Extension):
+class BaseEnergyShield(Condition):
     def __init__(
         self,
         value: int,
@@ -62,7 +66,7 @@ class BaseEnergyShield(Extension):
         """
 
 
-class BaseEvasion(Extension):
+class BaseEvasion(Condition):
     def __init__(
         self,
         value: int,
@@ -77,7 +81,7 @@ class BaseEvasion(Extension):
         """
 
 
-class BaseType(Extension):
+class BaseType(Condition):
     def __init__(
         self,
         value: str,
@@ -92,7 +96,7 @@ class BaseType(Extension):
         """
 
 
-class Class(Extension):
+class Class(Condition):
     def __init__(
         self,
         value: str,
@@ -107,7 +111,7 @@ class Class(Extension):
         """
 
 
-class Corrupted(Extension):
+class Corrupted(Condition):
     def __init__(
         self,
         value: bool,
@@ -120,7 +124,7 @@ class Corrupted(Extension):
         """
 
 
-class CorruptedMods(Extension):
+class CorruptedMods(Condition):
     def __init__(
         self,
         value: int = 1,
@@ -135,7 +139,7 @@ class CorruptedMods(Extension):
         """
 
 
-class ElderItem(Extension):
+class ElderItem(Condition):
     def __init__(
         self,
         value: bool,
@@ -148,7 +152,7 @@ class ElderItem(Extension):
         """
 
 
-class EnchantmentPassiveNum(Extension):
+class EnchantmentPassiveNum(Condition):
     def __init__(
         self,
         value: int = 1,
@@ -163,14 +167,14 @@ class EnchantmentPassiveNum(Extension):
         """
 
 
-class FracturedItem(Extension):
+class FracturedItem(Condition):
     def __str__(self):
         return """
             FracturedItem true
         """
 
 
-class GemLevel(Extension):
+class GemLevel(Condition):
     def __init__(
         self,
         value: int = 1,
@@ -185,7 +189,7 @@ class GemLevel(Extension):
         """
 
 
-class HasInfluence(Extension):
+class HasInfluence(Condition):
     def __init__(
         self,
         value: bool,
@@ -198,7 +202,7 @@ class HasInfluence(Extension):
         """
 
 
-class Height(Extension):
+class Height(Condition):
     def __init__(
         self,
         value: int,
@@ -213,14 +217,14 @@ class Height(Extension):
         """
 
 
-class Influenced(Extension):
+class Influenced(Condition):
     def __str__(self):
         return """
             HasInfluence "Shaper" "Elder" "Crusader" "Hunter" "Redeemer" "Warlord"
         """
 
 
-class ItemLevel(Extension):
+class ItemLevel(Condition):
     def __init__(
         self,
         value: int,
@@ -235,7 +239,7 @@ class ItemLevel(Extension):
         """
 
 
-class LinkedSockets(Extension):
+class LinkedSockets(Condition):
     def __init__(
         self,
         value: int,
@@ -250,7 +254,7 @@ class LinkedSockets(Extension):
         """
 
 
-class MapTier(Extension):
+class MapTier(Condition):
     def __init__(
         self,
         value: int,
@@ -261,11 +265,11 @@ class MapTier(Extension):
 
     def __str__(self):
         return f"""
-            MapTier {self.operator} {self.value}
+            WaystoneTier {self.operator} {self.value}
         """
 
 
-class MultiBaseType(Extension):
+class MultiBaseType(Condition):
     def __init__(
         self,
         values: list[str],
@@ -283,7 +287,7 @@ class MultiBaseType(Extension):
         """
 
 
-class MultiClass(Extension):
+class MultiClass(Condition):
     def __init__(
         self,
         values: list[str],
@@ -301,7 +305,7 @@ class MultiClass(Extension):
         """
 
 
-class Quality(Extension):
+class Quality(Condition):
     def __init__(
         self,
         value: int,
@@ -316,7 +320,7 @@ class Quality(Extension):
         """
 
 
-class Rarity(Extension):
+class Rarity(Condition):
     def __init__(
         self,
         value: RARITY,
@@ -331,7 +335,7 @@ class Rarity(Extension):
         """
 
 
-class Replica(Extension):
+class Replica(Condition):
     def __init__(
         self,
         value: bool,
@@ -344,7 +348,7 @@ class Replica(Extension):
         """
 
 
-class ShaperItem(Extension):
+class ShaperItem(Condition):
     def __init__(
         self,
         value: bool,
@@ -357,7 +361,7 @@ class ShaperItem(Extension):
         """
 
 
-class SocketGroup(Extension):
+class SocketGroup(Condition):
     def __init__(
         self,
         value: str,
@@ -372,7 +376,7 @@ class SocketGroup(Extension):
         """
 
 
-class Sockets(Extension):
+class Sockets(Condition):
     def __init__(
         self,
         value: str,
@@ -387,7 +391,7 @@ class Sockets(Extension):
         """
 
 
-class StackSize(Extension):
+class StackSize(Condition):
     def __init__(
         self,
         value: str,
@@ -402,7 +406,7 @@ class StackSize(Extension):
         """
 
 
-class SynthesisedItem(Extension):
+class SynthesisedItem(Condition):
     def __init__(
         self,
         value: bool,
@@ -415,7 +419,7 @@ class SynthesisedItem(Extension):
         """
 
 
-class TransfiguredGem(Extension):
+class TransfiguredGem(Condition):
     def __init__(
         self,
         value: bool,
@@ -428,21 +432,21 @@ class TransfiguredGem(Extension):
         """
 
 
-class VeiledPrefix(Extension):
+class VeiledPrefix(Condition):
     def __str__(self):
         return """
             HasExplicitMod "Veiled"
         """
 
 
-class VeiledSuffix(Extension):
+class VeiledSuffix(Condition):
     def __str__(self):
         return """
             HasExplicitMod "of the Veil"
         """
 
 
-class Width(Extension):
+class Width(Condition):
     def __init__(
         self,
         value: str,

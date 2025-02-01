@@ -1,24 +1,23 @@
-from abc import ABC
-from app.extention import Extension
+from app.conditions import Condition
 
 
-class Rule(ABC):
-    __slots__ = ["instruction", "extensions"]
+class Block:
+    __slots__ = ["instruction", "conditions"]
 
 
-class Show(Rule):
+class Show(Block):
     def __init__(
         self,
-        extensions: list[Extension],
+        conditions: list[Condition],
     ):
         self.instruction = "Show"
-        self.extensions = extensions
+        self.conditions = conditions
 
 
-class Hide(Rule):
+class Hide(Block):
     def __init__(
         self,
-        extensions: list[Extension],
+        conditions: list[Condition],
     ):
         self.instruction = "Hide"
-        self.extensions = extensions
+        self.conditions = conditions
