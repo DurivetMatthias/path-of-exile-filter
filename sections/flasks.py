@@ -1,5 +1,5 @@
-from app.blocks import Show
-from app.conditions import MultiBaseType, ItemLevel
+from app.blocks import Show, Hide
+from app.conditions import MultiBaseType, ItemLevel, MultiClass
 from app.actions import TierStyle
 from app.categories import TIER
 
@@ -23,6 +23,12 @@ rules = [
         [
             MultiBaseType(utility_flasks),
             TierStyle(TIER.EPIC),
+        ],
+    ),
+    Hide(
+        [
+            MultiClass(["Life Flasks", "Mana Flasks"]),
+            TierStyle(TIER.COMMON),
         ],
     ),
 ]

@@ -1,12 +1,7 @@
 from app.blocks import Show
-from app.conditions import (
-    BaseType,
-    AreaLevel,
-    MultiClass,
-    LinkedSockets,
-)
+from app.conditions import BaseType, AreaLevel
 from app.actions import TierStyle
-from app.categories import TIER
+from app.categories import TIER, OPERATOR
 
 BEFORE_RF = 16
 BEFORE_SIOSA = 30
@@ -15,191 +10,105 @@ BEFORE_MAPS = 67
 rules = [
     Show(
         [
-            AreaLevel(BEFORE_RF),
-            BaseType("Rawhide Tower Shield"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(8),
-            MultiClass(
-                [
-                    "Two Hand Sword",
-                    "Two Hand Axe",
-                    "Two Hand Mace",
-                ]
-            ),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(12),
-            BaseType("Jade Chopper"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(BEFORE_RF),
-            BaseType("Woodsplitter"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(5),
+            AreaLevel(5, operator=OPERATOR.LTE),
             BaseType("Plate Vest"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(16),
+            AreaLevel(16, operator=OPERATOR.LTE),
             BaseType("Chestplate"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(6),
+            AreaLevel(6, operator=OPERATOR.LTE),
             BaseType("Iron Hat"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(17),
+            AreaLevel(17, operator=OPERATOR.LTE),
             BaseType("Cone Helmet"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(10),
+            AreaLevel(10, operator=OPERATOR.LTE),
             BaseType("Iron Gauntlets"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(15),
+            AreaLevel(15, operator=OPERATOR.LTE),
             BaseType("Plated Gauntlets"),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            AreaLevel(8),
-            BaseType("Iron Greaves"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(19),
-            BaseType("Steel Greaves"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(BEFORE_RF),
+            AreaLevel(BEFORE_RF, operator=OPERATOR.LTE),
             BaseType("Rustic Sash"),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(BEFORE_RF),
+            AreaLevel(BEFORE_RF, operator=OPERATOR.LTE),
             BaseType("Jade Amulet"),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(BEFORE_RF),
-            BaseType("Lapis Amulet"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(BEFORE_RF),
-            BaseType("Coral Ring"),
-            TierStyle(TIER.RARE),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(BEFORE_RF),
+            AreaLevel(BEFORE_RF, operator=OPERATOR.LTE),
             BaseType("Iron Ring"),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(40),
+            AreaLevel(40, operator=OPERATOR.LTE),
             BaseType("Quartz Sceptre"),
-            LinkedSockets(3),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(40),
-            BaseType("Quartz Sceptre"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(60),
+            AreaLevel(60, operator=OPERATOR.LTE),
             BaseType("Crystal Sceptre"),
-            LinkedSockets(3),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(60),
-            BaseType("Crystal Sceptre"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(BEFORE_MAPS),
+            AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             BaseType("Opal Sceptre"),
-            LinkedSockets(3),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(BEFORE_MAPS),
-            BaseType("Opal Sceptre"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(BEFORE_MAPS),
+            AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             BaseType("Amethyst Ring"),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(BEFORE_MAPS),
+            AreaLevel(BEFORE_SIOSA, operator=OPERATOR.LTE),
             BaseType("Leather Belt"),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(BEFORE_MAPS),
+            AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             BaseType("Quicksilver Flask"),
             TierStyle(TIER.LEGENDARY),
         ]

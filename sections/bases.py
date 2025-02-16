@@ -9,7 +9,7 @@ from app.conditions import (
     Rarity,
 )
 from app.actions import TierStyle
-from app.categories import TIER, RARITY
+from app.categories import TIER, RARITY, OPERATOR
 
 EARLY_MAPS = 82
 
@@ -28,7 +28,7 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             MultiClass(["Gloves", "Boots"]),
             BaseArmour(200),
             Rarity(RARITY.MAGIC),
@@ -37,7 +37,7 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             Class("Helmets"),
             BaseArmour(400),
             Rarity(RARITY.MAGIC),
@@ -46,7 +46,7 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             Class("Body Armours"),
             BaseArmour(800),
             TierStyle(TIER.COMMON),
@@ -54,14 +54,14 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             BaseType("Void Sceptre"),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             Class("Shield"),
             BaseArmour(500),
             TierStyle(TIER.COMMON),
@@ -69,21 +69,21 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             BaseType("Leather Belt"),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             BaseType("Amethyst Ring"),
             TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS),
+            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
             BaseType("Onyx Amulet"),
             TierStyle(TIER.COMMON),
         ]

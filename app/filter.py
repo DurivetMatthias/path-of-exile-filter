@@ -15,7 +15,7 @@ from app.actions import TierStyle
 from app.categories import TIER
 
 FILTER_EXTENSION = "filter"
-FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile 2"
+FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile"
 
 
 def sort_by_tierstyle(a: Block):

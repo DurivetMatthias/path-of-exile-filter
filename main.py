@@ -12,6 +12,7 @@ from sections import (
     jewels,
     leveling,
     leveling_bases,
+    spectral_throw,
     map,
     scarabs,
     scrolls,
@@ -39,6 +40,7 @@ rules = [
     *unique.rules,
     *veiled.rules,
     *hide_gear.rules,
+    *spectral_throw.rules,
 ]
 
 filter.generate(rules=rules, filter_name="main")
