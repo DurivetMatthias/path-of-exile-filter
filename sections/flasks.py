@@ -25,10 +25,14 @@ rules = [
             TierStyle(TIER.EPIC),
         ],
     ),
-    Hide(
-        [
-            MultiClass(["Life Flasks", "Mana Flasks"]),
-            TierStyle(TIER.COMMON),
-        ],
-    ),
+    # Hide(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Life Flask",
+    #                 "Mana Flask",
+    #             ]
+    #         )
+    #     ]
+    # ),
 ]

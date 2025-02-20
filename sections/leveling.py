@@ -26,7 +26,7 @@ rules = [
         [
             AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             Class("Currency"),
-            TierStyle(TIER.RARE),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
@@ -64,25 +64,33 @@ rules = [
             TierStyle(TIER.EPIC),
         ]
     ),
-    # Show(
-    #     [
-    #         AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
-    #         Rarity(RARITY.RARE),
-    #         MultiClass(
-    #             [
-    #                 "Helmets",
-    #                 "Gloves",
-    #                 "Boots",
-    #                 "Body Armours",
-    #                 "Sceptres",
-    #                 "Shields",
-    #                 "Rings",
-    #                 "Amulets",
-    #                 "Belts",
-    #             ]
-    #         ),
-    #         TierStyle(TIER.COMMON),
-    #     ]
-    # ),
-    # TODO life flasks
+    Show(
+        [
+            AreaLevel(BEFORE_SIOSA, operator=OPERATOR.LTE),
+            Rarity(RARITY.RARE),
+            MultiClass(
+                [
+                    "Helmets",
+                    "Gloves",
+                    "Body Armours",
+                    "Sceptres",
+                    "Shields",
+                ]
+            ),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
+        [
+            AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
+            Rarity(RARITY.MAGIC),
+            MultiClass(
+                [
+                    "Boots",
+                ]
+            ),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show([AreaLevel(BEFORE_RF, operator=OPERATOR.LTE)]),
 ]

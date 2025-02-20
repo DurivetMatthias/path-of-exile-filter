@@ -19,6 +19,7 @@ from sections import (
     unique,
     veiled,
     vendor,
+    idols,
 )
 
 rules = [
@@ -41,6 +42,7 @@ rules = [
     *veiled.rules,
     *hide_gear.rules,
     *spectral_throw.rules,
+    *idols.rules,
 ]
 
 filter.generate(rules=rules, filter_name="main")
