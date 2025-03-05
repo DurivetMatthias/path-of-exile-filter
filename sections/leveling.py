@@ -66,7 +66,7 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(BEFORE_SIOSA, operator=OPERATOR.LTE),
+            AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             Rarity(RARITY.RARE),
             MultiClass(
                 [
@@ -82,7 +82,7 @@ rules = [
     ),
     Show(
         [
-            AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
+            AreaLevel(BEFORE_SIOSA, operator=OPERATOR.LTE),
             Rarity(RARITY.MAGIC),
             MultiClass(
                 [

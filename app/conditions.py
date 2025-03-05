@@ -446,6 +446,9 @@ class VeiledSuffix(Condition):
         """
 
 
+# TODO: of Riker's Veil
+
+
 class Width(Condition):
     def __init__(
         self,

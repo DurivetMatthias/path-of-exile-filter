@@ -7,6 +7,7 @@ from app.conditions import (
     BaseArmour,
     Class,
     Rarity,
+    ItemLevel,
 )
 from app.actions import TierStyle
 from app.categories import TIER, RARITY, OPERATOR
@@ -17,74 +18,60 @@ rules = [
     Show(
         [
             MultiBaseType(["Vermillion Ring", "Marble Amulet"]),
-            TierStyle(TIER.EPIC),
+            ItemLevel(84),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            BaseType("Scholar's Robe"),
-            TierStyle(TIER.EPIC),
+            MultiClass(["Boots"]),
+            BaseArmour(359),
+            ItemLevel(85),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    # Show(
+    #     [
+    #         MultiClass(["Helmets"]),
+    #         BaseArmour(501),
+    #         ItemLevel(85),
+    #         TierStyle(TIER.LEGENDARY),
+    #     ]
+    # ),
+    Show(
+        [
+            MultiClass(["Gloves"]),
+            BaseArmour(359),
+            ItemLevel(85),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    # Show(
+    #     [
+    #         MultiClass(["Shield"]),
+    #         BaseArmour(467),
+    #         ItemLevel(84),
+    #         TierStyle(TIER.LEGENDARY),
+    #     ]
+    # ),
+    Show(
+        [
+            MultiBaseType(["Amethyst Ring"]),
+            ItemLevel(84),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            MultiClass(["Gloves", "Boots"]),
-            BaseArmour(200),
-            Rarity(RARITY.MAGIC),
-            TierStyle(TIER.COMMON),
+            MultiBaseType(["Onyx Amulet", "Jade Amulet"]),
+            ItemLevel(84),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(
         [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            Class("Helmets"),
-            BaseArmour(400),
-            Rarity(RARITY.MAGIC),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            Class("Body Armours"),
-            BaseArmour(800),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            BaseType("Void Sceptre"),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            Class("Shield"),
-            BaseArmour(500),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            BaseType("Leather Belt"),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            BaseType("Amethyst Ring"),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            AreaLevel(EARLY_MAPS, operator=OPERATOR.LTE),
-            BaseType("Onyx Amulet"),
+            MultiClass(["Ring", "Amulet"]),
+            Rarity(RARITY.RARE),
             TierStyle(TIER.COMMON),
         ]
     ),

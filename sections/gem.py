@@ -20,6 +20,7 @@ rules = [
         [
             Class("Support Gems"),
             BaseType("Awakened", operator=OPERATOR.EQUAL),
+            TierStyle(TIER.LEGENDARY),
         ],
     ),
     Hide(

@@ -10,16 +10,16 @@ from app.categories import TIER, OPERATOR
 
 
 def level_to_stack_size(area_level):
-    return area_level // 10
+    return min(80, area_level) // 10
 
 
 show_scrolls = [
     Show(
         [
-            AreaLevel(area_level),
+            AreaLevel(area_level, operator=OPERATOR.LTE),
             MultiBaseType([SCROLL_OF_WISDOM, PORTAL_SCROLL]),
             TierStyle(TIER.COMMON),
-            StackSize(level_to_stack_size(area_level)),
+            StackSize(level_to_stack_size(area_level), operator=OPERATOR.GTE),
         ]
     )
     for area_level in range(10, 100, 10)
@@ -27,7 +27,7 @@ show_scrolls = [
 hide_scrolls = [
     Hide(
         [
-            AreaLevel(area_level),
+            AreaLevel(area_level, operator=OPERATOR.LTE),
             MultiBaseType([SCROLL_OF_WISDOM, PORTAL_SCROLL]),
             StackSize(level_to_stack_size(area_level), operator=OPERATOR.LT),
         ]

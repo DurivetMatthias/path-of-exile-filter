@@ -9,6 +9,9 @@ utility_flasks = [
     "Quicksilver Flask",
     "Silver Flask",
     "Gold Flask",
+    "Ruby Flask",
+    "Topaz Flask",
+    "Sapphire Flask",
 ]
 
 rules = [
@@ -22,17 +25,29 @@ rules = [
     Show(
         [
             MultiBaseType(utility_flasks),
+            ItemLevel(80),
             TierStyle(TIER.EPIC),
         ],
     ),
-    # Hide(
+    # Show(
     #     [
-    #         MultiBaseType(
+    #         MultiClass(
     #             [
-    #                 "Life Flask",
-    #                 "Mana Flask",
+    #                 "Life Flasks",
+    #                 "Mana Flasks",
     #             ]
-    #         )
+    #         ),
+    #         TierStyle(TIER.COMMON),
     #     ]
     # ),
+    Hide(
+        [
+            MultiClass(
+                [
+                    "Life Flasks",
+                    "Mana Flasks",
+                ]
+            )
+        ]
+    ),
 ]

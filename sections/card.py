@@ -32,7 +32,7 @@ cards = {
     "Arrogance of the Vaal": LEGENDARY,
     "Assassin's Favour": HIDE,
     "Assassin's Gift": HIDE,
-    "Astral Protection": HIDE,
+    "Astral Protection": LEGENDARY,
     "Atziri's Arsenal": HIDE,
     "Audacity": HIDE,
     "Auspicious Ambitions": LEGENDARY,

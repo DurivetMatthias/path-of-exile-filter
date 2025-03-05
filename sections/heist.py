@@ -1,7 +1,14 @@
 from app.blocks import Show, Hide
 from app.actions import TierStyle
-from app.conditions import BaseType, StackSize, Class, MultiBaseType, MultiClass
-from app.categories import TIER
+from app.conditions import (
+    BaseType,
+    StackSize,
+    Class,
+    MultiBaseType,
+    MultiClass,
+    ItemLevel,
+)
+from app.categories import TIER, OPERATOR
 
 best_in_slot_items = [
     "Foliate Brooch",
@@ -39,16 +46,30 @@ rules = [
             TierStyle(TIER.RARE),
         ]
     ),
-    Hide(
+    Show(
         [
             Class("Contracts"),
+            ItemLevel(83),
             TierStyle(TIER.EPIC),
         ]
     ),
-    Hide(
+    Show(
+        [
+            Class("Contracts"),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    Show(
         [
             Class("Blueprints"),
+            ItemLevel(83),
             TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            Class("Blueprints"),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(
@@ -72,7 +93,7 @@ rules = [
     Show(
         [
             BaseType("Rogue's Marker"),
-            StackSize(1000),
+            StackSize(200),
             TierStyle(TIER.EPIC),
         ]
     ),

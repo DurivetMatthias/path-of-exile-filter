@@ -20,17 +20,17 @@ currencies = {
     EXALTED_ORB: LEGENDARY,
     CHROMATIC_ORB: RARE,
     JEWELLERS_ORB: COMMON,
-    ENGINEERS_ORB: RARE,
+    ENGINEERS_ORB: EPIC,
     INFUSED_ENGINEERS_ORB: LEGENDARY,
     ORB_OF_CHANCE: RARE,
-    QUANTITY_CHISEL: RARE,
+    QUANTITY_CHISEL: EPIC,
     RARITY_CHISEL: EPIC,
     PACK_CHISEL: EPIC,
     SCARAB_CHISEL: EPIC,
     CURRENCY_CHISEL: EPIC,
     DIVINATION_CHISEL: EPIC,
-    ORB_OF_SCOURING: RARE,
-    BLESSED_ORB: RARE,
+    ORB_OF_SCOURING: EPIC,
+    BLESSED_ORB: EPIC,
     ORB_OF_REGRET: RARE,
     REGAL_ORB: RARE,
     DIVINE_ORB: LEGENDARY,
@@ -98,7 +98,7 @@ currencies = {
     REGAL_SHARD: RARE,
     ANNULMENT_SHARD: LEGENDARY,
     BINDING_SHARD: RARE,
-    ANCIENT_SHARD: RARE,
+    ANCIENT_SHARD: EPIC,
     HORIZON_SHARD: RARE,
     HARBINGERS_SHARD: RARE,
     FRACTURING_SHARD: LEGENDARY,
@@ -190,7 +190,7 @@ currencies = {
     DECAYING_RELIQUARY_KEY: LEGENDARY,
     VOIDBORN_RELIQUARY_KEY: LEGENDARY,
     VALDOS_PUZZLE_BOX: LEGENDARY,
-    DIVINE_VESSEL: RARE,
+    DIVINE_VESSEL: HIDE,
     # omens
     OMEN_OF_AMELIORATION: EPIC,
     # OMEN_OF_RETURN:EPIC,
@@ -318,6 +318,8 @@ currencies = {
     COSMIC_FRAGMENT: LEGENDARY,
     AWAKENING_FRAGMENT: LEGENDARY,
     DECAYING_FRAGMENT: LEGENDARY,
+    # Memories
+    "Einhar's Memory": LEGENDARY,
 }
 
 
@@ -329,11 +331,11 @@ legendary = [name for (name, tier) in currencies.items() if tier == LEGENDARY]
 
 
 rules = [
-    # Hide(
-    #     [
-    #         MultiBaseType(hidden),
-    #     ],
-    # ),
+    Hide(
+        [
+            MultiBaseType(hidden),
+        ],
+    ),
     Show(
         [
             MultiBaseType(common),
