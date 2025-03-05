@@ -8,14 +8,14 @@ reduce it to one-to-one as much as possible
 
 import os
 import datetime
-
+from pathlib import Path
 from app import formatting
 from app.blocks import Block, Hide, Show
 from app.actions import TierStyle
 from app.categories import TIER
 
 FILTER_EXTENSION = "filter"
-FILTER_OUTPUT_PATH = "C:\\Users\\matth\\Documents\\my games\\Path of Exile"
+FILTER_OUTPUT_PATH = f"{Path.home()}\\Documents\\My Games\\Path of Exile"
 
 
 def sort_by_tierstyle(a: Block):
