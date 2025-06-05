@@ -29,12 +29,19 @@ rules = [
             TierStyle(TIER.EPIC),
         ],
     ),
+    Show(
+        [
+            MultiBaseType(utility_flasks),
+            # ItemLevel(80),
+            TierStyle(TIER.RARE),
+        ],
+    ),
     # Show(
     #     [
     #         MultiClass(
     #             [
     #                 "Life Flasks",
-    #                 "Mana Flasks",
+    #                 # "Mana Flasks",
     #             ]
     #         ),
     #         TierStyle(TIER.COMMON),

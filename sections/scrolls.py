@@ -9,8 +9,17 @@ from app.actions import TierStyle
 from app.categories import TIER, OPERATOR
 
 
-def level_to_stack_size(area_level):
-    return min(80, area_level) // 10
+def level_to_stack_rule(area_level):
+    if area_level < 68:
+        return StackSize(1, operator=OPERATOR.GTE)
+
+    if area_level < 75:
+        return StackSize(4, operator=OPERATOR.GTE)
+
+    if area_level < 80:
+        return StackSize(6, operator=OPERATOR.GTE)
+
+    return StackSize(8, operator=OPERATOR.GTE)
 
 
 show_scrolls = [
@@ -19,21 +28,12 @@ show_scrolls = [
             AreaLevel(area_level, operator=OPERATOR.LTE),
             MultiBaseType([SCROLL_OF_WISDOM, PORTAL_SCROLL]),
             TierStyle(TIER.COMMON),
-            StackSize(level_to_stack_size(area_level), operator=OPERATOR.GTE),
+            level_to_stack_rule(area_level),
         ]
     )
-    for area_level in range(10, 100, 10)
+    for area_level in range(1, 100)
 ]
-hide_scrolls = [
-    Hide(
-        [
-            AreaLevel(area_level, operator=OPERATOR.LTE),
-            MultiBaseType([SCROLL_OF_WISDOM, PORTAL_SCROLL]),
-            StackSize(level_to_stack_size(area_level), operator=OPERATOR.LT),
-        ]
-    )
-    for area_level in range(10, 100, 10)
-]
+hide_scrolls = [Hide([MultiBaseType([SCROLL_OF_WISDOM, PORTAL_SCROLL])])]
 rules = [
     *show_scrolls,
     *hide_scrolls,

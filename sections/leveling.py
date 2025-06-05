@@ -48,6 +48,7 @@ rules = [
             AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             SocketGroup("bbbr"),
             TierStyle(TIER.LEGENDARY),
+            MultiClass(["Helmets", "Gloves", "Body Armours"]),
         ]
     ),
     Show(
@@ -55,6 +56,7 @@ rules = [
             AreaLevel(BEFORE_MAPS, operator=OPERATOR.LTE),
             SocketGroup("ggbb"),
             TierStyle(TIER.LEGENDARY),
+            MultiClass(["Helmets", "Gloves", "Body Armours"]),
         ]
     ),
     Show(

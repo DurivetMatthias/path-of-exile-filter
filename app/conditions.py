@@ -24,7 +24,7 @@ class AreaLevel(Condition):
 class BaseArmour(Condition):
     def __init__(
         self,
-        value: int,
+        value: int = 1,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -54,7 +54,7 @@ class BaseDefensePercentile(Condition):
 class BaseEnergyShield(Condition):
     def __init__(
         self,
-        value: int,
+        value: int = 1,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -69,7 +69,7 @@ class BaseEnergyShield(Condition):
 class BaseEvasion(Condition):
     def __init__(
         self,
-        value: int,
+        value: int = 1,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -394,7 +394,7 @@ class Sockets(Condition):
 class StackSize(Condition):
     def __init__(
         self,
-        value: str,
+        value: int,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value

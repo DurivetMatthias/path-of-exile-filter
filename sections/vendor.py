@@ -10,12 +10,12 @@ rules = [
     #         TierStyle(TIER.EPIC),
     #     ],
     # ),
-    # Show(
-    #     [
-    #         Sockets("6"),
-    #         TierStyle(TIER.EPIC),
-    #     ],
-    # ),
+    Show(
+        [
+            Sockets("6"),
+            TierStyle(TIER.EPIC),
+        ],
+    ),
     Show(
         [
             LinkedSockets(6),

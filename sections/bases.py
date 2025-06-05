@@ -5,6 +5,8 @@ from app.conditions import (
     AreaLevel,
     MultiClass,
     BaseArmour,
+    BaseEnergyShield,
+    BaseEvasion,
     Class,
     Rarity,
     ItemLevel,
@@ -17,62 +19,33 @@ EARLY_MAPS = 82
 rules = [
     Show(
         [
-            MultiBaseType(["Vermillion Ring", "Marble Amulet"]),
-            ItemLevel(84),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            MultiClass(["Boots"]),
-            BaseArmour(359),
-            ItemLevel(85),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    # Show(
-    #     [
-    #         MultiClass(["Helmets"]),
-    #         BaseArmour(501),
-    #         ItemLevel(85),
-    #         TierStyle(TIER.LEGENDARY),
-    #     ]
-    # ),
-    Show(
-        [
-            MultiClass(["Gloves"]),
-            BaseArmour(359),
-            ItemLevel(85),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    # Show(
-    #     [
-    #         MultiClass(["Shield"]),
-    #         BaseArmour(467),
-    #         ItemLevel(84),
-    #         TierStyle(TIER.LEGENDARY),
-    #     ]
-    # ),
-    Show(
-        [
-            MultiBaseType(["Amethyst Ring"]),
-            ItemLevel(84),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            MultiBaseType(["Onyx Amulet", "Jade Amulet"]),
-            ItemLevel(84),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            MultiClass(["Ring", "Amulet"]),
             Rarity(RARITY.RARE),
-            TierStyle(TIER.COMMON),
+            BaseArmour(),
+            BaseEnergyShield(0, OPERATOR.EQUAL),
+            BaseEvasion(0, OPERATOR.EQUAL),
+            MultiClass(
+                [
+                    "Boots",
+                    "Gloves",
+                    "Helmets",
+                    # "Body Armours",
+                    "Shields",
+                ]
+            ),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Void Sceptre",
+                    "Turquoise Amulet",
+                    "Scholar's Robe",
+                    "Amethyst Ring",
+                ]
+            ),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
 ]

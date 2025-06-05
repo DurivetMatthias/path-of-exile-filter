@@ -53,7 +53,7 @@ rules = [
             TierStyle(TIER.EPIC),
         ]
     ),
-    Show(
+    Hide(
         [
             Class("Contracts"),
             TierStyle(TIER.COMMON),
