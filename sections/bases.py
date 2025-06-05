@@ -1,20 +1,14 @@
 from app.blocks import Show
 from app.conditions import (
-    BaseType,
     MultiBaseType,
-    AreaLevel,
     MultiClass,
     BaseArmour,
     BaseEnergyShield,
     BaseEvasion,
-    Class,
     Rarity,
-    ItemLevel,
 )
 from app.actions import TierStyle
 from app.categories import TIER, RARITY, OPERATOR
-
-EARLY_MAPS = 82
 
 rules = [
     Show(
@@ -28,7 +22,7 @@ rules = [
                     "Boots",
                     "Gloves",
                     "Helmets",
-                    # "Body Armours",
+                    "Body Armours",
                     "Shields",
                 ]
             ),

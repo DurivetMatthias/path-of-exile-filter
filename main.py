@@ -17,7 +17,6 @@ from sections import (
     scarabs,
     scrolls,
     unique,
-    veiled,
     vendor,
     idols,
 )
@@ -39,7 +38,6 @@ rules = [
     *map.rules,
     *scarabs.rules,
     *unique.rules,
-    *veiled.rules,
     *hide_gear.rules,
     *spectral_throw.rules,
     *idols.rules,

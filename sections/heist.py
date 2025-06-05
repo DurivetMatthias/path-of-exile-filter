@@ -8,7 +8,7 @@ from app.conditions import (
     MultiClass,
     ItemLevel,
 )
-from app.categories import TIER, OPERATOR
+from app.categories import TIER
 
 best_in_slot_items = [
     "Foliate Brooch",
@@ -100,7 +100,6 @@ rules = [
     Hide(
         [
             BaseType("Rogue's Marker"),
-            TierStyle(TIER.EPIC),
         ]
     ),
 ]

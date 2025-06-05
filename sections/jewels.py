@@ -6,14 +6,19 @@ from app.categories import TIER, JEWEL, RARITY, OPERATOR
 rules = [
     Show(
         [
-            MultiBaseType([JEWEL.CRIMSON, JEWEL.MEDIUM_CLUSTER, JEWEL.LARGE_CLUSTER]),
+            MultiBaseType(
+                [
+                    # JEWEL.CRIMSON,
+                    JEWEL.MEDIUM_CLUSTER,
+                    JEWEL.LARGE_CLUSTER,
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ],
     ),
     Hide(
         [
             MultiBaseType(list(JEWEL)),
-            Rarity(RARITY.RARE, operator=OPERATOR.LTE),
         ],
     ),
 ]

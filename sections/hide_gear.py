@@ -39,10 +39,4 @@ rules = [
             AreaLevel(30, OPERATOR.GTE),
         ]
     ),
-    Hide(
-        [
-            MultiClass(hidden_flasks),
-            AreaLevel(30, OPERATOR.GTE),
-        ]
-    ),
 ]

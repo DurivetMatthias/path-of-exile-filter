@@ -82,7 +82,7 @@ for essence_type, essence_tier in product:
     if essence_tier == "Deafening":
         tier = LEGENDARY
     if essence_tier in ["Whispering", "Muttering", "Weeping", "Wailing"]:
-        tier = HIDE
+        tier = COMMON
 
     essences[name] = tier
 
@@ -97,17 +97,17 @@ legendary = [name for (name, tier) in essences.items() if tier == LEGENDARY]
 
 
 rules = [
-    Hide(
-        [
-            MultiBaseType(hidden),
-        ],
-    ),
-    # Show(
+    # Hide(
     #     [
-    #         MultiBaseType(common),
-    #         TierStyle(TIER.COMMON),
+    #         MultiBaseType(hidden),
     #     ],
     # ),
+    Show(
+        [
+            MultiBaseType(common),
+            TierStyle(TIER.COMMON),
+        ],
+    ),
     Show(
         [
             MultiBaseType(rare),

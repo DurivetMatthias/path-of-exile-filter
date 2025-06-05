@@ -32,29 +32,14 @@ rules = [
     Show(
         [
             MultiBaseType(utility_flasks),
-            # ItemLevel(80),
             TierStyle(TIER.RARE),
         ],
     ),
-    # Show(
-    #     [
-    #         MultiClass(
-    #             [
-    #                 "Life Flasks",
-    #                 # "Mana Flasks",
-    #             ]
-    #         ),
-    #         TierStyle(TIER.COMMON),
-    #     ]
-    # ),
-    Hide(
+    Show(
         [
-            MultiClass(
-                [
-                    "Life Flasks",
-                    "Mana Flasks",
-                ]
-            )
+            MultiClass(["Life Flasks", "Mana Flasks"]),
+            TierStyle(TIER.COMMON),
         ]
     ),
+    Hide([MultiClass(["Life Flasks", "Mana Flasks"])]),
 ]
