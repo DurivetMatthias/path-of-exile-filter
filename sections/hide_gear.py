@@ -1,6 +1,8 @@
-from app.blocks import Hide
-from app.conditions import MultiClass, AreaLevel
-from app.categories import OPERATOR
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 hidden_gear = [
     "Sceptres",
@@ -30,13 +32,10 @@ hidden_gear = [
     "Tinctures",
 ]
 
-hidden_flasks = ["Mana Flasks", "Hybrid Flasks", "Life Flasks", "Utility Flasks"]
-
 rules = [
     Hide(
         [
             MultiClass(hidden_gear),
-            AreaLevel(30, OPERATOR.GTE),
         ]
     ),
 ]

@@ -1,11 +1,10 @@
-"""This file defines the rules for essences."""
-
 import itertools
 
-from app.blocks import Show, Hide
-from app.conditions import MultiBaseType
-from app.actions import TierStyle
-from app.categories import TIER
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 HIDE = "Hide"
 COMMON = "common"

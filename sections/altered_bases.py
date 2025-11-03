@@ -1,9 +1,10 @@
-from app.blocks import Show
-from app.actions import TierStyle
-from app.conditions import FracturedItem, Influenced, MultiClass, MultiBaseType, Class
-from app.categories import TIER
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
-fractured_classes = [
+equiped_classes = [
     "Helmets",
     "Gloves",
     "Boots",
@@ -19,6 +20,13 @@ influenced_bases = [
     "Giantslayer Helmet",
     "Colossal Tower Shield",
     "Pinnacle Tower Shield",
+]
+
+fractured_classes = [
+    "Sceptres",
+    "Rune Daggers",
+    "Shields",
+    "Jewels",
 ]
 
 rules = [

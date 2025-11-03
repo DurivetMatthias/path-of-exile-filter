@@ -1,7 +1,8 @@
-from app.blocks import Show
-from app.actions import TierStyle
-from app.conditions import BaseType, Rarity, MultiBaseType
-from app.categories import TIER, RARITY
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 tier_0 = [
     "Leather Belt",
@@ -46,7 +47,15 @@ rules = [
     Show(
         [
             Rarity(RARITY.UNIQUE),
-            TierStyle(TIER.COMMON),
-        ],
+            Replica(),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            Rarity(RARITY.UNIQUE),
+            Foulborn(),
+            TierStyle(TIER.LEGENDARY),
+        ]
     ),
 ]

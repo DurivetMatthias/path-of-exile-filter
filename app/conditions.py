@@ -156,7 +156,7 @@ class EnchantmentPassiveNum(Condition):
     def __init__(
         self,
         value: int = 1,
-        operator: OPERATOR = OPERATOR.GTE,
+        operator: OPERATOR = OPERATOR.EXACT,
     ):
         self.value = value
         self.operator = operator
@@ -164,6 +164,19 @@ class EnchantmentPassiveNum(Condition):
     def __str__(self):
         return f"""
             EnchantmentPassiveNum {self.operator} {self.value}
+        """
+
+
+class EnchantmentPassiveNode(Condition):
+    def __init__(
+        self,
+        value: str,
+    ):
+        self.value = value
+
+    def __str__(self):
+        return f"""
+            EnchantmentPassiveNode "{self.value}"
         """
 
 
@@ -269,12 +282,29 @@ class MapTier(Condition):
         """
 
 
+class MemoryStrands(Condition):
+    def __init__(
+        self,
+        value: int = 1,
+        operator: OPERATOR = OPERATOR.GTE,
+    ):
+        self.value = value
+        self.operator = operator
+
+    def __str__(self):
+        return f"""
+            MemoryStrands {self.operator} {self.value}
+        """
+
+
 class MultiBaseType(Condition):
     def __init__(
         self,
         values: list[str],
         operator: OPERATOR = OPERATOR.EXACT,
     ):
+        if len(values) == 0:
+            raise ValueError("MultibaseType needs one or more values")
         self.values = values
         self.operator = operator
 
@@ -308,7 +338,7 @@ class MultiClass(Condition):
 class Quality(Condition):
     def __init__(
         self,
-        value: int,
+        value: int = 1,
         operator: OPERATOR = OPERATOR.GTE,
     ):
         self.value = value
@@ -446,9 +476,6 @@ class VeiledSuffix(Condition):
         """
 
 
-# TODO: of Riker's Veil
-
-
 class Width(Condition):
     def __init__(
         self,
@@ -461,4 +488,84 @@ class Width(Condition):
     def __str__(self):
         return f"""
             Width {self.operator} {self.value}
+        """
+
+
+class PureArmour(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+            BaseEvasion == 0
+            BaseEnergyShield == 0
+        """
+
+
+class PureEvasion(Condition):
+    def __str__(self):
+        return """
+            BaseArmour == 0
+            BaseEvasion >= 1
+            BaseEnergyShield == 0
+        """
+
+
+class PureEnergyShield(Condition):
+    def __str__(self):
+        return """
+            BaseArmour == 0
+            BaseEvasion == 0
+            BaseEnergyShield >= 1
+        """
+
+
+class HybridArmourEvasion(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+            BaseEvasion >= 1
+            BaseEnergyShield == 0
+        """
+
+
+class HybridArmourEnergyShield(Condition):
+    def __str__(self):
+        return """
+            BaseArmour >= 1
+            BaseEvasion == 0
+            BaseEnergyShield >= 1
+        """
+
+
+class HybridEvasionEnergyShield(Condition):
+    def __str__(self):
+        return """
+            BaseArmour == 0
+            BaseEvasion >= 1
+            BaseEnergyShield >= 1
+        """
+
+
+class Replica(Condition):
+    def __init__(
+        self,
+        value: bool = True,
+    ):
+        self.value = value
+
+    def __str__(self):
+        return f"""
+            Replica {self.value}
+        """
+
+
+class Foulborn(Condition):
+    def __init__(
+        self,
+        value: bool = True,
+    ):
+        self.value = value
+
+    def __str__(self):
+        return f"""
+            Foulborn {self.value}
         """

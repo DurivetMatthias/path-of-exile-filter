@@ -18,7 +18,7 @@ from sections import (
     scrolls,
     unique,
     vendor,
-    idols,
+    dust,
 )
 
 rules = [
@@ -40,7 +40,7 @@ rules = [
     *unique.rules,
     *hide_gear.rules,
     *spectral_throw.rules,
-    *idols.rules,
+    *dust.rules,
 ]
 
 filter.generate(rules=rules, filter_name="main")

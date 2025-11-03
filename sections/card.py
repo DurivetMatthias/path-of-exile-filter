@@ -1,7 +1,8 @@
-from app.blocks import Hide, Show
-from app.conditions import BaseType, MultiBaseType
-from app.actions import TierStyle
-from app.categories import TIER
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 HIDE = "hide"
 COMMON = "common"
@@ -147,6 +148,7 @@ cards = {
     "Might is Right": HIDE,
     "Misery in Darkness": LEGENDARY,
     "Mitts": HIDE,
+    "Monochrome": LEGENDARY,
     "More is never enough": EPIC,
     "No Traces": LEGENDARY,
     "Nook's Crown": LEGENDARY,
@@ -175,6 +177,7 @@ cards = {
     "Society's Remorse": RARE,
     "Something Dark": LEGENDARY,
     "Soul Quenched": HIDE,
+    "Squandered Prosperity": LEGENDARY,
     "Struck by Lightning": HIDE,
     "Succor of the Sinless": LEGENDARY,
     "The Academic": LEGENDARY,
@@ -191,6 +194,7 @@ cards = {
     "The Avenger": HIDE,
     "The Awakened": HIDE,
     "The Battle Born": HIDE,
+    "The Bargain": HIDE,
     "The Bear Woman": HIDE,
     "The Beast": HIDE,
     "The Betrayal": HIDE,
@@ -312,6 +316,7 @@ cards = {
     "The Magma Crab": HIDE,
     "The Master": HIDE,
     "The Master Artisan": HIDE,
+    "The Mayor": LEGENDARY,
     "The Mercenary": HIDE,
     "The Messenger": LEGENDARY,
     "The Metalsmith's Gift": HIDE,
@@ -428,6 +433,7 @@ cards = {
     "Treasure Hunter": HIDE,
     "Triskaidekaphobia": RARE,
     "Turn the Other Cheek": HIDE,
+    "Underground Forest": LEGENDARY,
     "Unchained": HIDE,
     "Unrequited Love": LEGENDARY,
     "Vanity": HIDE,

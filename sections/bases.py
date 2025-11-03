@@ -1,45 +1,62 @@
-from app.blocks import Show
-from app.conditions import (
-    MultiBaseType,
-    MultiClass,
-    BaseArmour,
-    BaseEnergyShield,
-    BaseEvasion,
-    Rarity,
-)
-from app.actions import TierStyle
-from app.categories import TIER, RARITY, OPERATOR
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 rules = [
+    # Show(
+    #     [
+    #         ItemLevel(68),
+    #         MultiBaseType(
+    #             [
+    #                 "Titan Greaves",
+    #                 "Titan Gauntlets",
+    #                 "Royal Burgonet",
+    #                 "Eternal Burgonet",
+    #             ]
+    #         ),
+    #         TierStyle(TIER.RARE),
+    #     ]
+    # ),
     Show(
         [
-            Rarity(RARITY.RARE),
-            BaseArmour(),
-            BaseEnergyShield(0, OPERATOR.EQUAL),
-            BaseEvasion(0, OPERATOR.EQUAL),
-            MultiClass(
+            ItemLevel(85),
+            MultiBaseType(
                 [
-                    "Boots",
-                    "Gloves",
-                    "Helmets",
-                    "Body Armours",
-                    "Shields",
+                    "Leviathan Gauntlets",
+                    "Leviathan Greaves",
                 ]
             ),
-            TierStyle(TIER.LEGENDARY),
+            TierStyle(TIER.RARE),
         ]
     ),
     Show(
         [
+            ItemLevel(85),
             MultiBaseType(
                 [
-                    "Void Sceptre",
+                    "Onyx Amulet",
                     "Turquoise Amulet",
-                    "Scholar's Robe",
-                    "Amethyst Ring",
+                    "Enthalpic Ring",
+                    # "Ruby Ring",
+                    # "Leather Belt",
                 ]
             ),
-            TierStyle(TIER.LEGENDARY),
+            TierStyle(TIER.RARE),
+        ]
+    ),
+    Show(
+        [
+            ItemLevel(85),
+            MultiBaseType(["Void Sceptre"]),
+            TierStyle(TIER.RARE),
+        ]
+    ),
+    Show(
+        [
+            MultiBaseType(["Scholar's Robe"]),
+            TierStyle(TIER.RARE),
         ]
     ),
 ]

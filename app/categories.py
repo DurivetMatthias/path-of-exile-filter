@@ -65,6 +65,7 @@ class VOLUME(StrEnum):
 
 
 class RGB(StrEnum):
+    TRANSPARENT = "0 0 0 0"
     BLACK = "0 0 0"
     WHITE = "255 255 255"
     RED = "255 0 0"
@@ -99,7 +100,7 @@ class TIER(StrEnum):
 
 
 class OPERATOR(StrEnum):
-    EQUAL = "="
+    CONTAINS = "="
     NOT_EQUAL = "!="
     LTE = "<="
     LT = "<"
@@ -143,10 +144,10 @@ class GEAR(StrEnum):
 
 
 class FLASK(StrEnum):
-    LIFE = "Life Flask"
-    MANA = "Mana Flask"
-    HYBRID = "Hybrid Flask"
-    UTILITY = "Utility Flask"
+    LIFE = "Life Flasks"
+    MANA = "Mana Flasks"
+    HYBRID = "Hybrid Flasks"
+    UTILITY = "Utility Flasks"
 
 
 class AMULET(StrEnum):
@@ -233,7 +234,8 @@ class CURRENCY(StrEnum):
     GLASSBLOWERS_BAUBLE = "Glassblower's Bauble"
     MIRROR_OF_KALANDRA = "Mirror of Kalandra"
     ORB_OF_UNMAKING = "Orb of Unmaking"
-    VEILED_ORB = "Veiled Orb"
+    VEILED_EXALTED_ORB = "Veiled Exalted Orb"
+    VEILED_CHAOS_ORB = "Veiled Chaos Orb"
     ENKINDLING_ORB = "Enkindling Orb"
     INSTILLING_ORB = "Instilling Orb"
     SACRED_ORB = "Sacred Orb"

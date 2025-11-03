@@ -1,10 +1,10 @@
+from app.blocks import *
+from app.actions import *
 from app.base_types import *
-from app.blocks import Show, Hide
-from app.conditions import MultiBaseType, BaseType
-from app.actions import TierStyle
-from app.categories import TIER, OPERATOR
+from app.categories import *
+from app.conditions import *
 
-HIDE = "Hide"
+HIDE = "hide"
 COMMON = "common"
 RARE = "rare"
 EPIC = "epic"
@@ -13,16 +13,16 @@ LEGENDARY = "legendary"
 currencies = {
     # Currency
     ORB_OF_ALTERATION: EPIC,
-    ORB_OF_FUSING: RARE,
-    ORB_OF_ALCHEMY: RARE,
+    ORB_OF_FUSING: COMMON,
+    ORB_OF_ALCHEMY: COMMON,
     CHAOS_ORB: EPIC,
     GEMCUTTERS_PRISM: RARE,
     EXALTED_ORB: LEGENDARY,
-    CHROMATIC_ORB: RARE,
+    CHROMATIC_ORB: COMMON,
     JEWELLERS_ORB: COMMON,
-    ENGINEERS_ORB: EPIC,
+    ENGINEERS_ORB: COMMON,
     INFUSED_ENGINEERS_ORB: LEGENDARY,
-    ORB_OF_CHANCE: RARE,
+    ORB_OF_CHANCE: COMMON,
     QUANTITY_CHISEL: EPIC,
     RARITY_CHISEL: EPIC,
     PACK_CHISEL: EPIC,
@@ -30,32 +30,38 @@ currencies = {
     CURRENCY_CHISEL: EPIC,
     DIVINATION_CHISEL: EPIC,
     ORB_OF_SCOURING: EPIC,
-    BLESSED_ORB: EPIC,
-    ORB_OF_REGRET: RARE,
-    REGAL_ORB: RARE,
+    BLESSED_ORB: COMMON,
+    ORB_OF_REGRET: COMMON,
+    REGAL_ORB: COMMON,
     DIVINE_ORB: LEGENDARY,
-    VAAL_ORB: RARE,
+    VAAL_ORB: EPIC,
     ORB_OF_ANNULMENT: LEGENDARY,
-    ORB_OF_BINDING: RARE,
+    ORB_OF_BINDING: COMMON,
     ANCIENT_ORB: EPIC,
-    ORB_OF_HORIZONS: RARE,
+    ORB_OF_HORIZONS: COMMON,
     HARBINGERS_ORB: EPIC,
     FRACTURING_ORB: LEGENDARY,
     ARMOURERS_SCRAP: COMMON,
     BLACKSMITHS_WHETSTONE: COMMON,
-    GLASSBLOWERS_BAUBLE: RARE,
+    GLASSBLOWERS_BAUBLE: EPIC,
     ORB_OF_TRANSMUTATION: COMMON,
     ORB_OF_AUGMENTATION: COMMON,
     MIRROR_OF_KALANDRA: LEGENDARY,
     TEMPERING_ORB: LEGENDARY,
     TAILORING_ORB: LEGENDARY,
     ORB_OF_UNMAKING: EPIC,
-    VEILED_ORB: LEGENDARY,
-    ENKINDLING_ORB: RARE,
-    INSTILLING_ORB: RARE,
+    VEILED_EXALTED_ORB: LEGENDARY,
+    VEILED_CHAOS_ORB: LEGENDARY,
+    ENKINDLING_ORB: COMMON,
+    INSTILLING_ORB: COMMON,
     SACRED_ORB: LEGENDARY,
     STACKED_DECK: RARE,
     # Exotic currency
+    ORB_OF_INTENTION: LEGENDARY,
+    ORB_OF_UNRAVELLING: LEGENDARY,
+    ORB_OF_REMEMBRANCE: LEGENDARY,
+    SHAPERS_EXALTED_ORB: LEGENDARY,
+    ELDERS_EXALTED_ORB: LEGENDARY,
     CRUSADERS_EXALTED_ORB: LEGENDARY,
     REDEEMERS_EXALTED_ORB: LEGENDARY,
     HUNTERS_EXALTED_ORB: LEGENDARY,
@@ -89,17 +95,17 @@ currencies = {
     SACRED_CRYSTALLISED_LIFEFORCE: EPIC,
     HINEKORAS_LOCK: LEGENDARY,
     # Shards & Splinters
-    TRANSMUTATION_SHARD: RARE,
+    TRANSMUTATION_SHARD: COMMON,
     ALTERATION_SHARD: RARE,
-    ALCHEMY_SHARD: RARE,
+    ALCHEMY_SHARD: COMMON,
     CHAOS_SHARD: EPIC,
     EXALTED_SHARD: LEGENDARY,
-    ENGINEERS_SHARD: RARE,
-    REGAL_SHARD: RARE,
+    ENGINEERS_SHARD: COMMON,
+    REGAL_SHARD: COMMON,
     ANNULMENT_SHARD: LEGENDARY,
-    BINDING_SHARD: RARE,
+    BINDING_SHARD: COMMON,
     ANCIENT_SHARD: EPIC,
-    HORIZON_SHARD: RARE,
+    HORIZON_SHARD: COMMON,
     HARBINGERS_SHARD: RARE,
     FRACTURING_SHARD: LEGENDARY,
     MIRROR_SHARD: LEGENDARY,
@@ -190,7 +196,7 @@ currencies = {
     DECAYING_RELIQUARY_KEY: LEGENDARY,
     VOIDBORN_RELIQUARY_KEY: LEGENDARY,
     VALDOS_PUZZLE_BOX: LEGENDARY,
-    DIVINE_VESSEL: HIDE,
+    DIVINE_VESSEL: COMMON,
     # omens
     OMEN_OF_AMELIORATION: EPIC,
     # OMEN_OF_RETURN:EPIC,
@@ -205,7 +211,7 @@ currencies = {
     OMEN_OF_DEATHS_DOOR: EPIC,
     # OMEN_OF_BRILLIANCE:EPIC,
     # Sanctum
-    FORBIDDEN_TOME: EPIC,
+    FORBIDDEN_TOME: COMMON,
     # Scouting Report
     EXPLORERS_SCOUTING_REPORT: RARE,
     VAAL_SCOUTING_REPORT: RARE,
@@ -318,12 +324,10 @@ currencies = {
     COSMIC_FRAGMENT: LEGENDARY,
     AWAKENING_FRAGMENT: LEGENDARY,
     DECAYING_FRAGMENT: LEGENDARY,
-    # Memories
-    "Einhar's Memory": LEGENDARY,
 }
 
 
-hidden = [name for (name, tier) in currencies.items() if tier == HIDE]
+hidden = [name for (name, tier) in currencies.items() if tier == COMMON]
 common = [name for (name, tier) in currencies.items() if tier == COMMON]
 rare = [name for (name, tier) in currencies.items() if tier == RARE]
 epic = [name for (name, tier) in currencies.items() if tier == EPIC]
@@ -331,11 +335,11 @@ legendary = [name for (name, tier) in currencies.items() if tier == LEGENDARY]
 
 
 rules = [
-    Hide(
-        [
-            MultiBaseType(hidden),
-        ],
-    ),
+    # Hide(
+    #     [
+    #         MultiBaseType(hidden),
+    #     ],
+    # ),
     Show(
         [
             MultiBaseType(common),
@@ -362,8 +366,26 @@ rules = [
     ),
     Show(
         [
-            BaseType("tattoo", operator=OPERATOR.EQUAL),
+            BaseType("Tattoo", OPERATOR.CONTAINS),
             TierStyle(TIER.EPIC),
+        ],
+    ),
+    Show(
+        [
+            BaseType("Runegraft", OPERATOR.CONTAINS),
+            TierStyle(TIER.EPIC),
+        ],
+    ),
+    Show(
+        [
+            BaseType("Wombgift", OPERATOR.CONTAINS),
+            TierStyle(TIER.EPIC),
+        ],
+    ),
+    Show(
+        [
+            BaseType("Hivebrain Gland"),
+            TierStyle(TIER.LEGENDARY),
         ],
     ),
     Hide([BaseType("Gold")]),

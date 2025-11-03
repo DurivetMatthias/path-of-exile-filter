@@ -1,17 +1,14 @@
-from app.blocks import Show, Hide
-from app.conditions import MultiBaseType, ItemLevel, MultiClass
-from app.actions import TierStyle
-from app.categories import TIER
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 utility_flasks = [
     "Granite Flask",
     "Quartz Flask",
     "Quicksilver Flask",
     "Silver Flask",
-    "Gold Flask",
-    "Ruby Flask",
-    "Topaz Flask",
-    "Sapphire Flask",
 ]
 
 rules = [
@@ -19,6 +16,7 @@ rules = [
         [
             MultiBaseType(utility_flasks),
             ItemLevel(85),
+            Rarity(RARITY.UNIQUE, OPERATOR.NOT_EQUAL),
             TierStyle(TIER.LEGENDARY),
         ],
     ),
@@ -35,11 +33,19 @@ rules = [
             TierStyle(TIER.RARE),
         ],
     ),
-    Show(
-        [
-            MultiClass(["Life Flasks", "Mana Flasks"]),
-            TierStyle(TIER.COMMON),
-        ]
+    # Show(
+    #     [
+    #         MultiClass(["Life Flasks"]),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         MultiBaseType(["Divine Life Flask"]),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    Hide(
+        [MultiClass(["Life Flasks", "Mana Flasks", "Hybrid Flasks", "Utility Flasks"])]
     ),
-    Hide([MultiClass(["Life Flasks", "Mana Flasks"])]),
 ]

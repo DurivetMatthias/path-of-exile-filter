@@ -1,14 +1,8 @@
-from app.blocks import Show, Hide
-from app.actions import TierStyle
-from app.conditions import (
-    BaseType,
-    StackSize,
-    Class,
-    MultiBaseType,
-    MultiClass,
-    ItemLevel,
-)
-from app.categories import TIER
+from app.blocks import *
+from app.actions import *
+from app.base_types import *
+from app.categories import *
+from app.conditions import *
 
 best_in_slot_items = [
     "Foliate Brooch",
@@ -33,7 +27,31 @@ item_classes = [
     "Heist Target",
 ]
 
+# Item Class: Quest Items
+# Rarity: Quest
+# Contract: The Wedding Dress
+# --------
+# Client: Tullina
+# Heist Target: Merveil's Wedding Dress
+# Area Level: 73
+# Requires Agility (Level 1)
+# Requires Tullina, the Catburglar
+# --------
+# "Let's just hope she wasn't wearing it when she wandered into the sea!"
+
+
 rules = [
+    # Remove quest-contracts
+    Show(
+        [
+            Class("Quest Items"),
+            BaseType("Contract", OPERATOR.CONTAINS),
+            SetFontSize(1),
+            SetBackgroundColor(RGB.TRANSPARENT),
+            SetTextColor(RGB.TRANSPARENT),
+            SetBorderColor(RGB.TRANSPARENT),
+        ]
+    ),
     Show(
         [
             MultiBaseType(best_in_slot_items),
@@ -53,8 +71,9 @@ rules = [
             TierStyle(TIER.EPIC),
         ]
     ),
-    Hide(
+    Show(
         [
+            ItemLevel(68),
             Class("Contracts"),
             TierStyle(TIER.COMMON),
         ]
