@@ -1,7 +1,6 @@
 from app import filter
-from sections import (
+from sections.endgame import (
     altered_bases,
-    bases,
     card,
     currency,
     essence,
@@ -10,24 +9,23 @@ from sections import (
     heist,
     hide_gear,
     jewels,
-    leveling,
-    leveling_bases,
-    spectral_throw,
     map,
     scarabs,
     scrolls,
     unique,
-    vendor,
-    dust,
 )
+from sections.endgame.skills import righteous_fire
+from sections.leveling import vendor
+from sections.leveling.skills import spectral_throw
+from sections.leveling.skills import righteous_fire as leveling_rf
 
 rules = [
-    *scrolls.rules,
     *vendor.rules,
-    *leveling_bases.rules,
-    *leveling.rules,
+    *spectral_throw.rules,
+    *leveling_rf.rules,
+    *righteous_fire.rules,
+    *scrolls.rules,
     *altered_bases.rules,
-    *bases.rules,
     *card.rules,
     *currency.rules,
     *essence.rules,
@@ -39,8 +37,6 @@ rules = [
     *scarabs.rules,
     *unique.rules,
     *hide_gear.rules,
-    *spectral_throw.rules,
-    *dust.rules,
 ]
 
 filter.generate(rules=rules, filter_name="main")

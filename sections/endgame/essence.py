@@ -6,7 +6,7 @@ from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
-HIDE = "Hide"
+HIDE = "hide"
 COMMON = "common"
 RARE = "rare"
 EPIC = "epic"
@@ -58,7 +58,7 @@ special_essences = [
     "Essence of Horror",
     "Essence of Delirium",
     "Essence of Hysteria",
-    "Remnant of Corruption",
+    "Essence of Desolation",
 ]
 
 product = [
@@ -74,21 +74,20 @@ for essence_type, essence_tier in product:
     name = f"{essence_tier} Essence of {essence_type}"
     essence_value = 0
 
+    if essence_tier in ["Whispering", "Muttering", "Weeping", "Wailing"]:
+        tier = COMMON
     if essence_tier == "Screaming":
         tier = RARE
     if essence_tier == "Shrieking":
         tier = EPIC
     if essence_tier == "Deafening":
         tier = LEGENDARY
-    if essence_tier in ["Whispering", "Muttering", "Weeping", "Wailing"]:
-        tier = COMMON
 
     essences[name] = tier
 
 for name in special_essences:
     essences[name] = LEGENDARY
 
-hidden = [name for (name, tier) in essences.items() if tier == HIDE]
 common = [name for (name, tier) in essences.items() if tier == COMMON]
 rare = [name for (name, tier) in essences.items() if tier == RARE]
 epic = [name for (name, tier) in essences.items() if tier == EPIC]
@@ -96,11 +95,6 @@ legendary = [name for (name, tier) in essences.items() if tier == LEGENDARY]
 
 
 rules = [
-    # Hide(
-    #     [
-    #         MultiBaseType(hidden),
-    #     ],
-    # ),
     Show(
         [
             MultiBaseType(common),

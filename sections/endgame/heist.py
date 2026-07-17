@@ -27,18 +27,6 @@ item_classes = [
     "Heist Target",
 ]
 
-# Item Class: Quest Items
-# Rarity: Quest
-# Contract: The Wedding Dress
-# --------
-# Client: Tullina
-# Heist Target: Merveil's Wedding Dress
-# Area Level: 73
-# Requires Agility (Level 1)
-# Requires Tullina, the Catburglar
-# --------
-# "Let's just hope she wasn't wearing it when she wandered into the sea!"
-
 
 rules = [
     # Remove quest-contracts
@@ -66,16 +54,16 @@ rules = [
     ),
     Show(
         [
+            ItemLevel(68),
             Class("Contracts"),
-            ItemLevel(83),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.COMMON),
         ]
     ),
     Show(
         [
-            ItemLevel(68),
+            ItemLevel(83),
             Class("Contracts"),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.EPIC),
         ]
     ),
     Show(

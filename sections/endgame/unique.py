@@ -58,4 +58,17 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    Show(
+        [
+            AreaLevel(68, OPERATOR.LT),
+            Rarity(RARITY.UNIQUE),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            Rarity(RARITY.UNIQUE),
+            TierStyle(TIER.RARE),
+        ]
+    ),
 ]

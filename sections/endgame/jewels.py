@@ -7,14 +7,14 @@ from app.conditions import *
 rules = [
     Show(
         [
-            MultiBaseType([JEWEL.MEDIUM_CLUSTER]),
+            MultiBaseType(["Medium Cluster Jewel"]),
             EnchantmentPassiveNode("Fire Damage over Time"),
             TierStyle(TIER.EPIC),
         ],
     ),
     Show(
         [
-            MultiBaseType([JEWEL.MEDIUM_CLUSTER]),
+            MultiBaseType(["Medium Cluster Jewel"]),
             EnchantmentPassiveNode("Fire Damage over Time"),
             EnchantmentPassiveNum(5, OPERATOR.LTE),
             TierStyle(TIER.LEGENDARY),
@@ -22,28 +22,36 @@ rules = [
     ),
     Show(
         [
-            MultiBaseType([JEWEL.LARGE_CLUSTER]),
+            MultiBaseType(["Small Cluster Jewel"]),
+            EnchantmentPassiveNode("Reservation Efficiency"),
+            EnchantmentPassiveNum(3, OPERATOR.LTE),
+            TierStyle(TIER.LEGENDARY),
+        ],
+    ),
+    Show(
+        [
+            MultiBaseType(["Large Cluster Jewel"]),
             EnchantmentPassiveNode("Fire Damage"),
             EnchantmentPassiveNum(8, OPERATOR.LTE),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.LEGENDARY),
         ],
     ),
     Show(
         [
             MultiBaseType(
                 [
-                    JEWEL.LARGE_CLUSTER,
-                    JEWEL.MEDIUM_CLUSTER,
-                    JEWEL.SMALL_CLUSTER,
+                    "Small Cluster Jewel",
+                    "Medium Cluster Jewel",
+                    "Large Cluster Jewel",
                 ]
             ),
         ],
     ),
-    # Show(
-    #     [
-    #         MultiBaseType([JEWEL.CRIMSON]),
-    #         TierStyle(TIER.COMMON),
-    #     ],
-    # ),
-    Hide([MultiBaseType(list(JEWEL))]),
+    Show(
+        [
+            MultiBaseType(["Crimson Jewel"]),
+            TierStyle(TIER.COMMON),
+        ],
+    ),
+    Hide([Class("Jewels")]),
 ]

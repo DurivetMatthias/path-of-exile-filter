@@ -12,7 +12,10 @@ def level_to_stack_rule(area_level):
     if area_level < 75:
         return StackSize(4, OPERATOR.GTE)
 
-    return StackSize(8, OPERATOR.GTE)
+    if area_level < 83:
+        return StackSize(8, OPERATOR.GTE)
+
+    return StackSize(10)
 
 
 show_scrolls = [
@@ -31,7 +34,18 @@ show_scrolls = [
     )
     for area_level in range(1, 100)
 ]
-hide_scrolls = [Hide([MultiBaseType([SCROLL_OF_WISDOM, PORTAL_SCROLL])])]
+hide_scrolls = [
+    Hide(
+        [
+            MultiBaseType(
+                [
+                    SCROLL_OF_WISDOM,
+                    PORTAL_SCROLL,
+                ]
+            )
+        ]
+    )
+]
 rules = [
     *show_scrolls,
     *hide_scrolls,

@@ -569,3 +569,108 @@ class Foulborn(Condition):
         return f"""
             Foulborn {self.value}
         """
+
+
+class GearClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(["Body Armours", "Helmets", "Gloves", "Boots"])
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class JewelryClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(["Rings", "Amulets", "Belts", "Trinkets"])
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class WeaponClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Claws",
+                "Daggers",
+                "Wands",
+                "Sceptres",
+                "Rune Daggers",
+                "One Hand Axes",
+                "One Hand Maces",
+                "One Hand Swords",
+                "Thrusting One Hand Swords",
+                "Bows",
+                "Staves",
+                "Warstaves",
+                "Two Hand Axes",
+                "Two Hand Maces",
+                "Two Hand Swords",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class OneHandedWeaponClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Claws",
+                "Daggers",
+                "Wands",
+                "Sceptres",
+                "Rune Daggers",
+                "One Hand Axes",
+                "One Hand Maces",
+                "One Hand Swords",
+                "Thrusting One Hand Swords",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class TwoHandedWeaponClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Bows",
+                "Staves",
+                "Warstaves",
+                "Two Hand Axes",
+                "Two Hand Maces",
+                "Two Hand Swords",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class OffhandClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Quivers",
+                "Shields",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)
+
+
+class FlaskClasses(Condition):
+    def __init__(self):
+        self.condition = MultiClass(
+            [
+                "Flasks",
+                "Tinctures",
+            ]
+        )
+
+    def __str__(self):
+        return str(self.condition)

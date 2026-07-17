@@ -8,8 +8,6 @@ LEGENDARY = TIER.LEGENDARY
 EPIC = TIER.EPIC
 
 scarabs = {
-    # Horny
-    HORNED_SCARAB_OF_AWAKENING: LEGENDARY,
     # Ambush
     AMBUSH_SCARAB_OF_CONTAINMENT: LEGENDARY,
     AMBUSH_SCARAB: LEGENDARY,
@@ -28,12 +26,6 @@ rules = [
     Show(
         [
             BaseType("Scarab", OPERATOR.CONTAINS),
-            TierStyle(TIER.EPIC),
-        ],
-    ),
-    Show(
-        [
-            BaseType("Allflame", OPERATOR.CONTAINS),
             TierStyle(TIER.EPIC),
         ],
     ),
