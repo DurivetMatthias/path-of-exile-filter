@@ -1,3 +1,6 @@
+from copy import copy
+
+
 class Doodad:
     def __init__(
         self,
@@ -25,3 +28,17 @@ class Doodad:
             "rotation": self.rotation,
             "version": self.version,
         }
+
+
+def place(doodad: Doodad, x, y, *, rotation=None, version=None) -> Doodad:
+    instance = copy(doodad)
+
+    instance.x = x
+    instance.y = y
+
+    if rotation is not None:
+        instance.rotation = rotation
+    if version is not None:
+        instance.version = version
+
+    return instance

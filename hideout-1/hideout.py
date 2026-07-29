@@ -41,14 +41,14 @@ class Hideout:
             {{
                 "version": 1,
                 "language": "English",
-                "hideout_name": "Overgrown Apex Hideout",
-                "hideout_hash": 31541,
-                "music_name": "Ngakanu",
-                "music_hash": 13604,
+                "hideout_name": "{self.hideout_name}",
+                "hideout_hash": {self.hideout_hash},
+                "music_name": "{self.music_name}",
+                "music_hash": {self.music_hash},
                 "doodads": {{{",".join(doodads)}
                 }}
             }}
-        """)
+        """).strip()
 
     def generate(self, name: str) -> None:
         output_filepath = FILTER_OUTPUT_PATH / f"{name}.{FILE_EXTENSION}"
