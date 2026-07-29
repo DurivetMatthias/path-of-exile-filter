@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -10,19 +9,24 @@ BEFORE_MAPS = 67
 
 rules = [
     # Sockets
+    # Show(
+    #     [
+    #         MultiClass(["One Hand Maces"]),
+    #         Sockets(3),  # Offhand Gem Leveling
+    #         AreaLevel(24, OPERATOR.LTE),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
     Show(
         [
-            MultiClass(["One-handed Maces", "Sceptres"]),
-            Sockets(3),  # Offhand Gem Leveling
-            AreaLevel(BEFORE_SIOSA, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
+            GearClasses(),  # Pick up anything for sockets early
+            AreaLevel(5, OPERATOR.LTE),
         ]
     ),
     Show(
         [
             GearClasses(),
-            # PureArmour(),  # Allow all bases for 3-link
-            LinkedSockets(3),
+            PureArmour(),  # No links needed at this point
             AreaLevel(24, OPERATOR.LTE),
             TierStyle(TIER.EPIC),
         ]
@@ -30,34 +34,42 @@ rules = [
     Show(
         [
             GearClasses(),
-            PureArmour(),
-            LinkedSockets(4),
-            AreaLevel(34, OPERATOR.LTE),
+            PureArmour(),  # Surely I'll find something with good sockets
+            AreaLevel(BEFORE_MAPS, OPERATOR.LTE),
+            Rarity(RARITY.RARE),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            GearClasses(),
-            PureArmour(),
+            Class("Body Armours"),
             LinkedSockets(5),
             AreaLevel(49, OPERATOR.LTE),
+            AreaLevel(BEFORE_MAPS, OPERATOR.LTE),
             TierStyle(TIER.LEGENDARY),  # Finding the first 5-link is really strong
         ]
     ),
     Show(
         [
-            GearClasses(),
-            PureArmour(),
+            Class("Body Armours"),
             LinkedSockets(6),
+            AreaLevel(BEFORE_MAPS, OPERATOR.LTE),
             TierStyle(TIER.LEGENDARY),  # Finding the first 6-link is really strong
         ]
     ),
     # Bases
     Show(
         [
-            MultiBaseType(["Jade Amulet", "Lapis Amulet"]),
+            MultiBaseType(["Jade Amulet", "Lapis Amulet", "Leather Belt", "Ruby Ring"]),
             AreaLevel(BEFORE_MAPS, OPERATOR.LTE),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            Class("Sceptres"),
+            Rarity(RARITY.MAGIC),
+            AreaLevel(59, OPERATOR.LTE),
             TierStyle(TIER.EPIC),
         ]
     ),

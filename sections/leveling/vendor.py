@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -19,19 +18,35 @@ class VendorStyle(Condition):
 
 
 rules = [
-    Show([AreaLevel(1, OPERATOR.EXACT), Rarity(RARITY.NORMAL), VendorStyle()]),
+    Show([AreaLevel(1, OPERATOR.EXACT), TierStyle(TIER.COMMON)]),
     Show([AreaLevel(16, OPERATOR.LTE), Rarity(RARITY.RARE), VendorStyle()]),
     Show([AreaLevel(16, OPERATOR.LTE), SocketGroup("RGB"), VendorStyle()]),
     Show(
         [
             AreaLevel(67, OPERATOR.LTE),
             Quality(),
-            Class("Flasks"),
+            MultiClass(
+                [
+                    "Life Flasks",
+                    "Mana Flasks",
+                    "Hybrid Flasks",
+                    "Utility Flasks",
+                ]
+            ),
             VendorStyle(),
         ],
     ),
-    Show([Sockets("6"), VendorStyle()]),
-    Show([LinkedSockets("6"), VendorStyle()]),
-    Show([BaseType("Amethyst Flask"), VendorStyle()]),
-    Show([Class("Quest Items"), TierStyle(TIER.EPIC)]),
+    Show([AreaLevel(67, OPERATOR.LTE), Sockets("6"), VendorStyle()]),
+    # Show([LinkedSockets("6"), VendorStyle()]),
+    Show([MultiBaseType(["Amethyst Flask", "Quicksilver Flask"]), VendorStyle()]),
+    Show([AreaLevel(16, OPERATOR.LTE), BaseType("Gold")]),
+    Show([AreaLevel(67, OPERATOR.LTE), StackSize(100), BaseType("Gold")]),
+    Show([StackSize(1000), BaseType("Gold")]),
+    Show(
+        [
+            MultiClass(["Quest Items", "Atlas Upgrade Items"]),
+            BaseType("Contract", OPERATOR.NOT_EQUAL),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
 ]

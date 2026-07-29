@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -30,6 +29,13 @@ rules = [
     Show(
         [
             MultiBaseType(["Rustic Sash", "Iron Ring"]),
+            AreaLevel(BEFORE_RF, OPERATOR.LTE),
+            SpectralThrowStyle(),
+        ]
+    ),
+    Show(
+        [
+            BaseType("Blacksmith's Whetstone"),
             AreaLevel(BEFORE_RF, OPERATOR.LTE),
             SpectralThrowStyle(),
         ]

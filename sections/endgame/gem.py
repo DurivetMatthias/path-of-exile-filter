@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -21,11 +20,12 @@ rules = [
     Show(
         [
             Class("Support Gems"),
-            BaseType("Greater", OPERATOR.CONTAINS),
+            BaseType("Exceptional", OPERATOR.CONTAINS),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show([MultiBaseType(["Righteous Fire", "Fire Trap"])]),
+    Show([MultiClass(["Support Gems", "Skill Gems"]), Quality()]),
     Hide([Class("Support Gems")]),
     Hide([Class("Skill Gems")]),
 ]

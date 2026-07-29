@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -9,19 +8,11 @@ tier_0 = [
     "Heavy Belt",
     "Ring",
     "Paua Amulet",
-    "Elegant Round Shield",
 ]
 double_corrupt = [
     "Scholar's Robe",
-    "Majestic Plate",
-    "Colosseum Plate",
     "Desert Brigandine",
-    "Devout Chainmail",
-    "Saint's Hauberk",
     "Simple Robe",
-    "Cobalt Jewel",
-    "Crimson Jewel",
-    "Viridian Jewel",
 ]
 rules = [
     Show(
@@ -40,8 +31,31 @@ rules = [
     ),
     Show(
         [
+            Rarity(RARITY.UNIQUE),
+            Class("Jewel"),
+            Corrupted(False),
+            TierStyle(TIER.LEGENDARY),
+        ],
+    ),
+    Show(
+        [
+            Rarity(RARITY.UNIQUE),
+            Class("Jewel"),
+            Corrupted(True),
+            TierStyle(TIER.COMMON),
+        ],
+    ),
+    Show(
+        [
             BaseType("Vaal Aspect"),
             TierStyle(TIER.LEGENDARY),
+        ],
+    ),
+    Show(
+        [
+            MultiClass(["Ring", "Amulet"]),  # Disenchant Kingsmarch
+            Rarity(RARITY.UNIQUE),
+            TierStyle(TIER.COMMON),
         ],
     ),
     Show(
@@ -53,22 +67,9 @@ rules = [
     ),
     Show(
         [
-            Rarity(RARITY.UNIQUE),
-            Foulborn(),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
             AreaLevel(68, OPERATOR.LT),
             Rarity(RARITY.UNIQUE),
             TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            Rarity(RARITY.UNIQUE),
-            TierStyle(TIER.RARE),
         ]
     ),
 ]

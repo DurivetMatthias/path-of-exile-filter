@@ -4,7 +4,6 @@ from sections.endgame import (
     card,
     currency,
     essence,
-    flasks,
     gem,
     heist,
     hide_gear,
@@ -15,7 +14,7 @@ from sections.endgame import (
     unique,
 )
 from sections.endgame.skills import righteous_fire
-from sections.leveling import vendor
+from sections.leveling import flasks, vendor
 from sections.leveling.skills import spectral_throw
 from sections.leveling.skills import righteous_fire as leveling_rf
 

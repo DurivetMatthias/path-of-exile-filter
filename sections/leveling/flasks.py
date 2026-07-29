@@ -1,13 +1,12 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
 rules = [
     Show(
         [
-            AreaLevel(68, OPERATOR.LT),
+            AreaLevel(15, OPERATOR.LTE),
             MultiClass(
                 [
                     "Life Flasks",
@@ -21,7 +20,13 @@ rules = [
     ),
     Show(
         [
-            MultiBaseType(["Divine Life Flask"]),
+            AreaLevel(67, OPERATOR.LTE),
+            MultiClass(
+                [
+                    "Life Flasks",
+                    "Utility Flasks",
+                ]
+            ),
             TierStyle(TIER.COMMON),
         ]
     ),

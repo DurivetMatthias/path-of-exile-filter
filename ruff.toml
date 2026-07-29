@@ -1,1 +1,5 @@
-ignore = ["F403", "F405"]
+ignore = [
+    "F403",
+    "F405",
+    "I001" # Sorting imports
+]

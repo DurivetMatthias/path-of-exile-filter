@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -47,11 +46,7 @@ rules = [
             ),
         ],
     ),
-    Show(
-        [
-            MultiBaseType(["Crimson Jewel"]),
-            TierStyle(TIER.COMMON),
-        ],
-    ),
+    # Show([MultiBaseType(["Medium Cluster Jewel"]), TierStyle(TIER.COMMON)]),  # Vendor
+    # Show([MultiBaseType(["Crimson Jewel"]), TierStyle(TIER.COMMON)]),
     Hide([Class("Jewels")]),
 ]

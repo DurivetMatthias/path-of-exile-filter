@@ -60,8 +60,7 @@ def generate(*, rules, filter_name):
     output_filepath = os.path.join(FILTER_OUTPUT_PATH, filter_filename)
     with open(output_filepath, mode="w", encoding="utf-8") as output_file:
         output_file.write(file_content)
-    divider = "=" * 10
+    divider = "=" * len(output_filepath)
     print(divider)
-    print("Inspect the item filter:")
     print(output_filepath)
     print(divider)

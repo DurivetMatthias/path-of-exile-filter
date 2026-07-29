@@ -1,25 +1,31 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
-
-LEGENDARY = TIER.LEGENDARY
-EPIC = TIER.EPIC
-
-scarabs = {
-    # Ambush
-    AMBUSH_SCARAB_OF_CONTAINMENT: LEGENDARY,
-    AMBUSH_SCARAB: LEGENDARY,
-}
-
-legendary_scarabs = [scarab for scarab, tier in scarabs.items() if tier == LEGENDARY]
-epic_scarabs = [scarab for scarab, tier in scarabs.items() if tier == EPIC]
 
 rules = [
     Show(
         [
-            MultiBaseType(legendary_scarabs),
+            MultiBaseType(
+                [
+                    "Ambush Scarab",
+                    "Ambush Scarab of Hidden Compartments",
+                    "Ambush Scarab of Potency",
+                    "Ambush Scarab of Discernment",
+                    "Ambush Scarab of Containment",
+                    # =================
+                    "Domination Scarab",
+                    "Domination Scarab of Apparitions",
+                    "Domination Scarab of Evolution",
+                    "Domination Scarab of Terrors",
+                    # =================
+                    "Cartography Scarab of Escalation",
+                    "Cartography Scarab of Corruption",
+                    "Cartography Scarab of the Multitude",
+                    # =================
+                    "Influencing Scarab of Interference",
+                ]
+            ),
             TierStyle(TIER.LEGENDARY),
         ],
     ),

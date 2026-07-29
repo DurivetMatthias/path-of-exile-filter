@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -38,12 +37,13 @@ rules = [
             SetBackgroundColor(RGB.TRANSPARENT),
             SetTextColor(RGB.TRANSPARENT),
             SetBorderColor(RGB.TRANSPARENT),
+            NoIcon(),
         ]
     ),
     Show(
         [
             MultiBaseType(best_in_slot_items),
-            TierStyle(TIER.EPIC),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     Show(

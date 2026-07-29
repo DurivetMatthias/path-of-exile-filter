@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -11,12 +10,6 @@ influenced_bases = [
 ]
 
 rules = [
-    Show(
-        [
-            FracturedItem(),
-            TierStyle(TIER.RARE),
-        ]
-    ),
     Show(
         [
             Influenced(),
@@ -36,6 +29,13 @@ rules = [
             Influenced(),
             MultiBaseType(influenced_bases),
             TierStyle(TIER.LEGENDARY),
+        ]
+    ),
+    Show(
+        [
+            FracturedItem(),
+            Class("Jewel"),
+            TierStyle(TIER.EPIC),
         ]
     ),
 ]

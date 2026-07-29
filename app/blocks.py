@@ -2,7 +2,7 @@ from app.conditions import Condition
 
 
 class Block:
-    __slots__ = ["instruction", "conditions"]
+    __slots__ = ["conditions", "instruction"]
 
 
 class Show(Block):

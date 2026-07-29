@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 from app.rule_map import *
@@ -14,11 +13,11 @@ rule_map = {
     "More is Never Enough": RULE.RARE,
     "The Cache": RULE.RARE,
     "The Encroaching Darkness": RULE.RARE,
-    "The Sun": RULE.RARE,
+    "The Sun": RULE.RARE,  # Rise of the Phoenix
     "The Escape": RULE.RARE,
     "The Tinkerer's Table": RULE.RARE,
     "The Tireless Extractor": RULE.RARE,
-    "The Professor": RULE.RARE,
+    "The Professor": RULE.LEGENDARY,  # Multi-mod craft
     "The Twilight Moon": RULE.RARE,
     "The Void": RULE.RARE,
     "The Wolf's Legacy": RULE.RARE,
@@ -89,6 +88,10 @@ rule_map = {
     "The Shortcut": RULE.LEGENDARY,
     "The Slumbering Beast": RULE.LEGENDARY,
     "Unrequited Love": RULE.LEGENDARY,
+    # New cards
+    "Pearls Before Swine": RULE.LEGENDARY,
+    "Energy Sword": RULE.LEGENDARY,
+    "Divine Shard": RULE.LEGENDARY,
 }
 
 

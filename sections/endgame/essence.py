@@ -2,7 +2,6 @@ import itertools
 
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -95,15 +94,18 @@ legendary = [name for (name, tier) in essences.items() if tier == LEGENDARY]
 
 
 rules = [
+    Hide([BaseType("Essence", OPERATOR.CONTAINS)]),
     Show(
         [
             MultiBaseType(common),
+            AreaLevel(67, OPERATOR.LTE),
             TierStyle(TIER.COMMON),
         ],
     ),
     Show(
         [
             MultiBaseType(rare),
+            AreaLevel(67, OPERATOR.LTE),
             TierStyle(TIER.RARE),
         ],
     ),

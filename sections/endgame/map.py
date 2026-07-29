@@ -1,6 +1,5 @@
 from app.blocks import *
 from app.actions import *
-from app.base_types import *
 from app.categories import *
 from app.conditions import *
 
@@ -22,7 +21,14 @@ rules = [
     Show(
         [
             Class("Map"),
+            MapTier(1, OPERATOR.EXACT),
             TierStyle(TIER.EPIC),
         ],
     ),
+    # Show(
+    #     [
+    #         Class("Map"),
+    #         TierStyle(TIER.EPIC),
+    #     ],
+    # ),
 ]

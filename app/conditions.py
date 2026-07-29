@@ -667,7 +667,10 @@ class FlaskClasses(Condition):
     def __init__(self):
         self.condition = MultiClass(
             [
-                "Flasks",
+                "Life Flasks",
+                "Mana Flasks",
+                "Hybrid Flasks",
+                "Utility Flasks",
                 "Tinctures",
             ]
         )

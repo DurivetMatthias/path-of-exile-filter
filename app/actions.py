@@ -35,6 +35,13 @@ class MinimapIcon(Condition):
         """
 
 
+class NoIcon(Condition):
+    def __str__(self):
+        return """
+            MinimapIcon -1
+        """
+
+
 class PlayEffect(Condition):
     def __init__(
         self,
