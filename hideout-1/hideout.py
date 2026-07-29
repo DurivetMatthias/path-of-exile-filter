@@ -4,9 +4,7 @@ from pathlib import Path
 from doodad import Doodad
 
 FILE_EXTENSION = "hideout"
-FILTER_OUTPUT_PATH = Path().home() / "Documents" / "poe" / "hideouts"
-if not FILTER_OUTPUT_PATH.exists():
-    FILTER_OUTPUT_PATH = Path(".")
+FILTER_OUTPUT_PATH = Path(".")
 
 
 class Hideout:

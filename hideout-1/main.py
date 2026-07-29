@@ -7,4 +7,4 @@ hideout = Hideout(
         *floors,
     ]
 )
-hideout.generate("ship")
+hideout.generate("city")
