@@ -1,0 +1,737 @@
+{
+    "name": "Shield Wall Leveling",
+    "author": "Ferox",
+    "ascendancy": "Warrior2",
+    "inventory_slots": [],
+    "passives": [],
+    "skills": [
+        {
+            "id": "Metadata/Items/Gem/SkillGemPlayerDefaultUnarmed",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemBrink",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMartialTempo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                1,
+                21
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gem/SkillGemRollingSlam",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemBrink",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMartialTempo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                1,
+                21
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gem/SkillGemBoneshatter",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemImpactShockwave",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                1,
+                21
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemShieldWall",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMartialTempo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMartialTempoTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMartialTempoThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemConcentratedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemImpale",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemHeft",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLacerate",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLacerateTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLacerateThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLacerateFour",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemInfernalCry",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemRagingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemTireless",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemEchoingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemCorruptingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemCorruptingCryTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemCorruptingCryThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemWolfArcticHowl",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemRagingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLifetap",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemTireless",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemEchoingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemFerociousRoar",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemRagingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLifetap",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemEnragedWarcry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemEnragedWarcryTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemCorruptingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemCorruptingCryTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemCorruptingCryThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemWolfLunarBlessing",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemRagingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemLifetap",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemTireless",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemEchoingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemFortifyingCry",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemRagingCry",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemBrutality",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemBrutalityTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemBrutalityThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemHeft",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemHeavySwing",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemInspiration",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemInspirationTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemHeraldOfAsh",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistence",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistenceTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistenceThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemWarBanner",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistence",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistenceTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistenceThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemMagnifiedEffectThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        },
+        {
+            "id": "Metadata/Items/Gems/SkillGemScavengedPlating",
+            "support_skills": [
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistence",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistenceTwo",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemPersistenceThree",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                },
+                {
+                    "id": "Metadata/Items/Gems/SupportGemClarity",
+                    "level_interval": [
+                        0,
+                        100
+                    ],
+                    "additional_text": ""
+                }
+            ],
+            "level_interval": [
+                0,
+                100
+            ],
+            "additional_text": ""
+        }
+    ]
+}
