@@ -1,0 +1,578 @@
+
+{
+    "version": 1,
+    "language": "English",
+    "hideout_name": "Overgrown Apex Hideout",
+    "hideout_hash": 31541,
+    "music_name": "Ngakanu",
+    "music_hash": 13604,
+    "doodads": {
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 0,
+            "y": 0,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 23,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 69,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 115,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 161,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 207,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 253,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 299,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 345,
+            "y": 391,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 23,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 69,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 115,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 161,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 207,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 253,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 299,
+            "r": 0,
+            "fv": 5
+        },
+        "Oriath Ground": {
+            "hash": 3123067737,
+            "x": 391,
+            "y": 345,
+            "r": 0,
+            "fv": 5
+        }
+    }
+}
