@@ -30,22 +30,22 @@ rules = [
             TierStyle(TIER.EPIC),
         ]
     ),
-    Show(
-        [
-            MultiBaseType(
-                [
-                    "Amethyst Ring",
-                    "Jade Amulet",
-                    "Turquoise Amulet",
-                    "Onyx Amulet",
-                    # "Leather Belt",
-                ]
-            ),
-            # Rarity(RARITY.RARE),
-            ItemLevel(84),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Amethyst Ring",
+    #                 "Jade Amulet",
+    #                 "Turquoise Amulet",
+    #                 "Onyx Amulet",
+    #                 # "Leather Belt",
+    #             ]
+    #         ),
+    #         Rarity(RARITY.UNIQUE, OPERATOR.LT),
+    #         ItemLevel(84),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     Show(
         [
             BaseType("Talisman", OPERATOR.CONTAINS),

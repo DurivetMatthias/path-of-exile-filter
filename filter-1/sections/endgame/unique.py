@@ -53,13 +53,6 @@ rules = [
     ),
     Show(
         [
-            MultiClass(["Ring", "Amulet"]),  # Disenchant Kingsmarch
-            Rarity(RARITY.UNIQUE),
-            TierStyle(TIER.COMMON),
-        ],
-    ),
-    Show(
-        [
             Rarity(RARITY.UNIQUE),
             Replica(),
             TierStyle(TIER.LEGENDARY),
