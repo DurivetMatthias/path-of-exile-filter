@@ -1,39 +1,48 @@
-from floors import cover_nebula, oriath_ground
+from floors import *
 from required import *
 from hideout import Hideout
 from doodad import place
+from geometry import place_in_shape, Circle, Point
 
-floors = cover_nebula(oriath_ground)
+floors = [
+    *cover_nebula(wood_ground),
+    *cover_nebula(water_low_ground),
+]
+center = Point(350, 350)
 hideout = Hideout(
     [
-        place(STASH, 400, 250),
-        place(WAYPOINT, 400, 200),
-        place(CRAFTING_BENCH, 400, 300),
-        place(MAP_DEVICE, 400, 400),
-        place(HARVEST_BENCH, 400, 500),
-        place(HEIST_STASH, 500, 250),
-        place(EXPEDITION_STASH, 500, 200),
-        place(RELIC_STASH, 500, 300),
-        place(RECOMBINATOR, 500, 400),
-        place(BREACH_STASH, 250, 250),
-        place(MERCENARY_1, 200, 250),
-        place(MERCENARY_2, 300, 250),
-        place(MERCENARY_3, 400, 250),
-        place(HELENA, 250, 500),
-        place(KIRAC, 200, 250),
-        place(DANNIG, 200, 200),
-        place(GEWENNEN, 200, 300),
-        place(TUJEN, 200, 400),
-        place(ROG, 200, 500),
-        place(LILLY, 300, 250),
-        place(JOHAN, 300, 200),
-        place(FAUSTUS, 300, 300),
-        place(EAGON, 300, 400),
-        place(AILITH, 300, 350),
-        place(JUN, 350, 350),
+        place(HELENA, center.x + 35, center.y - 20),
+        place(STASH, center.x + 30, center.y - 40),
+        place(MAP_DEVICE, center.x, center.y),
+        place(MERCENARY_1, 170, 170),
+        place(MERCENARY_2, 170, 170),
+        place(MERCENARY_3, 170, 170),
+        *place_in_shape(
+            Circle(center.x, center.y, 150),
+            [
+                WAYPOINT,
+                CRAFTING_BENCH,
+                HARVEST_BENCH,
+                HEIST_STASH,
+                EXPEDITION_STASH,
+                RELIC_STASH,
+                RECOMBINATOR,
+                BREACH_STASH,
+                LILLY,
+                KIRAC,
+                DANNIG,
+                GEWENNEN,
+                TUJEN,
+                JOHAN,
+                FAUSTUS,
+                EAGON,
+                JUN,
+                ROG,
+            ],
+        ),
         *floors,
     ]
 )
-hideout.generate("city")
+hideout.generate("ship")
 
 # TODO geometrical layouts: rectangle, square, line

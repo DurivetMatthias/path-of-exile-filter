@@ -4,7 +4,7 @@ from pathlib import Path
 from doodad import Doodad
 
 FILE_EXTENSION = "hideout"
-FILTER_OUTPUT_PATH = Path(".")
+FILTER_OUTPUT_PATH = Path(".") / "files"
 
 
 class Hideout:
@@ -30,9 +30,9 @@ class Hideout:
                 f"""
                     \"{doodad.name}\": {{
                         "hash": {doodad.hash},
-                        "x": {doodad.x},
-                        "y": {doodad.y},
-                        "r": {doodad.rotation},
+                        "x": {round(doodad.x)},
+                        "y": {round(doodad.y)},
+                        "r": {round(doodad.rotation)},
                         "fv": {doodad.version}
                     }}"""
             )
