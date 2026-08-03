@@ -23,7 +23,7 @@ rules = [
         [
             MultiBaseType(["Small Cluster Jewel"]),
             EnchantmentPassiveNode("Reservation Efficiency"),
-            EnchantmentPassiveNum(3, OPERATOR.LTE),
+            EnchantmentPassiveNum(3, OPERATOR.EXACT),
             TierStyle(TIER.LEGENDARY),
         ],
     ),

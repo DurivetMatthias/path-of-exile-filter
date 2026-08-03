@@ -20,14 +20,26 @@ rules = [
     #         TierStyle(TIER.EPIC),
     #     ]
     # ),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Leviathan Greaves",
+    #                 # "Leviathan Gauntlets",
+    #                 # "Colossal Tower Shield",
+    #             ]
+    #         ),
+    #         # Rarity(RARITY.RARE),
+    #         ItemLevel(85),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     Show(
         [
-            MultiBaseType(
-                ["Leviathan Greaves", "Leviathan Gauntlets", "Colossal Tower Shield"]
-            ),
+            MultiBaseType(["Leviathan Greaves"]),
             # Rarity(RARITY.RARE),
-            ItemLevel(85),
-            TierStyle(TIER.EPIC),
+            ItemLevel(86),
+            TierStyle(TIER.LEGENDARY),
         ]
     ),
     # Show(
@@ -68,6 +80,7 @@ rules = [
                     "Granite Flask",
                 ]
             ),
+            Rarity(RARITY.MAGIC, OPERATOR.LTE),  # hide uniques
             # ItemLevel(80),
             ItemLevel(85),
             TierStyle(TIER.EPIC),

@@ -24,7 +24,7 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
-    Show([MultiBaseType(["Righteous Fire", "Fire Trap"])]),
+    Show([AreaLevel(30, OPERATOR.LTE), MultiBaseType(["Righteous Fire", "Fire Trap"])]),
     Show([MultiClass(["Support Gems", "Skill Gems"]), Quality()]),
     Hide([Class("Support Gems")]),
     Hide([Class("Skill Gems")]),

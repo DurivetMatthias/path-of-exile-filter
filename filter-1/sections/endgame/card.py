@@ -91,7 +91,7 @@ rule_map = {
     # New cards
     "Pearls Before Swine": RULE.LEGENDARY,
     "Energy Sword": RULE.LEGENDARY,
-    "Divine Shard": RULE.LEGENDARY,
+    "Divine Shard": RULE.RARE,
 }
 
 
