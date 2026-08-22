@@ -35,7 +35,7 @@ class Item:
         self.unique_name = unique_name
         self.additional_text = dedent(additional_text).strip()
 
-    def to_dict(self) -> str:
+    def to_dict(self) -> dict:
         return {
             "inventory_id": self.inventory_id,
             "slot_x": self.slot_x,

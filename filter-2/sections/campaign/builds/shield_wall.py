@@ -21,6 +21,7 @@ rules = [
         [
             Class("Talismans"),
             TierStyle(TIER.EPIC),
+            AreaLevel(16),
         ]
     ),
     Show(

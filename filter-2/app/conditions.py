@@ -206,7 +206,7 @@ class Height(Condition):
     def __init__(
         self,
         value: int,
-        operator: OPERATOR = OPERATOR.EXACT,
+        operator: OPERATOR = OPERATOR.LTE,
     ):
         self.value = value
         self.operator = operator
@@ -465,7 +465,7 @@ class Width(Condition):
     def __init__(
         self,
         value: str,
-        operator: OPERATOR = OPERATOR.GTE,
+        operator: OPERATOR = OPERATOR.LTE,
     ):
         self.value = value
         self.operator = operator

@@ -13,7 +13,7 @@ class Support:
         self.level_interval = level_interval
         self.additional_text = additional_text
 
-    def to_dict(self) -> str:
+    def to_dict(self) -> dict:
         return {
             "id": self.id,
             "level_interval": self.level_interval,
@@ -35,7 +35,7 @@ class Skill:
         self.additional_text = additional_text
         self.support_skills = support_skills
 
-    def to_dict(self) -> str:
+    def to_dict(self) -> dict:
         return {
             "id": self.id,
             "support_skills": [support.to_dict() for support in self.support_skills],

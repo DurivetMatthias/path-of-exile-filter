@@ -15,7 +15,7 @@ class Passive:
         self.level_interval = level_interval
         self.additional_text = additional_text
 
-    def to_dict(self) -> str:
+    def to_dict(self) -> dict:
         return {
             "id": self.id,
             "weapon_set": self.weapon_set,

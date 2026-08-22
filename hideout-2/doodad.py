@@ -42,3 +42,9 @@ def place(doodad: Doodad, x, y, *, rotation=None, version=None) -> Doodad:
         instance.version = version
 
     return instance
+
+
+def version(doodad: Doodad, version=None) -> Doodad:
+    instance = copy(doodad)
+    instance.version = version
+    return instance

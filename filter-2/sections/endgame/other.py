@@ -46,6 +46,11 @@ rules = [
                     "Architect's Orb",
                     "Orb of Extraction",
                     "Crystallised Corruption",
+                    "Kamasa's Orb of Sacrifice",
+                    "Kopec's Orb of Sacrifice",
+                    "Yaomac's Orb of Sacrifice",
+                    "Yugul's Orb of Sacrifice",
+                    "Atziri's Medallion",
                 ],
                 OPERATOR.CONTAINS,
             ),
@@ -72,34 +77,42 @@ rules = [
             TierStyle(TIER.COMMON),
         ]
     ),
-    Show([MultiBaseType(["Splinter"], OPERATOR.CONTAINS), TierStyle(TIER.EPIC)]),
+    Show(
+        [
+            MultiBaseType(["Splinter"], OPERATOR.CONTAINS),
+            BaseType("Splintered Tower Shield", OPERATOR.NOT_EQUAL),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
     Show(
         [
             MultiBaseType(["Reliquary Key"], OPERATOR.CONTAINS),
             TierStyle(TIER.LEGENDARY),
         ]
     ),
-    Show(
-        [
-            MultiBaseType(
-                [
-                    "Greater Iron Rune",
-                    "Greater Desert Rune",
-                    "Greater Storm Rune",
-                    "Greater Glacial Rune",
-                    "Greater Body Rune",
-                ],
-                OPERATOR.CONTAINS,
-            ),
-            TierStyle(TIER.RARE),
-        ]
-    ),
-    Show(
-        [
-            Class("Augment"),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
+    Show([MultiBaseType(["Cryptic Key"]), TierStyle(TIER.LEGENDARY)]),
+    # Show(
+    #     [
+    #         MultiBaseType(
+    #             [
+    #                 "Greater Iron Rune",
+    #                 "Greater Desert Rune",
+    #                 "Greater Storm Rune",
+    #                 "Greater Glacial Rune",
+    #                 "Greater Body Rune",
+    #             ],
+    #             OPERATOR.CONTAINS,
+    #         ),
+    #         TierStyle(TIER.RARE),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         Class("Augment"),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    Hide([Class("Augment")]),
     # Essence
     Show(
         [
@@ -182,6 +195,23 @@ rules = [
             TierStyle(TIER.LEGENDARY),
         ]
     ),
+    # Early regal orbs
+    Show(
+        [
+            AreaLevel(70, OPERATOR.LTE),
+            BaseType("Regal Shard"),
+            TierStyle(TIER.COMMON),
+        ]
+    ),
+    # Early scraps
+    Show(
+        [
+            AreaLevel(70, OPERATOR.LTE),
+            GearClasses(),
+            Quality(),
+            VendorStyle(),
+        ]
+    ),
     # ===========================
     # Runes of Aldur / Expedition
     # ===========================
@@ -189,13 +219,7 @@ rules = [
         [
             Class("Stackable Currency"),
             MultiBaseType(
-                [
-                    "Alloy",
-                    "Flux",
-                    "Ore",
-                    "Crest",
-                    "Saga",
-                ],
+                ["Alloy", "Flux", "Ore", "Crest", "Saga"],
                 OPERATOR.CONTAINS,
             ),
             ExpeditionStyle(),

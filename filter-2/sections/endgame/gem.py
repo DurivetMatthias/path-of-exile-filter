@@ -5,25 +5,25 @@ from app.conditions import *
 from app.styles import *
 
 rules = [
-    Show(
-        [
-            MultiClass(
-                [
-                    "Uncut Skill Gems",
-                    "Uncut Spirit Gems",
-                    "Uncut Support Gems",
-                ]
-            ),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
-    Show(
-        [
-            MultiClass(["Uncut Support Gems"]),
-            BaseType("Level 5", operator=OPERATOR.CONTAINS),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
+    # Show(
+    #     [
+    #         MultiClass(
+    #             [
+    #                 "Uncut Skill Gems",
+    #                 "Uncut Spirit Gems",
+    #                 "Uncut Support Gems",
+    #             ]
+    #         ),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         MultiClass(["Uncut Support Gems"]),
+    #         BaseType("Level 5", operator=OPERATOR.CONTAINS),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
     # 19+ uncut gems
     Show(
         [

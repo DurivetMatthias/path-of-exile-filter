@@ -25,14 +25,14 @@ shared_config = {
     # Shard
     "Chance Shard": TIER.EPIC,
     # quality
-    "Artificer's Orb": TIER.RARE,
+    # "Artificer's Orb": TIER.RARE,
     "Gemcutter's Prism": TIER.EPIC,
     # "Arcanist's Etcher": TIER.COMMON,
-    "Armourer's Scrap": TIER.COMMON,
+    # "Armourer's Scrap": TIER.COMMON,
     # "Blacksmith's Whetstone": TIER.COMMON,
     "Glassblower's Bauble": TIER.COMMON,
     # Socket
-    "Lesser Jeweller's Orb": TIER.EPIC,
+    # "Lesser Jeweller's Orb": TIER.EPIC,
     "Greater Jeweller's Orb": TIER.LEGENDARY,
     "Perfect Jeweller's Orb": TIER.LEGENDARY,
     # Tink
@@ -50,6 +50,16 @@ rules.extend(
     for currency, tier in shared_config.items()
 )
 rules.append(
+    Show(
+        [
+            BaseType("Gold"),
+            # StackSize(300),
+            StackSize(1000),
+            TierStyle(TIER.COMMON),
+        ]
+    )
+)
+rules.append(
     Hide(
         [
             MultiBaseType(
@@ -61,10 +71,8 @@ rules.append(
                     "Greater Jeweller's Orb",
                     "Blacksmith's Whetstone",
                     "Arcanist's Etcher",
-                    "Artificer's Orb",
-                    "Gemcutter's Prism",
                     "Armourer's Scrap",
-                    "Glassblower's Bauble",
+                    "Artificer's Orb",
                 ]
             )
         ]

@@ -5,16 +5,14 @@ from app.conditions import *
 from app.categories import *
 
 bases = [
-    "Gold Ring",  # Ventor's Gamble
     "Heavy Belt",  # Headhunter
     "Utility Belt",  # Mageblood
-    "Woven Focus",  # Threaded Light
-    "Crimson Amulet",  # Idol of Uldurn
-    "Topaz Ring",  # Call of the Brotherhood
+    "Viper Cap",  # Constricting Command
+    "Champion Cuirass",  # Brass Dome
 ]
 
 rules = [
-    Show([Rarity(RARITY.UNIQUE), TierStyle(TIER.EPIC)]),
+    # Show([Rarity(RARITY.UNIQUE), TierStyle(TIER.EPIC)]),
 ]
 rules.extend(
     Show([Rarity(RARITY.NORMAL), TierStyle(TIER.LEGENDARY), BaseType(name)])

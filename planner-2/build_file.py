@@ -38,7 +38,7 @@ class BuildFile:
         self.skills = skills
         self.items = items
 
-    def to_dict(self) -> str:
+    def to_dict(self) -> dict:
         return {
             "name": self.name,
             "author": "Ferox",

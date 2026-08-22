@@ -5,19 +5,19 @@ from app.conditions import *
 from app.styles import *
 
 rules = [
-    Show(
-        [
-            # Rarity(RARITY.NORMAL),
-            # ItemLevel(81),
-            MultiBaseType(
-                [
-                    "Ultimate Mana Flask",
-                    "Ultimate Life Flask",
-                ]
-            ),
-            TierStyle(TIER.COMMON),
-        ]
-    ),
+    # Show(
+    #     [
+    #         Rarity(RARITY.MAGIC, OPERATOR.EXACT),
+    #         ItemLevel(81),
+    #         MultiBaseType(
+    #             [
+    #                 "Ultimate Mana Flask",
+    #                 # "Ultimate Life Flask",
+    #             ]
+    #         ),
+    #         TierStyle(TIER.COMMON),
+    #     ]
+    # ),
     Show(
         [
             MultiBaseType(
@@ -29,7 +29,7 @@ rules = [
                     "Antidote Charm",
                 ]
             ),
-            TierStyle(TIER.COMMON),
+            TierStyle(TIER.EPIC),
         ]
     ),
     Hide([MultiClass(["Life Flasks", "Mana Flasks", "Charms"])]),

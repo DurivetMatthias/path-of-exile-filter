@@ -11,9 +11,7 @@ rules = [
     # Custom Styles
     Show(
         [
-            MultiBaseType(
-                ["Gnawed Collarbone", "Gnawed Jawbone", "Gnawed Rib", "Gnawed Cranium"]
-            ),
+            MultiBaseType(["Gnawed Collarbone", "Gnawed Jawbone", "Gnawed Rib"]),
             AbyssStyle(),
         ]
     ),
@@ -54,16 +52,8 @@ rules = [
     # ===========================
     Show(
         [
-            MultiBaseType(
-                [
-                    "Alloy",
-                    "Flux",
-                    "Ore",
-                    "Crest",
-                    "Saga",
-                ],
-                OPERATOR.CONTAINS,
-            ),
+            MultiBaseType(["Alloy"], OPERATOR.CONTAINS),
+            Class("Stackable Currency"),
             ExpeditionStyle(),
         ]
     ),
@@ -71,6 +61,15 @@ rules = [
         [
             MultiBaseType(["Verisium", "Expedition Logbook", "Shattered Triskelion"]),
             ExpeditionStyle(),
+        ]
+    ),
+    # ======
+    # Vendor
+    # ======
+    Show(
+        [
+            Rarity(RARITY.RARE, OPERATOR.EXACT),
+            VendorStyle(),
         ]
     ),
 ]

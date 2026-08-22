@@ -17,6 +17,7 @@ from sections.endgame import gem as endgame_gem
 from sections.endgame import jewel as endgame_jewel
 from sections.endgame import other as endgame_other
 from sections.endgame import unique as endgame_unique
+from sections.endgame import waystone as endgame_waystone
 from sections.endgame.builds import shield_wall as endgame_shield_wall
 
 campaign_rules = [
@@ -39,8 +40,12 @@ endgame_rules = [
     *endgame_other.rules,
     *endgame_unique.rules,
     *endgame_currency.rules,
+    *endgame_waystone.rules,
     *endgame_shield_wall.rules,
 ]
+
+for rule in endgame_rules:
+    rule.conditions.append(AreaLevel(65, OPERATOR.GTE))
 
 rules = [
     *campaign_rules,

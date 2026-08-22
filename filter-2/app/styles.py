@@ -8,6 +8,8 @@ class VendorStyle(Condition):
                 PlayEffect(COLOR.YELLOW),
                 MinimapIcon(SIZE.SMALL, COLOR.YELLOW, SHAPE.DIAMOND),
                 SetFontSize(FONT_SIZE.LARGE),
+                SetBorderColor(RGB.YELLOW),
+                SetTextColor(RGB.YELLOW),
             ]
         )
 

@@ -5,30 +5,12 @@ from app.conditions import *
 from app.styles import *
 
 rules = [
-    # Tiering up maps
     Show(
         [
-            Class("Shields"),
-            PureArmour(),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            Class("One Hand Maces"),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            GearClasses(),
-            PureArmour(),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
+            ItemLevel(79),
             # Rarity(RARITY.NORMAL),
+            Rarity(RARITY.MAGIC, OPERATOR.LTE),
+            # Rarity(RARITY.RARE, OPERATOR.LTE),
             MultiBaseType(
                 [
                     "Ruby Ring",
@@ -36,91 +18,94 @@ rules = [
                     "Topaz Ring",
                     "Amethyst Ring",
                     "Prismatic Ring",
-                    "Solar Amulet",
-                    "Stellar Amulet",
-                    "Lapis Amulet",
-                    "Amber Amulet",
-                    "Jade Amulet",
-                    "Pearlescent Amulet",
+                    "Fine Belt",
                 ]
             ),
             TierStyle(TIER.EPIC),
         ]
     ),
-    # Just good magic bases
     Show(
         [
-            # BaseType("Massive Mitts"),
-            Class("Gloves"),
-            PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
+            ItemLevel(75),
+            # Rarity(RARITY.NORMAL),
+            # Rarity(RARITY.MAGIC, OPERATOR.LTE),
+            Rarity(RARITY.RARE, OPERATOR.LTE),
+            MultiBaseType(
+                [
+                    "Jade Amulet",
+                    "Amber Amulet",
+                    "Lapis Amulet",
+                    "Stellar Amulet",
+                    "Bloodstone Amulet",
+                ]
+            ),
             TierStyle(TIER.EPIC),
         ]
     ),
     Show(
         [
-            # BaseType("Tasalian Greaves"),
+            ItemLevel(75),
+            Class("Amulets"),
+            UnidentifiedItemTier(),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    # Show(
+    #     [
+    #         ItemLevel(75),  # +3 level of melee skills
+    #         Rarity(RARITY.RARE, OPERATOR.LTE),
+    #         Class("Amulet"),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
+    Show(
+        [
+            ItemLevel(81),  # +4 level of melee skills
+            MultiBaseType(["Fortified Hammer", "Structured Hammer"]),
+            Class("One Hand Maces"),
+            # Rarity(RARITY.MAGIC, OPERATOR.LTE),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            ItemLevel(79),
+            BaseType("Massive Mitts"),
+            Class("Gloves"),
+            PureArmour(),
+            Rarity(RARITY.MAGIC, OPERATOR.LTE),
+            # Rarity(RARITY.NORMAL, OPERATOR.LTE),
+            TierStyle(TIER.EPIC),
+        ]
+    ),
+    Show(
+        [
+            ItemLevel(82),  # +35% movement speed
+            BaseType("Tasalian Greaves"),
             Class("Boots"),
             PureArmour(),
             Rarity(RARITY.MAGIC, OPERATOR.LTE),
             TierStyle(TIER.EPIC),
         ]
     ),
+    # Show(
+    #     [
+    #         ItemLevel(79),
+    #         BaseType("Imperial Greathelm"),
+    #         Class("Helmets"),
+    #         PureArmour(),
+    #         Rarity(RARITY.MAGIC, OPERATOR.LTE),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     Show(
         [
-            BaseType("Imperial Greathelm"),
-            # Class("Helmets"),
-            # PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            MultiBaseType("Soldier Cuirass", "Warlord Cuirass"),
-            # Class("Body Armours"),
-            # PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Tawhoan Tower Shield"),
-            # Class("Shields"),
-            # PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            BaseType("Tawhoan Tower Shield"),
-            UnidentifiedItemTier(),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    Show(
-        [
-            # MultiBaseType(
-            #     [
-            #         "Fortified Hammer",
-            #         "Structured Hammer",
-            #     ]
-            # ),
-            Class("One Hand Maces"),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.LEGENDARY),
-        ]
-    ),
-    # Just the perfect item levels
-    Show(
-        [
-            ItemLevel(82),
-            MultiClass(["Gloves", "Boots", "Helmets"]),
+            ItemLevel(79),
+            MultiBaseType(["Soldier Cuirass"]),
+            Class("Body Armours"),
             PureArmour(),
-            # Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.LEGENDARY),
+            Rarity(RARITY.MAGIC, OPERATOR.LTE),
+            TierStyle(TIER.EPIC),
         ]
     ),
     # Hide the rest
