@@ -731,3 +731,8 @@ class InEndgame(Condition):
 class InHighTierMaps(Condition):
     def __str__(self):
         return str(AreaLevel(79, OPERATOR.GTE))
+
+
+class InActOne(Condition):
+    def __str__(self):
+        return str(AreaLevel(15, OPERATOR.LTE))

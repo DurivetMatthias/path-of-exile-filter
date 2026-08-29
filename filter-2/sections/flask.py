@@ -81,3 +81,20 @@ rules.append(
         ]
     )
 )
+
+# Unique charms
+rules.append(
+    Show(
+        [
+            Rarity(RARITY.UNIQUE),
+            MultiBaseType(
+                [
+                    "Golden Charm",
+                    "Antidote Charm",
+                    "Silver Charm",
+                ]
+            ),
+            TierStyle(TIER.LEGENDARY),
+        ]
+    )
+)

@@ -313,3 +313,15 @@ rules.append(
         ]
     ),
 )
+
+# Leveling
+rules.append(
+    Show(
+        [
+            InActOne(),
+            Rarity(RARITY.RARE),
+            Height(3),
+            VendorStyle(),
+        ]
+    ),
+)
