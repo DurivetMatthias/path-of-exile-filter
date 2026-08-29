@@ -716,3 +716,18 @@ class OffhandClasses(Condition):
 
     def __str__(self):
         return str(self.condition)
+
+
+class InCampaign(Condition):
+    def __str__(self):
+        return str(AreaLevel(65, OPERATOR.LT))
+
+
+class InEndgame(Condition):
+    def __str__(self):
+        return str(AreaLevel(65, OPERATOR.GTE))
+
+
+class InHighTierMaps(Condition):
+    def __str__(self):
+        return str(AreaLevel(79, OPERATOR.GTE))

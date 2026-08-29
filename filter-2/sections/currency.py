@@ -4,8 +4,7 @@ from app.categories import *
 from app.conditions import *
 from app.styles import *
 
-shared_config = {
-    "Regal Shard": TIER.COMMON,
+baseline_config = {
     "Orb of Transmutation": TIER.RARE,
     "Greater Orb of Transmutation": TIER.EPIC,
     "Perfect Orb of Transmutation": TIER.LEGENDARY,
@@ -25,31 +24,24 @@ shared_config = {
     "Vaal Orb": TIER.EPIC,
     # Shard
     "Chance Shard": TIER.EPIC,
-    # quality
-    "Artificer's Orb": TIER.RARE,
-    "Gemcutter's Prism": TIER.EPIC,
-    # "Arcanist's Etcher": TIER.COMMON,
-    "Armourer's Scrap": TIER.COMMON,
-    "Blacksmith's Whetstone": TIER.COMMON,
-    "Glassblower's Bauble": TIER.COMMON,
     # Socket
-    "Lesser Jeweller's Orb": TIER.EPIC,
-    "Greater Jeweller's Orb": TIER.LEGENDARY,
     "Perfect Jeweller's Orb": TIER.LEGENDARY,
     # Tink
     "Divine Orb": TIER.LEGENDARY,
     "Orb of Chance": TIER.LEGENDARY,
-    "Orb of Annulment": TIER.LEGENDARY,
     "Fracturing Orb": TIER.LEGENDARY,
+    "Orb of Annulment": TIER.LEGENDARY,
     "Hinekora's Lock": TIER.LEGENDARY,
     "Mirror of Kalandra": TIER.LEGENDARY,
 }
 
+# Baseline rules
 rules = []
 rules.extend(
     Show([BaseType(currency), TierStyle(tier)])
-    for currency, tier in shared_config.items()
+    for currency, tier in baseline_config.items()
 )
+# Scrolls of Wisdom
 rules.append(
     Show(
         [
@@ -59,6 +51,7 @@ rules.append(
         ]
     )
 )
+# Gold
 rules.append(
     Show(
         [
@@ -71,12 +64,61 @@ rules.append(
 rules.append(
     Show(
         [
+            AreaLevel(65, OPERATOR.LT),
             BaseType("Gold"),
             StackSize(100),
             TierStyle(TIER.COMMON),
         ]
     )
 )
+rules.append(
+    Show(
+        [
+            AreaLevel(65, OPERATOR.LT),
+            BaseType("Gold"),
+            StackSize(1000),
+            TierStyle(TIER.COMMON),
+        ]
+    )
+)
+# Always in campaign
+rules.append(
+    Show(
+        [
+            AreaLevel(65, OPERATOR.LT),
+            MultiBaseType(
+                [
+                    "Artificer's Orb",
+                    "Armourer's Scrap",
+                    "Gemcutter's Prism",
+                    "Glassblower's Bauble",
+                    "Lesser Jeweller's Orb",
+                    "Greater Jeweller's Orb",
+                ]
+            ),
+            TierStyle(TIER.EPIC),
+        ],
+    )
+)
+# Toggle as needed
+rules.append(
+    Show(
+        [
+            MultiBaseType(
+                [
+                    "Artificer's Orb",
+                    "Armourer's Scrap",
+                    "Gemcutter's Prism",
+                    "Glassblower's Bauble",
+                    "Lesser Jeweller's Orb",
+                    "Greater Jeweller's Orb",
+                ]
+            ),
+            TierStyle(TIER.EPIC),
+        ],
+    )
+)
+# Fallback Hide rule
 rules.append(
     Hide(
         [
@@ -85,8 +127,13 @@ rules.append(
                     "Gold",
                     "Regal Shard",
                     "Scroll of Wisdom",
+                    "Lesser Jeweller's Orb",
+                    "Greater Jeweller's Orb",
+                    "Artificer's Orb",
                     "Armourer's Scrap",
                     "Arcanist's Etcher",
+                    "Gemcutter's Prism",
+                    "Glassblower's Bauble",
                     "Blacksmith's Whetstone",
                 ]
             )
