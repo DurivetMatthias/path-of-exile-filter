@@ -54,7 +54,7 @@ if BODY.SOLDIER in active_rules:
     rules.append(
         Show(
             [
-                BaseType("Solider Cuirass"),
+                BaseType("Soldier Cuirass"),
                 TierStyle(TIER.EPIC),
             ]
         )
@@ -65,7 +65,7 @@ if BODY.SOLDIER_RES in active_rules:
         Show(
             [
                 ItemLevel(82),
-                BaseType("Solider Cuirass"),
+                BaseType("Soldier Cuirass"),
                 TierStyle(TIER.EPIC),
             ]
         )

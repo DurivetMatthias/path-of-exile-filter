@@ -51,7 +51,7 @@ rules.append(
 rules.append(
     Show(
         [
-            Class("Jewel"),
+            Class("Jewels"),
             Rarity(RARITY.UNIQUE),
             TierStyle(TIER.LEGENDARY),
         ]

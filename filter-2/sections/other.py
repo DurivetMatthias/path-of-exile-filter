@@ -22,7 +22,7 @@ rules.append(
                     "Cranium",
                     "Abyss Tablet",
                     "Omen of Light",
-                    "Omen of Putrification",
+                    "Omen of Putrefaction",
                     "Omen of Abyssal Echoes",
                     "Omen of the Liege",
                     "Essence of the Abyss",
@@ -30,7 +30,8 @@ rules.append(
                     "Omen of the Blackblooded",
                     "Omen of Dextral Necromancy",
                     "Omen of Sinistral Necromancy",
-                ]
+                ],
+                OPERATOR.CONTAINS,
             ),
             AbyssStyle(),
         ]
@@ -66,12 +67,12 @@ rules.append(
         [
             MultiBaseType(
                 [
-                    "Sacred Bloom",
+                    # "Sacred Bloom",
                     "Ritual tablet",
                     "Head of the King",
                     "Call of the Shadows",
                     "An Audience with the King",
-                ]
+                ],
             ),
             RitualStyle(),
         ]

@@ -15,7 +15,7 @@ rules.append(
 rules.append(
     Show(
         [
-            MultiClass(["Support Gems", "Spirit Gems", "Skill Gems"]),
+            MultiClass(["Support Gems", "Skill Gems"]),
             TierStyle(TIER.LEGENDARY),
         ]
     ),

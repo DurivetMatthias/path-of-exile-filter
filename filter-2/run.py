@@ -20,6 +20,7 @@ from sections import (
     other,
     ring,
     shield,
+    body,
     waystone,
 )
 
@@ -37,6 +38,7 @@ rules = [
     *boots.rules,
     *gloves.rules,
     *shield.rules,
+    *body.rules,
     *mace.rules,
 ]
 
