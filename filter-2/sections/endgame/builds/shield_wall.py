@@ -7,7 +7,7 @@ from app.styles import *
 rules = [
     Show(
         [
-            ItemLevel(79),
+            ItemLevel(82),
             # Rarity(RARITY.NORMAL),
             Rarity(RARITY.MAGIC, OPERATOR.LTE),
             # Rarity(RARITY.RARE, OPERATOR.LTE),
@@ -42,14 +42,14 @@ rules = [
             TierStyle(TIER.EPIC),
         ]
     ),
-    Show(
-        [
-            ItemLevel(75),
-            Class("Amulets"),
-            UnidentifiedItemTier(),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
+    # Show(
+    #     [
+    #         ItemLevel(75),
+    #         Class("Amulets"),
+    #         UnidentifiedItemTier(),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     # Show(
     #     [
     #         ItemLevel(75),  # +3 level of melee skills
@@ -58,36 +58,36 @@ rules = [
     #         TierStyle(TIER.EPIC),
     #     ]
     # ),
-    Show(
-        [
-            ItemLevel(81),  # +4 level of melee skills
-            MultiBaseType(["Fortified Hammer", "Structured Hammer"]),
-            Class("One Hand Maces"),
-            # Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            ItemLevel(79),
-            BaseType("Massive Mitts"),
-            Class("Gloves"),
-            PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            # Rarity(RARITY.NORMAL, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-    Show(
-        [
-            ItemLevel(82),  # +35% movement speed
-            BaseType("Tasalian Greaves"),
-            Class("Boots"),
-            PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
+    # Show(
+    #     [
+    #         ItemLevel(81),  # +4 level of melee skills
+    #         MultiBaseType(["Fortified Hammer", "Structured Hammer"]),
+    #         Class("One Hand Maces"),
+    #         # Rarity(RARITY.MAGIC, OPERATOR.LTE),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         ItemLevel(79),
+    #         BaseType("Massive Mitts"),
+    #         Class("Gloves"),
+    #         PureArmour(),
+    #         Rarity(RARITY.MAGIC, OPERATOR.LTE),
+    #         # Rarity(RARITY.NORMAL, OPERATOR.LTE),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
+    # Show(
+    #     [
+    #         ItemLevel(82),  # +35% movement speed
+    #         BaseType("Tasalian Greaves"),
+    #         Class("Boots"),
+    #         PureArmour(),
+    #         Rarity(RARITY.MAGIC, OPERATOR.LTE),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     # Show(
     #     [
     #         ItemLevel(79),
@@ -98,16 +98,16 @@ rules = [
     #         TierStyle(TIER.EPIC),
     #     ]
     # ),
-    Show(
-        [
-            ItemLevel(79),
-            MultiBaseType(["Soldier Cuirass"]),
-            Class("Body Armours"),
-            PureArmour(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
+    # Show(
+    #     [
+    #         ItemLevel(79),
+    #         MultiBaseType(["Soldier Cuirass"]),
+    #         Class("Body Armours"),
+    #         PureArmour(),
+    #         Rarity(RARITY.MAGIC, OPERATOR.LTE),
+    #         TierStyle(TIER.EPIC),
+    #     ]
+    # ),
     # Hide the rest
     Hide([GearClasses()]),
     Hide([WeaponClasses()]),

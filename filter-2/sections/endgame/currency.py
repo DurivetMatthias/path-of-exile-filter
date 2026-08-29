@@ -33,7 +33,7 @@ shared_config = {
     "Glassblower's Bauble": TIER.COMMON,
     # Socket
     # "Lesser Jeweller's Orb": TIER.EPIC,
-    "Greater Jeweller's Orb": TIER.LEGENDARY,
+    # "Greater Jeweller's Orb": TIER.LEGENDARY,
     "Perfect Jeweller's Orb": TIER.LEGENDARY,
     # Tink
     "Orb of Chance": TIER.LEGENDARY,

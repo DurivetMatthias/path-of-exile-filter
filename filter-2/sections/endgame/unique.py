@@ -9,6 +9,7 @@ bases = [
     "Utility Belt",  # Mageblood
     "Viper Cap",  # Constricting Command
     "Champion Cuirass",  # Brass Dome
+    "Golden Charm",  # Rite of Passage
 ]
 
 rules = [
