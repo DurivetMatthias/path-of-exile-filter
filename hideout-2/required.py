@@ -4,7 +4,7 @@ from doodad import Doodad
 STASH = Doodad("Stash", 3230065491)
 GUILD_STASH = Doodad("Guild Stash", 139228481)
 WAYPOINT = Doodad("Waypoint", 1224707366)
-MAP_DEVICE = Doodad("Map Device", 76459657, rotation=8186)
+MAP_DEVICE = Doodad("Map Device", 76459657, rotation=24500)
 WAYPOINT = Doodad("Waypoint", 1224707366)
 
 # People

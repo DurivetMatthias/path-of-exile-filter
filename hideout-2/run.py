@@ -6,7 +6,7 @@ from geometry import *
 from composite import *
 
 floors = []
-center = Point(400, 400)
+center = Point(375, 375)
 hideout = Hideout(
     [
         place(
@@ -14,7 +14,7 @@ hideout = Hideout(
             center.x,
             center.y,
         ),
-        *stash_group(center.x - 50, center.y - 50),
+        *stash_group(center.x - 40, center.y - 40),
         *place_in_shape(
             Circle(center.x, center.y, 125),
             [
