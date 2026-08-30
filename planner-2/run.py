@@ -1,5 +1,5 @@
-from build_file import BuildFile, generate
-from skills import Skill, Support
+from app.build_file import BuildFile, generate
+from app.skills import Skill, Support
 
 items = []
 
@@ -64,45 +64,6 @@ skills = [
             Support("Metadata/Items/Gems/SupportGemCorruptingCryThree"),
         ],
     ),
-    Skill(
-        "Metadata/Items/Gems/SkillGemWolfArcticHowl",
-        support_skills=[
-            Support("Metadata/Items/Gems/SupportGemRagingCry"),
-            Support("Metadata/Items/Gems/SupportGemLifetap"),
-            Support("Metadata/Items/Gems/SupportGemTireless"),
-            Support("Metadata/Items/Gems/SupportGemEchoingCry"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffect"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffectTwo"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffectThree"),
-        ],
-    ),
-    Skill(
-        "Metadata/Items/Gems/SkillGemFerociousRoar",
-        support_skills=[
-            Support("Metadata/Items/Gems/SupportGemRagingCry"),
-            Support("Metadata/Items/Gems/SupportGemLifetap"),
-            Support("Metadata/Items/Gems/SupportGemEnragedWarcry"),
-            Support("Metadata/Items/Gems/SupportGemEnragedWarcryTwo"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffect"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffectTwo"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffectThree"),
-            Support("Metadata/Items/Gems/SupportGemCorruptingCry"),
-            Support("Metadata/Items/Gems/SupportGemCorruptingCryTwo"),
-            Support("Metadata/Items/Gems/SupportGemCorruptingCryThree"),
-        ],
-    ),
-    Skill(
-        "Metadata/Items/Gems/SkillGemWolfLunarBlessing",
-        support_skills=[
-            Support("Metadata/Items/Gems/SupportGemRagingCry"),
-            Support("Metadata/Items/Gems/SupportGemLifetap"),
-            Support("Metadata/Items/Gems/SupportGemTireless"),
-            Support("Metadata/Items/Gems/SupportGemEchoingCry"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffect"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffectTwo"),
-            Support("Metadata/Items/Gems/SupportGemMagnifiedEffectThree"),
-        ],
-    ),
     Skill(  # Human version
         "Metadata/Items/Gems/SkillGemFortifyingCry",
         support_skills=[
@@ -151,7 +112,7 @@ skills = [
 
 build_file = BuildFile(
     name="Shield Wall Leveling",
-    description="Level as Boneshatter, transition into shield wall with animal forms",
+    description="Level as Boneshatter, transition into shield wall.",
     ascendancy="Warrior2",
     items=items,
     passives=passives,

@@ -1,6 +1,7 @@
 from enum import StrEnum
-from markup import Markup
 from textwrap import dedent
+
+from app.markup import Markup
 
 
 class INVENTORY_SLOT(StrEnum):
