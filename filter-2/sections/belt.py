@@ -3,22 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class BELT(StrEnum):
-    ANY = "Any"
-    FINE = "Fine"
-    FINE_RES = "Fine Resistance"
-    UNIQUE = "Unique"
-
-
-active_rules = [
-    # BELT.ANY,
-    # BELT.FINE,
-    BELT.FINE_RES,
-    BELT.UNIQUE,
-]
-
+from sections.toggles import *
 
 rules = []
 
@@ -38,7 +23,7 @@ rules.append(
     )
 )
 
-if BELT.ANY in active_rules:
+if BELT_TOGGLES.ANY in active_belt_rules:
     rules.append(
         Show(
             [
@@ -48,7 +33,7 @@ if BELT.ANY in active_rules:
         )
     )
 
-if BELT.FINE in active_rules:
+if BELT_TOGGLES.FINE in active_belt_rules:
     rules.append(
         Show(
             [
@@ -58,7 +43,7 @@ if BELT.FINE in active_rules:
         )
     )
 
-if BELT.FINE_RES in active_rules:
+if BELT_TOGGLES.FINE_RES in active_belt_rules:
     rules.append(
         Show(
             [
@@ -69,7 +54,7 @@ if BELT.FINE_RES in active_rules:
         )
     )
 
-if BELT.UNIQUE in active_rules:
+if BELT_TOGGLES.UNIQUE in active_belt_rules:
     rules.append(
         Show(
             [
@@ -80,7 +65,7 @@ if BELT.UNIQUE in active_rules:
         )
     )
 
-if BELT.UNIQUE in active_rules:
+if BELT_TOGGLES.UNIQUE in active_belt_rules:
     rules.append(
         Show(
             [

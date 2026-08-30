@@ -3,26 +3,34 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class GLOVES(StrEnum):
-    ANY = "Any"
-    MASSIVE = "Massive Mitts"
-    MASSIVE_RES = "Massive Mitts with res"
-
-
-active_rules = [
-    # GLOVES.ANY,
-    # GLOVES.MASSIVE,
-    # GLOVES.MASSIVE_RES,
-]
-
+from sections.toggles import *
 
 rules = []
 
 # Fallback Hide rule
 rules.append(
     Hide([Class("Gloves")]),
+)
+
+
+# Show early magic gloves
+rules.append(
+    Show(
+        [
+            InActOne(),
+            Rarity(RARITY.MAGIC, OPERATOR.GTE),
+            MultiBaseType(
+                [
+                    "Suede Bracers",
+                    "Torn Gloves",
+                    "Ringmail Gauntlets",
+                    "Rope Cuffs",
+                    "Gauze Wraps",
+                ]
+            ),
+            TierStyle(TIER.EPIC),
+        ]
+    )
 )
 
 # Show all during campaign
@@ -37,7 +45,7 @@ rules.append(
     )
 )
 
-if GLOVES.ANY in active_rules:
+if GLOVES_TOGGLES.ANY in active_gloves_rules:
     rules.append(
         Show(
             [
@@ -48,7 +56,7 @@ if GLOVES.ANY in active_rules:
         )
     )
 
-if GLOVES.MASSIVE in active_rules:
+if GLOVES_TOGGLES.MASSIVE in active_gloves_rules:
     rules.append(
         Show(
             [
@@ -58,7 +66,7 @@ if GLOVES.MASSIVE in active_rules:
         )
     )
 
-if GLOVES.MASSIVE_RES in active_rules:
+if GLOVES_TOGGLES.MASSIVE_RES in active_gloves_rules:
     rules.append(
         Show(
             [

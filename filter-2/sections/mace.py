@@ -3,20 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class MACE(StrEnum):
-    ANY = "Any"
-    DAZE = "Fortified or Structured"
-    DAZE_4 = "Fortified or Structured and +4"
-
-
-active_rules = [
-    # MACE.ANY,
-    # MACE.DAZE,
-    # MACE.DAZE_4,
-]
-
+from sections.toggles import *
 
 rules = []
 
@@ -36,7 +23,7 @@ rules.append(
     )
 )
 
-if MACE.ANY in active_rules:
+if MACE_TOGGLES.ANY in active_mace_rules:
     rules.append(
         Show(
             [
@@ -46,7 +33,7 @@ if MACE.ANY in active_rules:
         )
     )
 
-if MACE.DAZE in active_rules:
+if MACE_TOGGLES.DAZE in active_mace_rules:
     rules.append(
         Show(
             [
@@ -56,7 +43,7 @@ if MACE.DAZE in active_rules:
         )
     )
 
-if MACE.DAZE_4 in active_rules:
+if MACE_TOGGLES.DAZE_4 in active_mace_rules:
     rules.append(
         Show(
             [

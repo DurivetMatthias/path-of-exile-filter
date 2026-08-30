@@ -3,22 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class BODY(StrEnum):
-    ANY = "Any"
-    SOLDIER = "Soldier Cuirass"
-    SOLDIER_RES = "Soldier with Resistance"
-    BRASS_DOME = "Brass Dome"
-
-
-active_rules = [
-    # BODY.ANY,
-    # BODY.SOLDIER,
-    # BODY.SOLDIER_RES,
-    BODY.BRASS_DOME,
-]
-
+from sections.toggles import *
 
 rules = []
 
@@ -39,7 +24,7 @@ rules.append(
     )
 )
 
-if BODY.ANY in active_rules:
+if BODY_TOGGLES.ANY in active_body_rules:
     rules.append(
         Show(
             [
@@ -50,7 +35,7 @@ if BODY.ANY in active_rules:
         )
     )
 
-if BODY.SOLDIER in active_rules:
+if BODY_TOGGLES.SOLDIER in active_body_rules:
     rules.append(
         Show(
             [
@@ -60,7 +45,7 @@ if BODY.SOLDIER in active_rules:
         )
     )
 
-if BODY.SOLDIER_RES in active_rules:
+if BODY_TOGGLES.SOLDIER_RES in active_body_rules:
     rules.append(
         Show(
             [
@@ -71,7 +56,7 @@ if BODY.SOLDIER_RES in active_rules:
         )
     )
 
-if BODY.BRASS_DOME in active_rules:
+if BODY_TOGGLES.BRASS_DOME in active_body_rules:
     rules.append(
         Show(
             [
@@ -82,7 +67,7 @@ if BODY.BRASS_DOME in active_rules:
         )
     )
 
-if BODY.BRASS_DOME in active_rules:
+if BODY_TOGGLES.BRASS_DOME in active_body_rules:
     rules.append(
         Show(
             [

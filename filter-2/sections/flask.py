@@ -3,21 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class FLASK(StrEnum):
-    ANY = "Any"
-    GOOD_BASE = "Good base"
-    GOOD_ILVL = "Good item level"
-    UNIQUE = "Unique"
-
-
-active_rules = [
-    # FLASK.ANY,
-    # FLASK.GOOD_BASE,
-    FLASK.GOOD_ILVL,
-    FLASK.UNIQUE,
-]
+from sections.toggles import *
 
 rules = []
 
@@ -37,7 +23,7 @@ rules.append(
     )
 )
 
-if FLASK.GOOD_BASE in active_rules:
+if FLASK_TOGGLES.GOOD_BASE in active_flask_rules:
     rules.append(
         Show(
             [
@@ -54,7 +40,7 @@ if FLASK.GOOD_BASE in active_rules:
         )
     )
 
-if FLASK.GOOD_ILVL in active_rules:
+if FLASK_TOGGLES.GOOD_ILVL in active_flask_rules:
     rules.append(
         Show(
             [
@@ -74,7 +60,7 @@ good_charms = [
     "Antidote Charm",
 ]
 
-if FLASK.GOOD_BASE in active_rules:
+if FLASK_TOGGLES.GOOD_BASE in active_flask_rules:
     rules.append(
         Show(
             [
@@ -85,7 +71,7 @@ if FLASK.GOOD_BASE in active_rules:
         ),
     )
 
-if FLASK.GOOD_ILVL in active_rules:
+if FLASK_TOGGLES.GOOD_ILVL in active_flask_rules:
     rules.append(
         Show(
             [
@@ -97,7 +83,7 @@ if FLASK.GOOD_ILVL in active_rules:
         )
     )
 
-if FLASK.UNIQUE in active_rules:
+if FLASK_TOGGLES.UNIQUE in active_flask_rules:
     rules.append(
         Show(
             [

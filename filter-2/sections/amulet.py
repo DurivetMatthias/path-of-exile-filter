@@ -3,20 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class AMULET(StrEnum):
-    ANY = "Any"
-    MELEE_LEVEL = "Melee Level"
-    MELEE_LEVEL_AND_RES = "Melee level and resistances"
-
-
-active_rules = [
-    # AMULET.ANY,
-    # AMULET.MELEE_LEVEL,
-    AMULET.MELEE_LEVEL_AND_RES,
-]
-
+from sections.toggles import *
 
 rules = []
 
@@ -36,7 +23,7 @@ rules.append(
     )
 )
 
-if AMULET.ANY in active_rules:
+if AMULET_TOGGLES.ANY in active_amulet_rules:
     rules.append(
         Show(
             [
@@ -56,7 +43,7 @@ good_bases = [
     "Bloodstone Amulet",
 ]
 
-if AMULET.MELEE_LEVEL in active_rules:
+if AMULET_TOGGLES.MELEE_LEVEL in active_amulet_rules:
     rules.append(
         Show(
             [
@@ -68,7 +55,7 @@ if AMULET.MELEE_LEVEL in active_rules:
         )
     )
 
-if AMULET.MELEE_LEVEL_AND_RES in active_rules:
+if AMULET_TOGGLES.MELEE_LEVEL_AND_RES in active_amulet_rules:
     rules.append(
         Show(
             [

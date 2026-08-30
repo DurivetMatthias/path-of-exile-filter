@@ -3,22 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class HELMET(StrEnum):
-    ANY = "Any"
-    IMPERIAL = "Imperial"
-    IMPERIAL_RES = "Imperial with Resistance"
-    CONSTRICTING_COMMAND = "Constricting Command"
-
-
-active_rules = [
-    # HELMET.ANY,
-    # HELMET.IMPERIAL,
-    # HELMET.IMPERIAL_RES,
-    HELMET.CONSTRICTING_COMMAND,
-]
-
+from sections.toggles import *
 
 rules = []
 
@@ -39,7 +24,7 @@ rules.append(
     )
 )
 
-if HELMET.ANY in active_rules:
+if HELMET_TOGGLES.ANY in active_helmet_rules:
     rules.append(
         Show(
             [
@@ -50,7 +35,7 @@ if HELMET.ANY in active_rules:
         )
     )
 
-if HELMET.IMPERIAL in active_rules:
+if HELMET_TOGGLES.IMPERIAL in active_helmet_rules:
     rules.append(
         Show(
             [
@@ -60,7 +45,7 @@ if HELMET.IMPERIAL in active_rules:
         )
     )
 
-if HELMET.IMPERIAL_RES in active_rules:
+if HELMET_TOGGLES.IMPERIAL_RES in active_helmet_rules:
     rules.append(
         Show(
             [
@@ -71,7 +56,7 @@ if HELMET.IMPERIAL_RES in active_rules:
         )
     )
 
-if HELMET.CONSTRICTING_COMMAND in active_rules:
+if HELMET_TOGGLES.CONSTRICTING_COMMAND in active_helmet_rules:
     rules.append(
         Show(
             [
@@ -82,7 +67,7 @@ if HELMET.CONSTRICTING_COMMAND in active_rules:
         )
     )
 
-if HELMET.CONSTRICTING_COMMAND in active_rules:
+if HELMET_TOGGLES.CONSTRICTING_COMMAND in active_helmet_rules:
     rules.append(
         Show(
             [

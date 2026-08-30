@@ -3,6 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
+from sections.toggles import *
 
 baseline_config = {
     "Orb of Transmutation": TIER.RARE,
@@ -34,6 +35,7 @@ baseline_config = {
     "Hinekora's Lock": TIER.LEGENDARY,
     "Mirror of Kalandra": TIER.LEGENDARY,
 }
+
 
 # Baseline rules
 rules = []
@@ -100,24 +102,20 @@ rules.append(
         ],
     )
 )
-# Toggle as needed
-rules.append(
-    Show(
-        [
-            MultiBaseType(
-                [
-                    # "Artificer's Orb",
-                    # "Armourer's Scrap",
-                    # "Gemcutter's Prism",
-                    "Glassblower's Bauble",
-                    # "Lesser Jeweller's Orb",
-                    # "Greater Jeweller's Orb",
-                ]
-            ),
-            TierStyle(TIER.EPIC),
-        ],
-    )
-)
+# Toggles
+if CURRENCY_TOGGLES.ARTIFICER in active_currency_rules:
+    rules.append(Show([BaseType("Artificer's Orb"), TierStyle(TIER.EPIC)]))
+if CURRENCY_TOGGLES.ARMOURER in active_currency_rules:
+    rules.append(Show([BaseType("Armourer's Scrap"), TierStyle(TIER.EPIC)]))
+if CURRENCY_TOGGLES.GEMCUTTER in active_currency_rules:
+    rules.append(Show([BaseType("Gemcutter's Prism"), TierStyle(TIER.EPIC)]))
+if CURRENCY_TOGGLES.GLASSBLOWER in active_currency_rules:
+    rules.append(Show([BaseType("Glassblower's Bauble"), TierStyle(TIER.EPIC)]))
+if CURRENCY_TOGGLES.LESSER_JEWELLER in active_currency_rules:
+    rules.append(Show([BaseType("Lesser Jeweller's Orb"), TierStyle(TIER.EPIC)]))
+if CURRENCY_TOGGLES.LESSER_JEWELLER in active_currency_rules:
+    rules.append(Show([BaseType("Greater Jeweller's Orb"), TierStyle(TIER.EPIC)]))
+
 # Fallback Hide rule
 rules.append(
     Hide(

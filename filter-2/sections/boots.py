@@ -3,20 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
-
-
-class BOOTS(StrEnum):
-    ANY = "Any"
-    TASALIAN = "Tasalian"
-    FRACTURE = "Tasalian for fracturing"
-
-
-active_rules = [
-    # BOOTS.ANY,
-    # BOOTS.TASALIAN,
-    # BOOTS.FRACTURE,
-]
-
+from sections.toggles import *
 
 rules = []
 
@@ -57,7 +44,7 @@ rules.append(
     )
 )
 
-if BOOTS.ANY in active_rules:
+if BOOTS_TOGGLES.ANY in active_boots_rules:
     rules.append(
         Show(
             [
@@ -69,7 +56,7 @@ if BOOTS.ANY in active_rules:
         )
     )
 
-if BOOTS.TASALIAN in active_rules:
+if BOOTS_TOGGLES.TASALIAN in active_boots_rules:
     rules.append(
         Show(
             [
@@ -80,7 +67,7 @@ if BOOTS.TASALIAN in active_rules:
         )
     )
 
-if BOOTS.FRACTURE in active_rules:
+if BOOTS_TOGGLES.FRACTURE in active_boots_rules:
     rules.append(
         Show(
             [

@@ -3,6 +3,7 @@ from app.blocks import *
 from app.categories import *
 from app.conditions import *
 from app.styles import *
+from sections.toggles import *
 
 rules = []
 
@@ -162,6 +163,27 @@ rules.append(
 )
 
 # Trial
+if OTHER_TOGGLES.CHAOS in active_other_rules:
+    rules.append(
+        Show(
+            [
+                ItemLevel(75),
+                BaseType("Inscribed Ultimatum"),
+                TierStyle(TIER.COMMON),
+            ]
+        )
+    )
+# Trial
+if OTHER_TOGGLES.SEKHEMA in active_other_rules:
+    rules.append(
+        Show(
+            [
+                ItemLevel(75),
+                BaseType("Djinn Barya"),
+                TierStyle(TIER.COMMON),
+            ]
+        )
+    )
 rules.append(
     Show(
         [
@@ -196,19 +218,7 @@ rules.append(
         ]
     )
 )
-rules.append(
-    Show(
-        [
-            MultiClass(
-                [
-                    "Pinnacle Keys",
-                ],
-                OPERATOR.CONTAINS,
-            ),
-            TierStyle(TIER.EPIC),
-        ]
-    )
-)
+rules.append(Show([Class(["Pinnacle Keys"]), TierStyle(TIER.EPIC)]))
 
 # Augment
 rules.append(Hide([Class("Augment")]))
@@ -229,21 +239,23 @@ rules.append(
     )
 )
 
-# rules.append(
-#     Show(
-#         [
-#             MultiBaseType(
-#                 [
-#                     "Greater Iron Rune",
-#                     "Greater Desert Rune",
-#                     "Greater Storm Rune",
-#                     "Greater Glacial Rune",
-#                 ]
-#             ),
-#             TierStyle(TIER.EPIC),
-#         ]
-#     )
-# )
+
+if OTHER_TOGGLES.BASIC_AUGMENT in active_other_rules:
+    rules.append(
+        Show(
+            [
+                MultiBaseType(
+                    [
+                        "Greater Iron Rune",
+                        "Greater Desert Rune",
+                        "Greater Storm Rune",
+                        "Greater Glacial Rune",
+                    ]
+                ),
+                TierStyle(TIER.EPIC),
+            ]
+        )
+    )
 
 rules.append(
     Show(
