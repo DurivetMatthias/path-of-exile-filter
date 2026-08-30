@@ -12,8 +12,8 @@ class RING(StrEnum):
 
 
 active_rules = [
-    RING.ANY,
-    RING.GOOD_BASE,
+    # RING.ANY,
+    # RING.GOOD_BASE,
     RING.RES,
 ]
 
@@ -58,6 +58,7 @@ if RING.GOOD_BASE in active_rules:
     rules.append(
         Show(
             [
+                Rarity(RARITY.MAGIC, OPERATOR.LTE),
                 MultiBaseType(good_bases),
                 TierStyle(TIER.EPIC),
             ]
@@ -69,6 +70,7 @@ if RING.RES in active_rules:
         Show(
             [
                 ItemLevel(82),
+                Rarity(RARITY.MAGIC, OPERATOR.LTE),
                 MultiBaseType(good_bases),
                 TierStyle(TIER.EPIC),
             ]

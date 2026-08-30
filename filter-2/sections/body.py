@@ -13,9 +13,9 @@ class BODY(StrEnum):
 
 
 active_rules = [
-    BODY.ANY,
-    BODY.SOLDIER,
-    BODY.SOLDIER_RES,
+    # BODY.ANY,
+    # BODY.SOLDIER,
+    # BODY.SOLDIER_RES,
     BODY.BRASS_DOME,
 ]
 

@@ -106,12 +106,12 @@ rules.append(
         [
             MultiBaseType(
                 [
-                    "Artificer's Orb",
-                    "Armourer's Scrap",
-                    "Gemcutter's Prism",
+                    # "Artificer's Orb",
+                    # "Armourer's Scrap",
+                    # "Gemcutter's Prism",
                     "Glassblower's Bauble",
-                    "Lesser Jeweller's Orb",
-                    "Greater Jeweller's Orb",
+                    # "Lesser Jeweller's Orb",
+                    # "Greater Jeweller's Orb",
                 ]
             ),
             TierStyle(TIER.EPIC),

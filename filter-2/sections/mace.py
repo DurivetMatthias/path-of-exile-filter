@@ -12,9 +12,9 @@ class MACE(StrEnum):
 
 
 active_rules = [
-    MACE.ANY,
-    MACE.DAZE,
-    MACE.DAZE_4,
+    # MACE.ANY,
+    # MACE.DAZE,
+    # MACE.DAZE_4,
 ]
 
 

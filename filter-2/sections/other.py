@@ -30,10 +30,12 @@ rules.append(
                     "Omen of the Blackblooded",
                     "Omen of Dextral Necromancy",
                     "Omen of Sinistral Necromancy",
+                    "Kulemak's Invitation",
                 ],
                 OPERATOR.CONTAINS,
             ),
             AbyssStyle(),
+            MultiBaseType(["Tribal Bow"], OPERATOR.NOT_EQUAL),
         ]
     )
 )
@@ -55,6 +57,7 @@ rules.append(
                 ],
                 OPERATOR.CONTAINS,
             ),
+            MultiBaseType(["Crest Shield", "Explorer Armour"], OPERATOR.NOT_EQUAL),
             ExpeditionStyle(),
         ]
     )
@@ -208,6 +211,7 @@ rules.append(
 )
 
 # Augment
+rules.append(Hide([Class("Augment")]))
 rules.append(
     Show(
         [
@@ -225,21 +229,21 @@ rules.append(
     )
 )
 
-rules.append(
-    Show(
-        [
-            MultiBaseType(
-                [
-                    "Greater Iron Rune",
-                    "Greater Desert Rune",
-                    "Greater Storm Rune",
-                    "Greater Glacial Rune",
-                ]
-            ),
-            TierStyle(TIER.EPIC),
-        ]
-    )
-)
+# rules.append(
+#     Show(
+#         [
+#             MultiBaseType(
+#                 [
+#                     "Greater Iron Rune",
+#                     "Greater Desert Rune",
+#                     "Greater Storm Rune",
+#                     "Greater Glacial Rune",
+#                 ]
+#             ),
+#             TierStyle(TIER.EPIC),
+#         ]
+#     )
+# )
 
 rules.append(
     Show(

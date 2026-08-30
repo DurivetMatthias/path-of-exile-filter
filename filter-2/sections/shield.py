@@ -12,9 +12,9 @@ class SHIELD(StrEnum):
 
 
 active_rules = [
-    SHIELD.ANY,
-    SHIELD.TAWHOAN,
-    SHIELD.TAWHOAN_RES,
+    # SHIELD.ANY,
+    # SHIELD.TAWHOAN,
+    # SHIELD.TAWHOAN_RES,
 ]
 
 

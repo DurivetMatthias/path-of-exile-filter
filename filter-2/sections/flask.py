@@ -4,6 +4,21 @@ from app.categories import *
 from app.conditions import *
 from app.styles import *
 
+
+class FLASK(StrEnum):
+    ANY = "Any"
+    GOOD_BASE = "Good base"
+    GOOD_ILVL = "Good item level"
+    UNIQUE = "Unique"
+
+
+active_rules = [
+    # FLASK.ANY,
+    # FLASK.GOOD_BASE,
+    FLASK.GOOD_ILVL,
+    FLASK.UNIQUE,
+]
+
 rules = []
 
 # Fallback Hide rule
@@ -22,79 +37,79 @@ rules.append(
     )
 )
 
-# Toggle as needed
-rules.append(
-    Show(
-        [
-            InEndgame(),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            MultiBaseType(
-                [
-                    "Ultimate Life Flask",
-                    "Ultimate Mana Flask",
-                ]
-            ),
-            TierStyle(TIER.COMMON),
-        ]
+if FLASK.GOOD_BASE in active_rules:
+    rules.append(
+        Show(
+            [
+                InEndgame(),
+                Rarity(RARITY.MAGIC, OPERATOR.LTE),
+                MultiBaseType(
+                    [
+                        "Ultimate Life Flask",
+                        "Ultimate Mana Flask",
+                    ]
+                ),
+                TierStyle(TIER.COMMON),
+            ]
+        )
     )
-)
 
-# T1 reduced charges per use
-rules.append(
-    Show(
-        [
-            ItemLevel(83),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            MultiBaseType(["Ultimate Life Flask"]),
-            TierStyle(TIER.LEGENDARY),
-        ]
+if FLASK.GOOD_ILVL in active_rules:
+    rules.append(
+        Show(
+            [
+                ItemLevel(83),
+                Rarity(RARITY.MAGIC, OPERATOR.LTE),
+                MultiBaseType(["Ultimate Life Flask"]),
+                TierStyle(TIER.LEGENDARY),
+            ]
+        )
     )
-)
 
-# Toggle as needed
-rules.append(
-    Show(
-        [
-            InEndgame(),
-            MultiBaseType(
-                [
-                    "Thawing Charm",
-                    "Silver Charm",
-                    "Staunching Charm",
-                    "Dousing Charm",
-                    "Antidote Charm",
-                ]
-            ),
-            TierStyle(TIER.EPIC),
-        ]
-    ),
-)
+good_charms = [
+    "Thawing Charm",
+    "Silver Charm",
+    "Staunching Charm",
+    "Dousing Charm",
+    "Antidote Charm",
+]
 
-# T1 reduced charges per use
-rules.append(
-    Show(
-        [
-            ItemLevel(83),
-            Rarity(RARITY.MAGIC, OPERATOR.LTE),
-            Class("Charms"),
-            TierStyle(TIER.LEGENDARY),
-        ]
+if FLASK.GOOD_BASE in active_rules:
+    rules.append(
+        Show(
+            [
+                InEndgame(),
+                MultiBaseType(good_charms),
+                TierStyle(TIER.EPIC),
+            ]
+        ),
     )
-)
 
-# Unique charms
-rules.append(
-    Show(
-        [
-            Rarity(RARITY.UNIQUE),
-            MultiBaseType(
-                [
-                    "Golden Charm",
-                    "Antidote Charm",
-                    "Silver Charm",
-                ]
-            ),
-            TierStyle(TIER.LEGENDARY),
-        ]
+if FLASK.GOOD_ILVL in active_rules:
+    rules.append(
+        Show(
+            [
+                ItemLevel(83),
+                Rarity(RARITY.MAGIC, OPERATOR.LTE),
+                MultiBaseType(good_charms),
+                TierStyle(TIER.LEGENDARY),
+            ]
+        )
     )
-)
+
+if FLASK.UNIQUE in active_rules:
+    rules.append(
+        Show(
+            [
+                Rarity(RARITY.UNIQUE),
+                MultiBaseType(
+                    [
+                        "Golden Charm",
+                        "Antidote Charm",
+                        "Silver Charm",
+                    ]
+                ),
+                TierStyle(TIER.LEGENDARY),
+            ]
+        )
+    )

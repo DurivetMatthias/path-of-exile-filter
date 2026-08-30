@@ -13,8 +13,8 @@ class BELT(StrEnum):
 
 
 active_rules = [
-    BELT.ANY,
-    BELT.FINE,
+    # BELT.ANY,
+    # BELT.FINE,
     BELT.FINE_RES,
     BELT.UNIQUE,
 ]

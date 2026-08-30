@@ -12,9 +12,9 @@ class GLOVES(StrEnum):
 
 
 active_rules = [
-    GLOVES.ANY,
-    GLOVES.MASSIVE,
-    GLOVES.MASSIVE_RES,
+    # GLOVES.ANY,
+    # GLOVES.MASSIVE,
+    # GLOVES.MASSIVE_RES,
 ]
 
 

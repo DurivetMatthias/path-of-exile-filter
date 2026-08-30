@@ -12,8 +12,8 @@ class AMULET(StrEnum):
 
 
 active_rules = [
-    AMULET.ANY,
-    AMULET.MELEE_LEVEL,
+    # AMULET.ANY,
+    # AMULET.MELEE_LEVEL,
     AMULET.MELEE_LEVEL_AND_RES,
 ]
 
@@ -40,6 +40,7 @@ if AMULET.ANY in active_rules:
     rules.append(
         Show(
             [
+                Rarity(RARITY.RARE, OPERATOR.LTE),
                 Class("Amulets"),
                 TierStyle(TIER.EPIC),
             ]
@@ -51,6 +52,7 @@ good_bases = [
     "Amber Amulet",
     "Lapis Amulet",
     "Stellar Amulet",
+    "Solar Amulet",
     "Bloodstone Amulet",
 ]
 
@@ -58,6 +60,7 @@ if AMULET.MELEE_LEVEL in active_rules:
     rules.append(
         Show(
             [
+                Rarity(RARITY.RARE, OPERATOR.LTE),
                 ItemLevel(75),
                 MultiBaseType(good_bases),
                 TierStyle(TIER.EPIC),
@@ -69,6 +72,7 @@ if AMULET.MELEE_LEVEL_AND_RES in active_rules:
     rules.append(
         Show(
             [
+                Rarity(RARITY.RARE, OPERATOR.LTE),
                 ItemLevel(82),
                 MultiBaseType(good_bases),
                 TierStyle(TIER.EPIC),
