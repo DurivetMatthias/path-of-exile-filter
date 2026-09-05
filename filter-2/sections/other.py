@@ -36,7 +36,12 @@ rules.append(
                 OPERATOR.CONTAINS,
             ),
             AbyssStyle(),
-            MultiBaseType(["Tribal Bow"], OPERATOR.NOT_EQUAL),
+            MultiBaseType(
+                [
+                    "Tribal",
+                ],
+                OPERATOR.NOT_EQUAL,
+            ),
         ]
     )
 )
@@ -58,7 +63,24 @@ rules.append(
                 ],
                 OPERATOR.CONTAINS,
             ),
-            MultiBaseType(["Crest Shield", "Explorer Armour"], OPERATOR.NOT_EQUAL),
+            MultiClass(
+                [
+                    "Boots",
+                    "Helmets",
+                    "Gloves",
+                    "Body Armours",
+                    "Crossbows",
+                    "Spears",
+                    "Shields",
+                ],
+                OPERATOR.NOT_EQUAL,
+            ),
+            MultiBaseType(
+                [
+                    "Core",
+                ],
+                OPERATOR.NOT_EQUAL,
+            ),
             ExpeditionStyle(),
         ]
     )
@@ -218,7 +240,7 @@ rules.append(
         ]
     )
 )
-rules.append(Show([Class(["Pinnacle Keys"]), TierStyle(TIER.EPIC)]))
+rules.append(Show([Class("Pinnacle Keys"), TierStyle(TIER.EPIC)]))
 
 # Augment
 rules.append(Hide([Class("Augment")]))

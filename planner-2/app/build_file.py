@@ -41,7 +41,6 @@ class BuildFile:
     def to_dict(self) -> dict:
         return {
             "name": self.name,
-            "author": "Ferox",
             "ascendancy": self.ascendancy,
             "inventory_slots": [item.to_dict() for item in self.items],
             "passives": [passive.to_dict() for passive in self.passives],
